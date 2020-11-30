@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "allowTemplateLiterals": true,
+  "semi": false,
+  "trailingComma": "es5"
+}
