@@ -1,0 +1,6 @@
+.MainWindow {
+  width: 800px;
+  height: 600px;
+  background-color: #008080;
+  cursor: url(../../static/cursor-default.png), auto;
+}
