@@ -1,8 +1,8 @@
 .StartButton {
-  width: 49px;
   height: 100%;
   padding: 4px;
   font-weight: bold;
+  letter-spacing: 0.5px;
 }
 
 .StartButtonText {
