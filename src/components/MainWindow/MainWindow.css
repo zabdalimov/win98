@@ -1,6 +1,19 @@
+@font-face {
+  font-family: 'Windows95';
+  src: url(../../static/fonts/w95fa.woff) format('woff'),
+  url(../../static/fonts/w95fa.woff2) format('woff2');
+}
+
 .MainWindow {
-  width: 800px;
-  height: 600px;
+  width: 1024px;
+  height: 768px;
+  display: flex;
+  flex-direction: column;
   background-color: #008080;
   cursor: url(../../static/cursor-default.png), auto;
+  font-family: Windows95, serif;
+}
+
+img {
+  image-rendering: pixelated;
 }
