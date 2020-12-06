@@ -1,0 +1,15 @@
+.TimerContainer {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-top: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+}
+
+.Time {
+  margin-left: auto;
+  font-size: 12px;
+}

@@ -8,3 +8,7 @@
   background-color: #C0C0C0;
   box-shadow: inset 0 1px #DFDFDF, inset 0 2px #FFF;
 }
+
+.TaskBar > :last-child {
+  margin-left: auto;
+}
