@@ -7,7 +7,7 @@ export interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = ({ src, alt }) => {
-  return <img className="Icon" src={src} alt={alt} />
+  return <img className="Icon" src={src} alt={alt} draggable={false} />
 }
 
 export default Icon

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Timer.scss'
-import Icon, { IconProps } from '../Icon/Icon'
+import Icon, { IconProps } from '../../Icon/Icon'
 import soundIcon from '../../../static/icons/sound-icon.png'
 
 interface Props {
