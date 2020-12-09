@@ -7,16 +7,15 @@
   /*TODO extract as vars*/
   background-color: #C0C0C0;
   box-shadow: inset 0 1px #DFDFDF, inset 0 2px #FFF;
-}
 
-.TaskBar > .Separator {
-  margin-left: 2px;
-}
+  & > .Separator {
+    margin-left: 2px;
+    &:nth-last-child(2) {
+      margin-left: auto;
+    }
+  }
 
-.TaskBar > .Separator:nth-last-child(2) {
-  margin-left: auto;
-}
-
-.TaskBar > .Timer {
-  margin-left: 2px;
+  & > .Timer {
+    margin-left: 2px;
+  }
 }

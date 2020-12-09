@@ -4,21 +4,20 @@
   box-shadow: inset 1px 1px #FFF, inset 2px 2px #DFDFDF, inset -1px -1px #000, inset -2px -2px #808080;
   cursor: inherit;
   font-family: inherit;
-}
 
-.Button > .InnerContainer {
-  display: flex;
-  align-items: center;
-}
+  &:active {
+    box-shadow: inset 1px 1px #000, inset 2px 2px #808080, inset -1px -1px #FFF, inset -2px -2px #DFDFDF;
+  }
 
-.Button:active {
-  box-shadow: inset 1px 1px #000, inset 2px 2px #808080, inset -1px -1px #FFF, inset -2px -2px #DFDFDF;
-}
+  &:focus {
+    outline: none;
+    & > .InnerContainer {
+      outline: 1px dotted #000;
+    }
+  }
 
-.Button:focus {
-  outline: none;
-}
-
-.Button:focus > .InnerContainer {
-  outline: 1px dotted #000;
+  & > .InnerContainer {
+    display: flex;
+    align-items: center;
+  }
 }
