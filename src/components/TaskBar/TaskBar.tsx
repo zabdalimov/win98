@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import './TaskBar.css'
 import StartButton from './StartButton/StartButton'
 import Separator from './Separator/Separator'
 import Timer from './Timer/Timer'
+import useCurrentDate from '../../hooks/useCurrentDate'
 
 const TaskBar: React.FC = () => {
-  const [date, setDate] = useState(new Date())
-
-  useEffect(() => {
-    setTimeout(() => setDate(new Date()), 1000)
-  }, [date])
+  const date = useCurrentDate()
 
   return (
     <div className="TaskBar">
