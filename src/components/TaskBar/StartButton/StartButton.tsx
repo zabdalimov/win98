@@ -1,6 +1,6 @@
 import React from 'react'
 import './StartButton.css'
-import logo from '../../../static/w98-icon.png'
+import logo from '../../../static/icons/w98-icon.png'
 import Button from '../../Button/Button'
 
 const StartButton: React.FC = () => {
