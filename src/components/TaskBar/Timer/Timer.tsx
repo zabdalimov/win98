@@ -1,5 +1,5 @@
 import React from 'react'
-import './Timer.css'
+import './Timer.scss'
 import Icon, { IconProps } from '../Icon/Icon'
 import soundIcon from '../../../static/icons/sound-icon.png'
 

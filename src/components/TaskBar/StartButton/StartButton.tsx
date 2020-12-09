@@ -1,5 +1,5 @@
 import React from 'react'
-import './StartButton.css'
+import './StartButton.scss'
 import logo from '../../../static/icons/w98-icon.png'
 import Button from '../../Button/Button'
 

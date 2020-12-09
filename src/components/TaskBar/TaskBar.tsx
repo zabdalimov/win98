@@ -1,5 +1,5 @@
 import React from 'react'
-import './TaskBar.css'
+import './TaskBar.scss'
 import StartButton from './StartButton/StartButton'
 import Separator from './Separator/Separator'
 import Timer from './Timer/Timer'
