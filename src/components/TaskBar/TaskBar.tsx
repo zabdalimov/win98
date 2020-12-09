@@ -6,13 +6,14 @@ import Timer from './Timer/Timer'
 import useCurrentDate from '../../hooks/useCurrentDate'
 
 const TaskBar: React.FC = () => {
-  const date = useCurrentDate()
+  const currentDate = useCurrentDate()
 
   return (
     <div className="TaskBar">
       <StartButton />
       <Separator />
-      <Timer date={date} />
+      <Separator />
+      <Timer date={currentDate} />
     </div>
   )
 }

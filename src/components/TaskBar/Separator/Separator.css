@@ -1,8 +1,6 @@
 .Separator {
   width: 2px;
   height: 100%;
-  /*TODO this should be set externally*/
-  margin-left: 2px;
   border-left: 1px solid #808080;
   border-right: 1px solid #FFF;
 }

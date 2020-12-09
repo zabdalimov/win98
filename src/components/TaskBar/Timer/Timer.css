@@ -1,4 +1,4 @@
-.TimerContainer {
+.Timer {
   height: 100%;
   display: flex;
   align-items: center;
@@ -9,7 +9,11 @@
   border-bottom: 1px solid #FFF;
 }
 
+.Icon:not(:first-child) {
+  margin-left: 1px;
+}
+
 .Time {
-  margin-left: auto;
+  margin-left: 11px;
   font-size: 12px;
 }
