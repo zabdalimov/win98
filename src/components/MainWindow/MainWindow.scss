@@ -12,8 +12,13 @@
   background-color: #008080;
   cursor: url(../../static/cursor-default.png), auto;
   font-family: Windows95, serif;
-}
+  user-select: none;
 
-img {
-  image-rendering: pixelated;
+  & div {
+    box-sizing: border-box;
+  }
+
+  & img {
+    image-rendering: pixelated;
+  }
 }
