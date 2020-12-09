@@ -4,9 +4,8 @@
   background-color: #C0C0C0;
   border: none;
   box-shadow: inset 1px 1px #FFF, inset 2px 2px #DFDFDF, inset -1px -1px #000, inset -2px -2px #808080;
-  /*TODO extract*/
-  cursor: url(../../static/cursor-default.png), auto;
-  font-family: Windows95, serif;
+  cursor: inherit;
+  font-family: inherit;
 }
 
 .Button:active, .Button:focus {
