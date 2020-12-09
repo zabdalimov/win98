@@ -1,6 +1,4 @@
 .Button {
-  display: flex;
-  align-items: center;
   background-color: #C0C0C0;
   border: none;
   box-shadow: inset 1px 1px #FFF, inset 2px 2px #DFDFDF, inset -1px -1px #000, inset -2px -2px #808080;
@@ -8,7 +6,19 @@
   font-family: inherit;
 }
 
-.Button:active, .Button:focus {
-  border: none;
+.Button > .InnerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.Button:active {
+  box-shadow: inset 1px 1px #000, inset 2px 2px #808080, inset -1px -1px #FFF, inset -2px -2px #DFDFDF;
+}
+
+.Button:focus {
   outline: none;
+}
+
+.Button:focus > .InnerContainer {
+  outline: 1px dotted #000;
 }

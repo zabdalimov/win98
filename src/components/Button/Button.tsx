@@ -8,7 +8,11 @@ interface Props {
 
 const Button: React.FC<Props> = ({ children, className }) => {
   const btnClass = classNames('Button', className)
-  return <button className={btnClass}>{children}</button>
+  return (
+    <button className={btnClass}>
+      <div className="InnerContainer">{children}</div>
+    </button>
+  )
 }
 
 export default Button
