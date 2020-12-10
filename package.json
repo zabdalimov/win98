@@ -6,8 +6,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "lint": "./node_modules/.bin/eslint src --ext .ts,.tsx",
-    "lint:fix": "yarn lint --fix",
+    "lint": "yarn eslint && yarn stylelint",
+    "eslint": "eslint src --ext .ts,.tsx",
+    "stylelint": "stylelint 'src/**/*.scss'",
+    "lint:fix": "yarn eslint --fix && yarn stylelint --fix",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -34,6 +36,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "node-sass": "^4.14.1",
     "prettier": "^2.2.1",
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-prettier": "^1.1.2",
     "ts-jest": "^26.4.4",
     "typescript": "^4.0.3"
   },
