@@ -1,12 +1,14 @@
 .Button {
-  background-color: #C0C0C0;
+  background-color: #c0c0c0;
   border: none;
-  box-shadow: inset 1px 1px #FFF, inset 2px 2px #DFDFDF, inset -1px -1px #000, inset -2px -2px #808080;
+  box-shadow: inset 1px 1px #fff, inset 2px 2px #dfdfdf, inset -1px -1px #000,
+    inset -2px -2px #808080;
   cursor: inherit;
   font-family: inherit;
 
   &:active {
-    box-shadow: inset 1px 1px #000, inset 2px 2px #808080, inset -1px -1px #FFF, inset -2px -2px #DFDFDF;
+    box-shadow: inset 1px 1px #000, inset 2px 2px #808080, inset -1px -1px #fff,
+      inset -2px -2px #dfdfdf;
   }
 
   &:focus {
