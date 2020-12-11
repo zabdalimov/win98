@@ -1,4 +1,4 @@
-@import 'src/colors.scss';
+@use './colors';
 
 html {
   height: 100%;
@@ -10,5 +10,5 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  background-color: $black;
+  background-color: colors.$black;
 }

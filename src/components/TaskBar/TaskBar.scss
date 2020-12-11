@@ -1,13 +1,14 @@
-@import 'src/colors.scss';
+@use 'src/styles/colors';
+@use 'src/styles/sizings';
 
 .TaskBar {
-  height: 27px;
+  height: sizings.$taskbar-height;
   display: flex;
   align-items: center;
   margin-top: auto;
   padding: 4px 2px 2px 2px;
-  background-color: $base-gray;
-  box-shadow: inset 0 1px $light-gray, inset 0 2px $white;
+  background-color: colors.$base-gray;
+  box-shadow: inset 0 1px colors.$light-gray, inset 0 2px colors.$white;
 
   & > .Separator {
     margin-left: 2px;

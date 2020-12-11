@@ -1,4 +1,4 @@
-@import 'src/colors.scss';
+@use 'src/styles/colors';
 
 @font-face {
   font-family: 'Windows95';
@@ -9,9 +9,10 @@
 .MainWindow {
   width: 1024px;
   height: 768px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $desktop-theme;
+  background-color: colors.$desktop-theme;
   cursor: url(../../static/cursor-default.png), auto;
   font-family: Windows95, serif;
   user-select: none;

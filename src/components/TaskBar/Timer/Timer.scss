@@ -1,14 +1,14 @@
-@import 'src/colors.scss';
+@use 'src/styles/colors';
 
 .Timer {
   height: 100%;
   display: flex;
   align-items: center;
   padding: 2px;
-  border-top: 1px solid $dark-gray;
-  border-left: 1px solid $dark-gray;
-  border-right: 1px solid $white;
-  border-bottom: 1px solid $white;
+  border-top: 1px solid colors.$dark-gray;
+  border-left: 1px solid colors.$dark-gray;
+  border-right: 1px solid colors.$white;
+  border-bottom: 1px solid colors.$white;
 }
 
 .Icon:not(:first-child) {

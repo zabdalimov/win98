@@ -1,22 +1,22 @@
-@import 'src/colors.scss';
+@use 'src/styles/colors';
 
 .Button {
-  background-color: $base-gray;
+  background-color: colors.$base-gray;
   border: none;
-  box-shadow: inset 1px 1px $white, inset 2px 2px $light-gray,
-    inset -1px -1px $black, inset -2px -2px $dark-gray;
+  box-shadow: inset 1px 1px colors.$white, inset 2px 2px colors.$light-gray,
+    inset -1px -1px colors.$black, inset -2px -2px colors.$dark-gray;
   cursor: inherit;
   font-family: inherit;
 
   &:active {
-    box-shadow: inset 1px 1px $black, inset 2px 2px $dark-gray,
-      inset -1px -1px $white, inset -2px -2px $light-gray;
+    box-shadow: inset 1px 1px colors.$black, inset 2px 2px colors.$dark-gray,
+      inset -1px -1px colors.$white, inset -2px -2px colors.$light-gray;
   }
 
   &:focus {
     outline: none;
     & > .InnerContainer {
-      outline: 1px dotted $black;
+      outline: 1px dotted colors.$black;
     }
   }
 
