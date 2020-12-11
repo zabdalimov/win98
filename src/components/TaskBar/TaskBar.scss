@@ -1,12 +1,13 @@
+@import 'src/colors.scss';
+
 .TaskBar {
   height: 27px;
   display: flex;
   align-items: center;
   margin-top: auto;
   padding: 4px 2px 2px 2px;
-  /*TODO extract as vars*/
-  background-color: #c0c0c0;
-  box-shadow: inset 0 1px #dfdfdf, inset 0 2px #fff;
+  background-color: $base-gray;
+  box-shadow: inset 0 1px $light-gray, inset 0 2px $white;
 
   & > .Separator {
     margin-left: 2px;

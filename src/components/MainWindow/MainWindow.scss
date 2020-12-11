@@ -1,3 +1,5 @@
+@import 'src/colors.scss';
+
 @font-face {
   font-family: 'Windows95';
   src: url(../../static/fonts/w95fa.woff) format('woff'),
@@ -9,7 +11,7 @@
   height: 768px;
   display: flex;
   flex-direction: column;
-  background-color: #008080;
+  background-color: $desktop-theme;
   cursor: url(../../static/cursor-default.png), auto;
   font-family: Windows95, serif;
   user-select: none;
