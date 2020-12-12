@@ -17,12 +17,12 @@ export function clickOutsideWrapper<P>(
     useEffect(() => {
       const handleClick = (e: MouseEvent) => {
         if (!ref.current?.contains(e.target as Node)) {
-          toggleIsOpen()
+          setIsOpen(false)
         }
       }
       document.addEventListener('click', handleClick)
       return () => document.removeEventListener('click', handleClick)
-    })
+    }, [])
 
     return (
       <Component
