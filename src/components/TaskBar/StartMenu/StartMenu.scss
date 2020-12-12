@@ -1,0 +1,11 @@
+@use 'src/styles/colors';
+@use 'src/styles/sizings';
+
+.StartMenu {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: sizings.$taskbar-height;
+  left: 0;
+  background-color: colors.$base-gray;
+}
