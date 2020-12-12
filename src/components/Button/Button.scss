@@ -1,16 +1,15 @@
 @use 'src/styles/colors';
+@use 'src/styles/mixins';
 
 .Button {
+  @include mixins.standard-border;
   background-color: colors.$base-gray;
   border: none;
-  box-shadow: inset 1px 1px colors.$white, inset 2px 2px colors.$light-gray,
-    inset -1px -1px colors.$black, inset -2px -2px colors.$dark-gray;
   cursor: inherit;
   font-family: inherit;
 
   &:active {
-    box-shadow: inset 1px 1px colors.$black, inset 2px 2px colors.$dark-gray,
-      inset -1px -1px colors.$white, inset -2px -2px colors.$light-gray;
+    @include mixins.standard-border-inverted;
   }
 
   &:focus {
