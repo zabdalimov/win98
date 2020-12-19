@@ -2,8 +2,7 @@ import colors from '../../styles/colors.styles'
 import { css } from '@emotion/react'
 
 const mainWindowStyles = css`
-  width: 1024px;
-  height: 768px;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
