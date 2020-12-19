@@ -11,6 +11,7 @@
     "stylelint-processor-styled-components"
   ],
   "rules": {
-    "prettier/prettier": true
+    "prettier/prettier": true,
+    "no-invalid-double-slash-comments": null
   }
 }
