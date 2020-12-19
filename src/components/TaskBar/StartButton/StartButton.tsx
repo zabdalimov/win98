@@ -18,7 +18,7 @@ const StartButton: React.FC<ClickOutsideWrapperProps> = ({
   wrapperRef,
 }) => {
   return (
-    <div ref={wrapperRef}>
+    <div css={startButtonStyles.startButtonContainer} ref={wrapperRef}>
       {isOpen && <StartMenu />}
       <Button
         className={startButtonStyles.startButton}
