@@ -1,5 +1,8 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import React from 'react'
-import './Icon.scss'
+import { iconStyles } from './Icon.styles'
 
 export interface IconProps {
   src: string
@@ -7,7 +10,7 @@ export interface IconProps {
 }
 
 const Icon: React.FC<IconProps> = ({ src, alt }) => {
-  return <img className="Icon" src={src} alt={alt} draggable={false} />
+  return <img css={iconStyles} src={src} alt={alt} draggable={false} />
 }
 
 export default Icon

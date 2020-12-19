@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Windows95';
+  src: url(../static/fonts/w95fa.woff) format('woff'),
+  url(../static/fonts/w95fa.woff2) format('woff2');
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #000;
+}

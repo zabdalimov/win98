@@ -1,8 +1,11 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import React from 'react'
-import './StartMenu.scss'
+import startMenuStyles from './StartMenu.styles'
 
 const StartMenu: React.FC = () => {
-  return <div className="StartMenu">content</div>
+  return <div css={startMenuStyles.startMenu} />
 }
 
 export default StartMenu

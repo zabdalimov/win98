@@ -1,27 +1,24 @@
-@use 'src/styles/colors';
+import colors from '../../styles/colors.styles'
+import { css } from '@emotion/react'
 
-@font-face {
-  font-family: 'Windows95';
-  src: url(../../static/fonts/w95fa.woff) format('woff'),
-    url(../../static/fonts/w95fa.woff2) format('woff2');
-}
-
-.MainWindow {
+const mainWindowStyles = css`
   width: 1024px;
   height: 768px;
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: colors.$desktop-theme;
+  background-color: ${colors.desktopTheme};
   cursor: url(../../static/cursor-default.png), auto;
   font-family: Windows95, serif;
   user-select: none;
 
-  & div {
+  div {
     box-sizing: border-box;
   }
 
-  & img {
+  img {
     image-rendering: pixelated;
   }
-}
+`
+
+export default mainWindowStyles

@@ -1,21 +1,22 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx, SerializedStyles } from '@emotion/react'
 import React from 'react'
-import './Button.scss'
-import classNames from 'classnames'
+import buttonStyles from './Button.styles'
 
 interface Props {
-  className?: string
+  className?: SerializedStyles
   onClick?: (event?: React.MouseEvent<HTMLElement>) => void
 }
 
 const Button: React.FC<Props> = ({
   children,
-  className,
+  className = '',
   onClick = () => void 0,
 }) => {
-  const btnClass = classNames('Button', className)
   return (
-    <button className={btnClass} onClick={onClick}>
-      <div className="InnerContainer">{children}</div>
+    <button css={[buttonStyles.button, className]} onClick={onClick}>
+      <div>{children}</div>
     </button>
   )
 }

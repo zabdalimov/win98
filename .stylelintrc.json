@@ -1,6 +1,15 @@
 {
-  "extends": "stylelint-config-prettier",
-  "plugins": ["stylelint-prettier"],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-prettier"
+  ],
+  "processors": [
+    "stylelint-processor-styled-components"
+  ],
   "rules": {
     "prettier/prettier": true
   }

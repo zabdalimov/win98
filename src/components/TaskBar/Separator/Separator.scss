@@ -1,8 +1,0 @@
-@use 'src/styles/colors';
-
-.Separator {
-  width: 2px;
-  height: 100%;
-  border-left: 1px solid colors.$dark-gray;
-  border-right: 1px solid colors.$white;
-}

@@ -24,7 +24,7 @@
     "project": "./tsconfig.json",
     "tsconfigRootDir": "."
   },
-  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "@emotion"],
   "rules": {
     "indent": 0,
     "@typescript-eslint/ban-ts-ignore": 0,
@@ -67,7 +67,10 @@
     "react/default-props-match-prop-types": 0,
     "react/jsx-no-bind": 0,
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/jsx-import": "error"
   },
   "settings": {
     "react": {

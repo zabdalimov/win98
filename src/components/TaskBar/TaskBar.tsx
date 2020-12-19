@@ -1,19 +1,22 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from '@emotion/react'
 import React from 'react'
-import './TaskBar.scss'
 import StartButton from './StartButton/StartButton'
 import Separator from './Separator/Separator'
-import Timer from './Timer/Timer'
+import TimerSection from './Timer/TimerSection'
 import useCurrentDate from '../../hooks/useCurrentDate'
+import taskBarStyles from './TaskBar.styles'
 
 const TaskBar: React.FC = () => {
   const currentDate = useCurrentDate()
 
   return (
-    <div className="TaskBar">
+    <div css={taskBarStyles.taskBar}>
       <StartButton />
       <Separator />
       <Separator />
-      <Timer date={currentDate} />
+      <TimerSection date={currentDate} />
     </div>
   )
 }
