@@ -9,7 +9,7 @@ const startMenuStyles = {
     height: 100px;
     width: 100px;
     position: absolute;
-    bottom: ${sizings.taskbarHeight};
+    bottom: calc(${sizings.taskbarHeight} - 3px);
     background-color: ${colors.baseGray};
   `,
 }
