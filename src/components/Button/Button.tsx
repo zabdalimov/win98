@@ -1,6 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx, SerializedStyles } from '@emotion/react'
+import { SerializedStyles } from '@emotion/react'
 import React from 'react'
 import buttonStyles from './Button.styles'
 

@@ -12,15 +12,15 @@ const taskBarStyles = {
     background-color: ${colors.baseGray};
     box-shadow: inset 0 1px ${colors.lightGray}, inset 0 2px ${colors.white};
 
-    > [class*='Separator'] {
+    > [class*='separatorStyles'] {
       margin-left: 2px;
 
       :nth-last-of-type(2) {
         margin-left: auto;
       }
     }
-
-    > [class*='TimerSection'] {
+    // TODO inconsistent naming
+    > [class*='timerSection'] {
       margin-left: 2px;
     }
   `,

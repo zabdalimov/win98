@@ -8,7 +8,8 @@ export interface ClickOutsideWrapperProps {
 
 export function clickOutsideWrapper<P>(
   Component: React.FC<P & ClickOutsideWrapperProps>
-): React.FC<P> {
+  // TODO fix type
+): React.FC<any> {
   return function WrappedComponent(props) {
     const ref = useRef<HTMLElement>(null)
     const [isOpen, setIsOpen] = useState(false)

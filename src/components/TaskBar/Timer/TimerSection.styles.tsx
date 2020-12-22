@@ -1,8 +1,8 @@
 import { css } from '@emotion/react'
 import colors from '../../../styles/colors.styles'
 
-const timerStyles = {
-  timer: css`
+const timerSectionStyles = {
+  timerSection: css`
     height: 100%;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@ const timerStyles = {
     border-right: 1px solid ${colors.white};
     border-bottom: 1px solid ${colors.white};
 
-    [class*='Icon']:not(:first-of-type) {
+    [class*='iconStyles']:not(:first-of-type) {
       margin-left: 1px;
     }
   `,
@@ -22,4 +22,4 @@ const timerStyles = {
   `,
 }
 
-export default timerStyles
+export default timerSectionStyles
