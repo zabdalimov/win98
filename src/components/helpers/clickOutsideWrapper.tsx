@@ -6,12 +6,9 @@ export interface ClickOutsideWrapperProps {
   wrapperRef: React.RefObject<any>
 }
 
-// TODO add return type when these are fixed
-// TODO https://github.com/emotion-js/emotion/issues/2169
-// TODO https://github.com/emotion-js/emotion/pull/2181
 export function clickOutsideWrapper<Props>(
   Component: React.FC<Props & ClickOutsideWrapperProps>
-): React.FC<any> {
+): React.FC<Props> {
   return function WrappedComponent(props) {
     const ref = useRef<HTMLElement>(null)
     const [isOpen, setIsOpen] = useState(false)
