@@ -13,7 +13,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.2",
+    "@emotion/react": "^11.1.4",
     "@emotion/utils": "^1.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
