@@ -13,6 +13,19 @@ body {
   margin: 0;
 }
 
+div, span, button {
+  box-sizing: border-box;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  padding: 0;
+  cursor: inherit;
+}
+
 #root {
   height: 100%;
   width: 100%;

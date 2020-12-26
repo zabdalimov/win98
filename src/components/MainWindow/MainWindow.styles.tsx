@@ -15,10 +15,6 @@ const mainWindowStyles = css`
   font-family: Windows95, serif;
   user-select: none;
 
-  div {
-    box-sizing: border-box;
-  }
-
   img {
     image-rendering: pixelated;
   }

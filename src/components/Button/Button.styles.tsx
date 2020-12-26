@@ -26,7 +26,7 @@ const buttonStyles = {
       outline: none;
 
       > div {
-        outline: 1px dotted ${colors.black};
+        ${mixins.dottedBorderBlack};
       }
     }
   `,

@@ -10,6 +10,7 @@ interface DesktopIcon {
 }
 
 const DesktopGrid: React.FC = () => {
+  // TODO adjust margins on these
   const icons: DesktopIcon[] = [
     {
       icon: computerExplorerIcon,
@@ -23,10 +24,10 @@ const DesktopGrid: React.FC = () => {
   return (
     <div css={desktopGridStyles.desktopGrid}>
       {icons.map((icon) => (
-        <div key={icon.label} css={desktopGridStyles.desktopGridEntry}>
+        <button key={icon.label} css={desktopGridStyles.desktopGridEntry}>
           <Icon src={icon.icon} alt={icon.label} />
           <span>{icon.label}</span>
-        </div>
+        </button>
       ))}
     </div>
   )

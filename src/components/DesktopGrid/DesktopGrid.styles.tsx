@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import colors from '../../styles/colors.styles'
 import sizings from '../../styles/sizings.styles'
+import mixins from '../../styles/mixins.styles'
 
 const desktopGridStyles = {
   desktopGrid: css`
@@ -25,6 +26,21 @@ const desktopGridStyles = {
       font-size: 12px;
       text-align: center;
       margin-top: 6px;
+      padding: 1px;
+    }
+
+    :active,
+    :focus {
+      > img {
+        filter: brightness(35%) sepia(100%) hue-rotate(180deg) saturate(300%);
+      }
+
+      > span {
+        ${mixins.dottedBorderWhite};
+        /* border fills this space */
+        padding: 0;
+        background-color: ${colors.darkBlue};
+      }
     }
   `,
 }
