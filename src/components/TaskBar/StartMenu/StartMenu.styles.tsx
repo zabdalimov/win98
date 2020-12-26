@@ -6,11 +6,43 @@ import colors from '../../../styles/colors.styles'
 const startMenuStyles = {
   startMenu: css`
     ${mixins.standardBorder};
-    height: 100px;
-    width: 100px;
+    width: 176px;
     position: absolute;
     bottom: calc(${sizings.taskbarHeight} - 4px);
+    padding: 3px;
+    display: flex;
     background-color: ${colors.baseGray};
+  `,
+  // TODO add pixelated gradient here
+  windowsBlueLine: css`
+    display: flex;
+    align-items: center;
+    width: 20px;
+    padding: 4px 0 0 0;
+    color: ${colors.white};
+    background-color: ${colors.darkBlue};
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+  `,
+  startMenuEntries: css`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  `,
+  startMenuEntry: css`
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+
+    > span {
+      margin-left: 13px;
+    }
+
+    :hover {
+      background-color: ${colors.darkBlue};
+      color: ${colors.white};
+    }
   `,
 }
 
