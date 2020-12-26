@@ -1,5 +1,6 @@
 import colors from '../../styles/colors.styles'
 import { css } from '@emotion/react'
+import cursorDefault from '../../static/cursor-default.png'
 
 const mainWindowStyles = css`
   width: 100%;
@@ -10,7 +11,7 @@ const mainWindowStyles = css`
   display: flex;
   flex-direction: column;
   background-color: ${colors.desktopTheme};
-  cursor: url(../../static/cursor-default.png), auto;
+  cursor: url(${cursorDefault}), auto;
   font-family: Windows95, serif;
   user-select: none;
 
