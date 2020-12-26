@@ -28,6 +28,10 @@ const startMenuStyles = {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    > [class*='separator'] {
+      margin: 0 2px;
+    }
   `,
   startMenuEntry: css`
     font-size: 12px;

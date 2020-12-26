@@ -8,6 +8,7 @@ import helpIcon from '../../../static/icons/help-book-icon.png'
 import applicationHourglassIcon from '../../../static/icons/application-hourglass-icon.png'
 import winKeyIcon from '../../../static/icons/win-key-icon.png'
 import shutDownIcon from '../../../static/icons/shut-down-icon.png'
+import Separator from '../Separator/Separator'
 
 interface StartMenuEntry {
   icon: string
@@ -15,7 +16,7 @@ interface StartMenuEntry {
 }
 
 const StartMenu: React.FC = () => {
-  const entries: StartMenuEntry[] = [
+  const entries: (StartMenuEntry | 'separator')[] = [
     {
       icon: dirExecIcon,
       label: 'Programs',
@@ -36,6 +37,7 @@ const StartMenu: React.FC = () => {
       icon: applicationHourglassIcon,
       label: 'Run',
     },
+    'separator',
     {
       icon: winKeyIcon,
       label: 'Log Off...',
@@ -51,12 +53,16 @@ const StartMenu: React.FC = () => {
         <span>Windows98</span>
       </div>
       <div css={startMenuStyles.startMenuEntries}>
-        {entries.map((entry) => (
-          <div key={entry.label} css={startMenuStyles.startMenuEntry}>
-            <Icon src={entry.icon} alt={entry.label} />
-            <span>{entry.label}</span>
-          </div>
-        ))}
+        {entries.map((entry, index) =>
+          entry === 'separator' ? (
+            <Separator key={index} orientation={'horizontal'} />
+          ) : (
+            <div key={entry.label} css={startMenuStyles.startMenuEntry}>
+              <Icon src={entry.icon} alt={entry.label} />
+              <span>{entry.label}</span>
+            </div>
+          )
+        )}
       </div>
     </div>
   )
