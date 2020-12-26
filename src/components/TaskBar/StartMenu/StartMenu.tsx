@@ -1,6 +1,7 @@
 import React from 'react'
 import startMenuStyles from './StartMenu.styles'
 import Icon from '../../Icon/Icon'
+import winUpdate from '../../../static/icons/win-update.png'
 import dirExecIcon from '../../../static/icons/dir-exec-icon.png'
 import settingsIcon from '../../../static/icons/settings-icon.png'
 import searchIcon from '../../../static/icons/search-file-icon.png'
@@ -17,6 +18,11 @@ interface StartMenuEntry {
 
 const StartMenu: React.FC = () => {
   const entries: (StartMenuEntry | 'separator')[] = [
+    {
+      icon: winUpdate,
+      label: 'Windows Update',
+    },
+    'separator',
     {
       icon: dirExecIcon,
       label: 'Programs',
