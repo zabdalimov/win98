@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import colors from '../../../styles/colors.styles'
+import colors from '../../styles/colors.styles'
 import { SeparatorProps } from './Separator'
 
 const verticalStyles = css`

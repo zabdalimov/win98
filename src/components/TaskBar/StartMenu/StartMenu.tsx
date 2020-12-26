@@ -9,7 +9,7 @@ import helpIcon from '../../../static/icons/help-book-icon.png'
 import applicationHourglassIcon from '../../../static/icons/application-hourglass-icon.png'
 import winKeyIcon from '../../../static/icons/win-key-icon.png'
 import shutDownIcon from '../../../static/icons/shut-down-icon.png'
-import Separator from '../Separator/Separator'
+import Separator from '../../Separator/Separator'
 
 interface StartMenuEntry {
   icon: string
