@@ -9,7 +9,7 @@ const startMenuStyles = {
     width: 176px;
     position: absolute;
     bottom: calc(${sizings.taskbarHeight} - 4px);
-    padding: 3px;
+    padding: 3px 5px 3px 3px;
     display: flex;
     background-color: ${colors.baseGray};
   `,
@@ -30,7 +30,7 @@ const startMenuStyles = {
     width: 100%;
 
     > [class*='separator'] {
-      margin: 0 2px;
+      margin: 3px 0 3px 2px;
     }
   `,
   startMenuEntry: css`
@@ -38,6 +38,10 @@ const startMenuStyles = {
     display: flex;
     align-items: center;
     height: 30px;
+
+    > img {
+      margin-left: 3px;
+    }
 
     > span {
       margin-left: 13px;
