@@ -2,6 +2,7 @@ import React from 'react'
 import desktopGridStyles from './DesktopGrid.styles'
 import computerExplorerIcon from '../../static/icons/computer-explorer-icon.png'
 import recycleBinEmptyIcon from '../../static/icons/recycle-bin-empty-icon.png'
+import ieIcon from '../../static/icons/ie-icon.png'
 import Icon from '../Icon/Icon'
 
 interface DesktopIcon {
@@ -19,6 +20,10 @@ const DesktopGrid: React.FC = () => {
     {
       icon: recycleBinEmptyIcon,
       label: 'Recycle Bin',
+    },
+    {
+      icon: ieIcon,
+      label: 'Internet Explorer',
     },
   ]
   return (
