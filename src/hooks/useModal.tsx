@@ -2,7 +2,7 @@ import { ReactElement } from 'react'
 import { ModalRootId } from '../components/ModalRoot/ModalRoot'
 import ReactDOM from 'react-dom'
 
-type UseModalProvided = {
+interface UseModalProvided {
   openModal: (child: ReactElement) => void
   closeModal: () => void
 }
