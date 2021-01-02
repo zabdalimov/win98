@@ -1,8 +1,9 @@
 import styles from './ApplicationWindow.styles'
-import React from 'react'
+import React, { useRef } from 'react'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 import closeButtonIcon from '../../static/icons/close-button-icon.png'
+import { useDrag } from '../../hooks/useDrag'
 
 interface Props {
   applicationName: string
@@ -14,9 +15,13 @@ const ApplicationWindow: React.FC<Props> = ({
   children,
   onClose,
 }) => {
+  const ref = useRef<HTMLDivElement>(null)
+
+  const { onMouseDown } = useDrag(ref)
+
   return (
-    <div css={styles.applicationWindow}>
-      <div css={styles.applicationWindowHeader}>
+    <div css={styles.applicationWindow} ref={ref}>
+      <div css={styles.applicationWindowHeader} onMouseDown={onMouseDown}>
         <span>{applicationName}</span>
         <Button onClick={onClose}>
           <Icon src={closeButtonIcon} alt={'Close button'} />
