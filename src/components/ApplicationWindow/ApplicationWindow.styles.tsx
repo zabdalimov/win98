@@ -6,6 +6,8 @@ const applicationWindowStyles = {
   applicationWindow: css`
     ${mixins.standardBorder};
     padding: 3px;
+    height: fit-content;
+    width: fit-content;
     background-color: ${colors.baseGray};
     display: flex;
     flex-direction: column;
