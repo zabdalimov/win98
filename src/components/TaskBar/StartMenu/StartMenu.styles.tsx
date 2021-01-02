@@ -12,6 +12,7 @@ const startMenuStyles = {
     padding: 3px 5px 3px 3px;
     display: flex;
     background-color: ${colors.baseGray};
+    z-index: 200;
   `,
   // TODO add pixelated gradient here
   windowsBlueLine: css`
