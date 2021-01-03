@@ -22,12 +22,16 @@ const ApplicationWindow: React.FC<Props> = ({
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useDispatch()
-  const onDragStart = () => dispatch(focusApplication(applicationName))
+  const focus = () => dispatch(focusApplication(applicationName))
 
-  const { onMouseDown } = useDrag({ ref, onDragStart })
+  const { onMouseDown } = useDrag({ ref })
 
   return (
-    <div css={styles.applicationWindow(isFocused)} ref={ref}>
+    <div
+      css={styles.applicationWindow(isFocused)}
+      onMouseDown={focus}
+      ref={ref}
+    >
       <div
         css={styles.applicationWindowHeader(isFocused)}
         onMouseDown={onMouseDown}

@@ -5,7 +5,6 @@ interface UseDragProps {
    * ref to the element that would be moved
    */
   ref: React.RefObject<HTMLElement>
-  onDragStart?: () => void
 }
 
 interface UseDragProvided {
@@ -31,10 +30,7 @@ interface State {
   lastTranslation: Point
 }
 
-export function useDrag({
-  ref,
-  onDragStart = () => void 0,
-}: UseDragProps): UseDragProvided {
+export function useDrag({ ref }: UseDragProps): UseDragProvided {
   const [state, setState] = useState<State>({
     dragStart: PointZero,
     translation: PointZero,
@@ -71,9 +67,8 @@ export function useDrag({
           y: e.clientY,
         },
       }))
-      onDragStart()
     },
-    [onDragStart, onMouseMove, onMouseUp]
+    [onMouseMove, onMouseUp]
   )
 
   useEffect(() => {
