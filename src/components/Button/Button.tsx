@@ -4,15 +4,18 @@ import buttonStyles from './Button.styles'
 
 export interface ButtonProps {
   isPushed?: boolean
-  className?: SerializedStyles
+  className?: (props: ButtonProps) => SerializedStyles
   onClick?: (event?: React.MouseEvent<HTMLElement>) => void
 }
 
 const Button: React.FC<ButtonProps> = (props) => {
-  const { children, className = '', onClick = () => void 0 } = props
+  const { children, className = () => '', onClick = () => void 0 } = props
 
   return (
-    <button css={[buttonStyles.button(props), className]} onClick={onClick}>
+    <button
+      css={[buttonStyles.button(props), className(props)]}
+      onClick={onClick}
+    >
       <div>{children}</div>
     </button>
   )

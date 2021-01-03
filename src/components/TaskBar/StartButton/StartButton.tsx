@@ -18,7 +18,7 @@ const StartButton: React.FC<ClickOutsideWrapperProps> = ({
     <div css={startButtonStyles.startButtonContainer} ref={wrapperRef}>
       {isOpen && <StartMenu />}
       <Button
-        className={startButtonStyles.startButton}
+        className={() => startButtonStyles.startButton}
         isPushed={isOpen}
         onClick={toggleIsOpen}
       >
