@@ -16,7 +16,6 @@ interface State {
   dragStart: Point
   translation: Point
   lastTranslation: Point
-  isDragging: boolean
 }
 
 /**
@@ -36,19 +35,7 @@ export function useDrag(ref: React.RefObject<HTMLElement>): UseDragProvided {
       x: 0,
       y: 0,
     },
-    isDragging: false,
   })
-
-  const onMouseDown = useCallback((e: React.MouseEvent<HTMLElement>) => {
-    setState((prev) => ({
-      ...prev,
-      dragStart: {
-        x: e.clientX,
-        y: e.clientY,
-      },
-      isDragging: true,
-    }))
-  }, [])
 
   const onMouseMove = useCallback((e: MouseEvent) => {
     setState((prev) => ({
@@ -61,22 +48,28 @@ export function useDrag(ref: React.RefObject<HTMLElement>): UseDragProvided {
   }, [])
 
   const onMouseUp = useCallback(() => {
+    window.removeEventListener('mousemove', onMouseMove)
+    window.removeEventListener('mouseup', onMouseUp)
     setState((prev) => ({
       ...prev,
       lastTranslation: prev.translation,
-      isDragging: false,
     }))
-  }, [])
+  }, [onMouseMove])
 
-  useEffect(() => {
-    if (state.isDragging) {
+  const onMouseDown = useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
       window.addEventListener('mousemove', onMouseMove)
       window.addEventListener('mouseup', onMouseUp)
-    } else {
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('mouseup', onMouseUp)
-    }
-  }, [state.isDragging, onMouseMove, onMouseUp])
+      setState((prev) => ({
+        ...prev,
+        dragStart: {
+          x: e.clientX,
+          y: e.clientY,
+        },
+      }))
+    },
+    [onMouseMove, onMouseUp]
+  )
 
   useEffect(() => {
     if (ref.current) {
