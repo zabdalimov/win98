@@ -12,6 +12,11 @@ type Point = {
   y: number
 }
 
+const PointZero: Point = {
+  x: 0,
+  y: 0,
+}
+
 interface State {
   dragStart: Point
   translation: Point
@@ -23,18 +28,9 @@ interface State {
  */
 export function useDrag(ref: React.RefObject<HTMLElement>): UseDragProvided {
   const [state, setState] = useState<State>({
-    dragStart: {
-      x: 0,
-      y: 0,
-    },
-    translation: {
-      x: 0,
-      y: 0,
-    },
-    lastTranslation: {
-      x: 0,
-      y: 0,
-    },
+    dragStart: PointZero,
+    translation: PointZero,
+    lastTranslation: PointZero,
   })
 
   const onMouseMove = useCallback((e: MouseEvent) => {
