@@ -15,8 +15,11 @@
   "dependencies": {
     "@emotion/react": "^11.1.4",
     "@emotion/utils": "^1.0.0",
+    "@reduxjs/toolkit": "^1.5.0",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^11.0.0",
@@ -27,6 +30,8 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.15",
+    "@types/redux": "^3.6.0",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
     "customize-cra": "^1.0.0",
