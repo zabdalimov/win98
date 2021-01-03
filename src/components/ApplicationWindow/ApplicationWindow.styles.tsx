@@ -38,6 +38,7 @@ const applicationWindowStyles = {
 
     > button:first-of-type {
       margin-left: auto;
+      padding: 2px;
     }
   `,
   applicationWindowContents: css``,

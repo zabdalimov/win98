@@ -6,7 +6,6 @@ const startButtonStyles = {
   `,
   startButton: css`
     height: 100%;
-    padding: 4px;
     font-weight: bold;
     letter-spacing: 0.5px;
   `,
