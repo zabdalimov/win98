@@ -1,6 +1,7 @@
 import {
   ApplicationAction,
   CLOSE_APPLICATION,
+  FOCUS_APPLICATION,
   OPEN_APPLICATION,
 } from './actions'
 import React from 'react'
@@ -8,6 +9,7 @@ import React from 'react'
 export interface Application {
   name: string
   contents: React.ReactElement
+  isFocused: boolean
 }
 
 interface ApplicationState {
@@ -27,23 +29,30 @@ export function applicationReducer(
       const app = state.openedApplications.find(
         (a) => a.name === action.application.name
       )
-      if (app) {
-        console.error(
-          `Can't open application ${action.application.name}, already opened.`
-        )
-        return state
-      }
       return {
         ...state,
-        openedApplications: [...state.openedApplications, action.application],
+        openedApplications: [
+          ...state.openedApplications,
+          ...(!app ? [action.application] : []),
+        ],
       }
 
     case CLOSE_APPLICATION:
+      // TODO focus last application
       return {
         ...state,
         openedApplications: state.openedApplications.filter(
           (a) => a.name !== action.applicationName
         ),
+      }
+
+    case FOCUS_APPLICATION:
+      return {
+        ...state,
+        openedApplications: state.openedApplications.map((a) => ({
+          ...a,
+          isFocused: a.name === action.applicationName,
+        })),
       }
 
     default:

@@ -1,5 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react'
 
+interface UseDragProps {
+  /**
+   * ref to the element that would be moved
+   */
+  ref: React.RefObject<HTMLElement>
+  onDragStart?: () => void
+}
+
 interface UseDragProvided {
   /**
    * Attach as a onMouseDown handler to the element that would be dragged
@@ -23,10 +31,10 @@ interface State {
   lastTranslation: Point
 }
 
-/**
- * @param ref - ref to the element that would be moved
- */
-export function useDrag(ref: React.RefObject<HTMLElement>): UseDragProvided {
+export function useDrag({
+  ref,
+  onDragStart = () => void 0,
+}: UseDragProps): UseDragProvided {
   const [state, setState] = useState<State>({
     dragStart: PointZero,
     translation: PointZero,
@@ -63,8 +71,9 @@ export function useDrag(ref: React.RefObject<HTMLElement>): UseDragProvided {
           y: e.clientY,
         },
       }))
+      onDragStart()
     },
-    [onMouseMove, onMouseUp]
+    [onDragStart, onMouseMove, onMouseUp]
   )
 
   useEffect(() => {

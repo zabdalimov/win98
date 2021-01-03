@@ -17,6 +17,7 @@ const ModalRoot: React.FC = () => {
           key={a.name}
           applicationName={a.name}
           onClose={() => dispatch(closeApplication(a.name))}
+          isFocused={a.isFocused}
         >
           {a.contents}
         </ApplicationWindow>

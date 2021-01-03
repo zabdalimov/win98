@@ -1,9 +1,10 @@
 import { css } from '@emotion/react'
 import colors from '../../styles/colors.styles'
 import mixins from '../../styles/mixins.styles'
+import { modalRootZindex } from '../ModalRoot/ModalRoot.styles'
 
 const applicationWindowStyles = {
-  applicationWindow: css`
+  applicationWindow: (isFocused: boolean) => css`
     ${mixins.standardBorder};
     padding: 3px;
     position: absolute;
@@ -17,6 +18,11 @@ const applicationWindowStyles = {
     background-color: ${colors.baseGray};
     display: flex;
     flex-direction: column;
+    ${isFocused
+      ? css`
+          z-index: ${modalRootZindex + 1};
+        `
+      : ''};
   `,
   // TODO the font is pretty bad here
   applicationWindowHeader: css`
