@@ -32,7 +32,7 @@ export function applicationReducer(
       return {
         ...state,
         openedApplications: [
-          ...state.openedApplications,
+          ...state.openedApplications.map((a) => ({ ...a, isFocused: false })),
           ...(!app ? [action.application] : []),
         ],
       }
