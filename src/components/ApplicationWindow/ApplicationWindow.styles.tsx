@@ -6,6 +6,12 @@ const applicationWindowStyles = {
   applicationWindow: css`
     ${mixins.standardBorder};
     padding: 3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
     height: fit-content;
     width: fit-content;
     background-color: ${colors.baseGray};
