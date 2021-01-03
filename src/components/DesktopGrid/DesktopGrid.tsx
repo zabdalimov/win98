@@ -5,7 +5,8 @@ import recycleBinEmptyIcon from '../../static/icons/recycle-bin-empty-icon.png'
 import ieIcon from '../../static/icons/ie-icon.png'
 import Icon from '../Icon/Icon'
 import { css } from '@emotion/react'
-import useApplicationWindow from '../../hooks/useApplicationWindow'
+import { useDispatch } from 'react-redux'
+import { openApplication } from '../../store/application/actions'
 
 interface DesktopIcon {
   icon: string
@@ -13,7 +14,7 @@ interface DesktopIcon {
 }
 
 const DesktopGrid: React.FC = () => {
-  const { openApplicationWindow } = useApplicationWindow()
+  const dispatch = useDispatch()
 
   // TODO adjust margins on these
   const icons: DesktopIcon[] = [
@@ -41,7 +42,12 @@ const DesktopGrid: React.FC = () => {
         `}
       />
     )
-    openApplicationWindow(applicationName, dummyContent)
+    dispatch(
+      openApplication({
+        name: applicationName,
+        contents: dummyContent,
+      })
+    )
   }
 
   return (

@@ -7,7 +7,7 @@ import React from 'react'
 
 export interface Application {
   name: string
-  contents: React.FC
+  contents: React.ReactElement
 }
 
 interface ApplicationState {
@@ -41,8 +41,8 @@ export function applicationReducer(
     case CLOSE_APPLICATION:
       return {
         ...state,
-        ...state.openedApplications.filter(
-          (a) => a.name === action.applicationName
+        openedApplications: state.openedApplications.filter(
+          (a) => a.name !== action.applicationName
         ),
       }
 
