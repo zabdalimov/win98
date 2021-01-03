@@ -1,7 +1,7 @@
 import {
   ApplicationAction,
+  CHANGE_FOCUS_APPLICATION,
   CLOSE_APPLICATION,
-  FOCUS_APPLICATION,
   OPEN_APPLICATION,
 } from './actions'
 import React from 'react'
@@ -49,12 +49,13 @@ export function applicationReducer(
         ),
       }
 
-    case FOCUS_APPLICATION:
+    case CHANGE_FOCUS_APPLICATION:
       return {
         ...state,
         openedApplications: state.openedApplications.map((a) => ({
           ...a,
-          isFocused: a.name === action.applicationName,
+          isFocused:
+            a.name === action.applicationName ? action.isFocused : false,
         })),
       }
 
