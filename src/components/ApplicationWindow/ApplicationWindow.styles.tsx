@@ -25,15 +25,15 @@ const applicationWindowStyles = {
       : ''};
   `,
   // TODO the font is pretty bad here
-  applicationWindowHeader: css`
+  applicationWindowHeader: (isFocused: boolean) => css`
     padding: 2px 3px;
-    background-color: ${colors.darkBlue};
+    background-color: ${isFocused ? colors.darkBlue : colors.darkGray};
     display: flex;
     align-items: center;
 
     > span {
       font-size: 11px;
-      color: ${colors.white};
+      color: ${isFocused ? colors.white : colors.baseGray};
     }
 
     > button:first-of-type {

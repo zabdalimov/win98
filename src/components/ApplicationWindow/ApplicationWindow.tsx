@@ -28,7 +28,10 @@ const ApplicationWindow: React.FC<Props> = ({
 
   return (
     <div css={styles.applicationWindow(isFocused)} ref={ref}>
-      <div css={styles.applicationWindowHeader} onMouseDown={onMouseDown}>
+      <div
+        css={styles.applicationWindowHeader(isFocused)}
+        onMouseDown={onMouseDown}
+      >
         <span>{applicationName}</span>
         <Button onClick={onClose}>
           <Icon src={closeButtonIcon} alt={'Close button'} />
