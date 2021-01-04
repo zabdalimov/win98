@@ -6,6 +6,8 @@ import { ButtonProps } from './Button'
 const buttonStyles = {
   button: (props: ButtonProps) => css`
     ${mixins.standardBorder};
+    display: flex;
+    align-items: center;
     background-color: ${colors.baseGray};
     border: none;
     cursor: inherit;
