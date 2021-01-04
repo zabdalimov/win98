@@ -13,7 +13,7 @@ body {
   margin: 0;
 }
 
-div, span, button {
+div, span, button, input {
   box-sizing: border-box;
 }
 
@@ -24,6 +24,16 @@ button {
   font-family: inherit;
   padding: 0;
   cursor: inherit;
+}
+
+input {
+  border: none;
+  font-family: inherit;
+  padding: 0;
+}
+
+input:focus {
+  outline: none;
 }
 
 #root {
