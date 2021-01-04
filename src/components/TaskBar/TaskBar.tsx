@@ -8,11 +8,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectOpenedApplications } from '../../store/application/selectors'
 import { changeApplicationFocus } from '../../store/application/actions'
 import TaskEntry from './TaskEntry/TaskEntry'
+import { Application } from '../../store/application/reducer'
 
 const TaskBar: React.FC = () => {
   const applications = useSelector(selectOpenedApplications)
 
   const dispatch = useDispatch()
+  const onClick = (a: Application) =>
+    dispatch(changeApplicationFocus(a.applicationType.name, !a.isFocused))
 
   const currentDate = useCurrentDate()
 
@@ -24,11 +27,7 @@ const TaskBar: React.FC = () => {
         <TaskEntry
           key={a.applicationType.name}
           application={a}
-          onClick={() =>
-            dispatch(
-              changeApplicationFocus(a.applicationType.name, !a.isFocused)
-            )
-          }
+          onClick={() => onClick(a)}
         />
       ))}
       <Separator />
