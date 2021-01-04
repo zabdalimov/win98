@@ -42,7 +42,10 @@ const applicationWindowStyles = {
       padding: 2px;
     }
   `,
-  applicationWindowContents: css``,
+  applicationWindowContents: css`
+    width: 600px;
+    height: 400px;
+  `,
 }
 
 export default applicationWindowStyles
