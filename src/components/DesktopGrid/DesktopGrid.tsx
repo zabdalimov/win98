@@ -3,6 +3,7 @@ import desktopGridStyles from './DesktopGrid.styles'
 import computerExplorerIcon from '../../static/icons/computer-explorer-icon.png'
 import recycleBinEmptyIcon from '../../static/icons/recycle-bin-empty-icon.png'
 import ieIcon from '../../static/icons/ie-icon.png'
+import notepadIcon from '../../static/icons/notepad-icon.png'
 import Icon from '../Icon/Icon'
 import { css } from '@emotion/react'
 import { useDispatch } from 'react-redux'
@@ -29,6 +30,10 @@ const DesktopGrid: React.FC = () => {
     {
       icon: ieIcon,
       label: 'Internet Explorer',
+    },
+    {
+      icon: notepadIcon,
+      label: 'New Text Document.txt',
     },
   ]
 
