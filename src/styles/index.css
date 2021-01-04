@@ -26,13 +26,13 @@ button {
   cursor: inherit;
 }
 
-input {
+input, textarea {
   border: none;
   font-family: inherit;
   padding: 0;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
 }
 
