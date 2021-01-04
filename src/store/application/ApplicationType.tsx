@@ -8,6 +8,7 @@ import ieIcon from '../../static/icons/ie-icon.png'
 import ieSmIcon from '../../static/icons/ie-sm-icon.png'
 import notepadIcon from '../../static/icons/notepad-icon.png'
 import notepadSmIcon from '../../static/icons/notepad-sm-icon.png'
+import Notepad from '../../ui/applications/Notepad/Notepad'
 
 const dummyContent = (
   <div
@@ -53,7 +54,7 @@ export class ApplicationType {
 
   static readonly Notepad = new ApplicationType(
     'Notepad',
-    dummyContent,
+    <Notepad />,
     notepadIcon,
     notepadSmIcon
   )
