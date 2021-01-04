@@ -4,11 +4,10 @@ import {
   CLOSE_APPLICATION,
   OPEN_APPLICATION,
 } from './actions'
-import React from 'react'
+import { ApplicationType } from './ApplicationType'
 
 export interface Application {
-  name: string
-  contents: React.ReactElement
+  applicationType: ApplicationType
   isFocused: boolean
 }
 
@@ -29,14 +28,21 @@ export function applicationReducer(
       // Unfocus other apps except given one
       const openedApplications = state.openedApplications.map((a) => ({
         ...a,
-        isFocused: a.name === action.application.name,
+        isFocused: a.applicationType.name === action.applicationType.name,
       }))
 
       // Do not open given app 2nd time in case it's opened
       const isOpened = !!state.openedApplications.find(
-        (a) => a.name === action.application.name
+        (a) => a.applicationType.name === action.applicationType.name
       )
-      const appsToOpen = !isOpened ? [action.application] : []
+      const appsToOpen: Application[] = !isOpened
+        ? [
+            {
+              applicationType: action.applicationType,
+              isFocused: true,
+            },
+          ]
+        : []
 
       return {
         ...state,
@@ -48,7 +54,7 @@ export function applicationReducer(
       return {
         ...state,
         openedApplications: state.openedApplications.filter(
-          (a) => a.name !== action.applicationName
+          (a) => a.applicationType.name !== action.applicationName
         ),
       }
 
@@ -58,7 +64,9 @@ export function applicationReducer(
         openedApplications: state.openedApplications.map((a) => ({
           ...a,
           isFocused:
-            a.name === action.applicationName ? action.isFocused : false,
+            a.applicationType.name === action.applicationName
+              ? action.isFocused
+              : false,
         })),
       }
 

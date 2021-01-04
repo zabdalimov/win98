@@ -11,12 +11,12 @@ interface Props {
 const TaskEntry: React.FC<Props> = ({ application, onClick }) => {
   return (
     <Button
-      key={application.name}
+      key={application.applicationType.name}
       isPushed={application.isFocused}
       onClick={onClick}
       className={(props) => taskEntryStyles(props.isPushed || false)}
     >
-      {application.name}
+      {application.applicationType.name}
     </Button>
   )
 }

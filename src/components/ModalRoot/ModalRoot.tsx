@@ -14,12 +14,12 @@ const ModalRoot: React.FC = () => {
     <div id={ModalRootId} css={modalRootStyles}>
       {applications.map((a) => (
         <ApplicationWindow
-          key={a.name}
-          applicationName={a.name}
-          onClose={() => dispatch(closeApplication(a.name))}
+          key={a.applicationType.name}
+          applicationName={a.applicationType.name}
+          onClose={() => dispatch(closeApplication(a.applicationType.name))}
           isFocused={a.isFocused}
         >
-          {a.contents}
+          {a.applicationType.content}
         </ApplicationWindow>
       ))}
     </div>

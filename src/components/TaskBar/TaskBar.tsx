@@ -22,9 +22,13 @@ const TaskBar: React.FC = () => {
       <Separator />
       {applications.map((a) => (
         <TaskEntry
-          key={a.name}
+          key={a.applicationType.name}
           application={a}
-          onClick={() => dispatch(changeApplicationFocus(a.name, !a.isFocused))}
+          onClick={() =>
+            dispatch(
+              changeApplicationFocus(a.applicationType.name, !a.isFocused)
+            )
+          }
         />
       ))}
       <Separator />

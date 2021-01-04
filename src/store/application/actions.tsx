@@ -1,4 +1,4 @@
-import { Application } from './reducer'
+import { ApplicationType } from './ApplicationType'
 
 export const OPEN_APPLICATION = 'application/OPEN'
 export const CLOSE_APPLICATION = 'application/CLOSE'
@@ -6,7 +6,7 @@ export const CHANGE_APPLICATION_FOCUS = 'application/CHANGE_FOCUS'
 
 interface OpenApplicationAction {
   type: typeof OPEN_APPLICATION
-  application: Application
+  applicationType: ApplicationType
 }
 
 interface CloseApplicationAction {
@@ -21,13 +21,10 @@ interface ChangeApplicationFocusAction {
 }
 
 export const openApplication = (
-  application: Omit<Application, 'isFocused'>
+  applicationType: ApplicationType
 ): OpenApplicationAction => ({
   type: OPEN_APPLICATION,
-  application: {
-    ...application,
-    isFocused: true,
-  },
+  applicationType,
 })
 
 export const closeApplication = (
