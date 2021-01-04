@@ -34,6 +34,7 @@ const applicationWindowStyles = {
     > span {
       font-size: 11px;
       color: ${isFocused ? colors.white : colors.baseGray};
+      margin-left: 3px;
     }
 
     > button:first-of-type {
