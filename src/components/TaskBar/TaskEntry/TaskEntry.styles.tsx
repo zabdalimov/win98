@@ -12,6 +12,12 @@ const taskEntryStyles = (isPushed: boolean) => css`
         background-color: ${colors.lightGray};
       `
     : ''};
+
+  :focus {
+    > div {
+      outline: none;
+    }
+  }
 `
 
 export default taskEntryStyles
