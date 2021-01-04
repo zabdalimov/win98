@@ -6,23 +6,24 @@ import closeButtonIcon from '../../static/icons/close-button-icon.png'
 import { useDrag } from '../../hooks/useDrag'
 import { useDispatch } from 'react-redux'
 import { changeApplicationFocus } from '../../store/application/actions'
+import { Application } from '../../store/application/reducer'
 
 interface Props {
-  applicationName: string
+  application: Application
   onClose: () => void
-  isFocused: boolean
 }
 
 const ApplicationWindow: React.FC<Props> = ({
-  applicationName,
+  application,
   children,
   onClose,
-  isFocused,
 }) => {
+  const { applicationType, isFocused } = application
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useDispatch()
-  const focus = () => dispatch(changeApplicationFocus(applicationName, true))
+  const focus = () =>
+    dispatch(changeApplicationFocus(applicationType.name, true))
 
   const { onMouseDown } = useDrag({ ref })
 
@@ -36,7 +37,7 @@ const ApplicationWindow: React.FC<Props> = ({
         css={styles.applicationWindowHeader(isFocused)}
         onMouseDown={onMouseDown}
       >
-        <span>{applicationName}</span>
+        <span>{applicationType.name}</span>
         <Button onClick={onClose}>
           <Icon src={closeButtonIcon} alt={'Close button'} />
         </Button>
