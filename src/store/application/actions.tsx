@@ -2,7 +2,7 @@ import { Application } from './reducer'
 
 export const OPEN_APPLICATION = 'application/OPEN'
 export const CLOSE_APPLICATION = 'application/CLOSE'
-export const CHANGE_FOCUS_APPLICATION = 'application/CHANGE_FOCUS'
+export const CHANGE_APPLICATION_FOCUS = 'application/CHANGE_FOCUS'
 
 interface OpenApplicationAction {
   type: typeof OPEN_APPLICATION
@@ -14,8 +14,8 @@ interface CloseApplicationAction {
   applicationName: string
 }
 
-interface ChangeFocusApplicationAction {
-  type: typeof CHANGE_FOCUS_APPLICATION
+interface ChangeApplicationFocusAction {
+  type: typeof CHANGE_APPLICATION_FOCUS
   applicationName: string
   isFocused: boolean
 }
@@ -37,11 +37,11 @@ export const closeApplication = (
   applicationName,
 })
 
-export const changeFocusApplication = (
+export const changeApplicationFocus = (
   applicationName: string,
   isFocused: boolean
-): ChangeFocusApplicationAction => ({
-  type: CHANGE_FOCUS_APPLICATION,
+): ChangeApplicationFocusAction => ({
+  type: CHANGE_APPLICATION_FOCUS,
   applicationName,
   isFocused,
 })
@@ -49,4 +49,4 @@ export const changeFocusApplication = (
 export type ApplicationAction =
   | OpenApplicationAction
   | CloseApplicationAction
-  | ChangeFocusApplicationAction
+  | ChangeApplicationFocusAction

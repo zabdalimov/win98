@@ -5,7 +5,7 @@ import Icon from '../Icon/Icon'
 import closeButtonIcon from '../../static/icons/close-button-icon.png'
 import { useDrag } from '../../hooks/useDrag'
 import { useDispatch } from 'react-redux'
-import { changeFocusApplication } from '../../store/application/actions'
+import { changeApplicationFocus } from '../../store/application/actions'
 
 interface Props {
   applicationName: string
@@ -22,7 +22,7 @@ const ApplicationWindow: React.FC<Props> = ({
   const ref = useRef<HTMLDivElement>(null)
 
   const dispatch = useDispatch()
-  const focus = () => dispatch(changeFocusApplication(applicationName, true))
+  const focus = () => dispatch(changeApplicationFocus(applicationName, true))
 
   const { onMouseDown } = useDrag({ ref })
 

@@ -1,6 +1,6 @@
 import {
   ApplicationAction,
-  CHANGE_FOCUS_APPLICATION,
+  CHANGE_APPLICATION_FOCUS,
   CLOSE_APPLICATION,
   OPEN_APPLICATION,
 } from './actions'
@@ -52,7 +52,7 @@ export function applicationReducer(
         ),
       }
 
-    case CHANGE_FOCUS_APPLICATION:
+    case CHANGE_APPLICATION_FOCUS:
       return {
         ...state,
         openedApplications: state.openedApplications.map((a) => ({

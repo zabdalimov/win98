@@ -6,7 +6,7 @@ import useCurrentDate from '../../hooks/useCurrentDate'
 import taskBarStyles from './TaskBar.styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectOpenedApplications } from '../../store/application/selectors'
-import { changeFocusApplication } from '../../store/application/actions'
+import { changeApplicationFocus } from '../../store/application/actions'
 import TaskEntry from './TaskEntry/TaskEntry'
 
 const TaskBar: React.FC = () => {
@@ -24,7 +24,7 @@ const TaskBar: React.FC = () => {
         <TaskEntry
           key={a.name}
           application={a}
-          onClick={() => dispatch(changeFocusApplication(a.name, !a.isFocused))}
+          onClick={() => dispatch(changeApplicationFocus(a.name, !a.isFocused))}
         />
       ))}
       <Separator />
