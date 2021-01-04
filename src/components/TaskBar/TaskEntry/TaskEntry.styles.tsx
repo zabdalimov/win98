@@ -13,6 +13,10 @@ const taskEntryStyles = (isPushed: boolean) => css`
       `
     : ''};
 
+  span {
+    margin-left: 3px;
+  }
+
   :focus {
     > div {
       outline: none;
