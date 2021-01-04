@@ -26,18 +26,21 @@ export function applicationReducer(
 ): ApplicationState {
   switch (action.type) {
     case OPEN_APPLICATION:
-      const app = state.openedApplications.find(
+      // Unfocus other apps except given one
+      const openedApplications = state.openedApplications.map((a) => ({
+        ...a,
+        isFocused: a.name === action.application.name,
+      }))
+
+      // Do not open given app 2nd time in case it's opened
+      const isOpened = !!state.openedApplications.find(
         (a) => a.name === action.application.name
       )
+      const appsToOpen = !isOpened ? [action.application] : []
+
       return {
         ...state,
-        openedApplications: [
-          ...state.openedApplications.map((a) => ({
-            ...a,
-            isFocused: a.name === action.application.name,
-          })),
-          ...(!app ? [action.application] : []),
-        ],
+        openedApplications: [...openedApplications, ...appsToOpen],
       }
 
     case CLOSE_APPLICATION:
