@@ -5,8 +5,8 @@ import { modalRootZindex } from '../ModalRoot/ModalRoot.styles'
 
 const applicationWindowStyles = {
   applicationWindow: (isFocused: boolean) => css`
-    ${mixins.standardBorder};
-    padding: 3px;
+    ${mixins.standardBorderAlt};
+    padding: 4px;
     position: absolute;
     top: 0;
     left: 0;

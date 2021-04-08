@@ -3,14 +3,28 @@ import colors from './colors.styles'
 
 const mixins = {
   // Padding is added so box shadow is not overlapping with contents of the element
+  // white, gray, dark gray, black
   standardBorder: css`
     box-shadow: inset 1px 1px ${colors.white}, inset 2px 2px ${colors.lightGray},
       inset -1px -1px ${colors.black}, inset -2px -2px ${colors.darkGray};
     padding: 4px;
   `,
+  // gray, white, dark gray, black
+  standardBorderAlt: css`
+    box-shadow: inset 1px 1px ${colors.lightGray}, inset 2px 2px ${colors.white},
+      inset -1px -1px ${colors.black}, inset -2px -2px ${colors.darkGray};
+    padding: 4px;
+  `,
+  // black, dark gray, gray, white
   standardBorderInverted: css`
     box-shadow: inset 1px 1px ${colors.black}, inset 2px 2px ${colors.darkGray},
       inset -1px -1px ${colors.white}, inset -2px -2px ${colors.lightGray};
+    padding: 4px;
+  `,
+  // dark gray, black, gray, white
+  standardBorderInvertedAlt: css`
+    box-shadow: inset 1px 1px ${colors.darkGray}, inset 2px 2px ${colors.black},
+      inset -1px -1px ${colors.lightGray}, inset -2px -2px ${colors.white};
     padding: 4px;
   `,
   dottedBorderBlack: css`
