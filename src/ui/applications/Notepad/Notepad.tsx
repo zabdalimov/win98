@@ -1,5 +1,6 @@
 import React from 'react'
 import notepadStyles from './Notepad.styles'
+import MenuBarEntry from '../../MenuBarEntry/MenuBarEntry'
 
 const Notepad: React.FC = ({}) => {
   const menus = ['File', 'Edit', 'Search', 'Help']
@@ -7,7 +8,7 @@ const Notepad: React.FC = ({}) => {
     <div css={notepadStyles.notepad}>
       <div css={notepadStyles.menuBar}>
         {menus.map((m) => (
-          <span key={m}>{m}</span>
+          <MenuBarEntry key={m} label={m} />
         ))}
       </div>
       <textarea css={notepadStyles.textArea} />
