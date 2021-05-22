@@ -1,7 +1,7 @@
 import React from 'react'
 import StartButton from './StartButton/StartButton'
 import Separator from '../Separator/Separator'
-import TimerSection from './Timer/TimerSection'
+import DateTimeSection from './DateTimeSection/DateTimeSection'
 import useCurrentDate from '../../hooks/useCurrentDate'
 import taskBarStyles from './TaskBar.styles'
 import { useDispatch, useSelector } from 'react-redux'
@@ -31,7 +31,7 @@ const TaskBar: React.FC = () => {
         />
       ))}
       <Separator orientation={'vertical'} />
-      <TimerSection date={currentDate} />
+      <DateTimeSection date={currentDate} />
     </div>
   )
 }

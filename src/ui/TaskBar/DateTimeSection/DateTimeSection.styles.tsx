@@ -3,8 +3,8 @@ import colors from '../../../styles/colors.styles'
 import { IconStyled } from '../../Icon/Icon.styles'
 
 // TODO extract border styles this as mixin or component
-const timerSectionStyles = {
-  timerSection: css`
+const dateTimeSectionStyles = {
+  dateTimeSection: css`
     height: 100%;
     display: flex;
     align-items: center;
@@ -28,4 +28,4 @@ const timerSectionStyles = {
   `,
 }
 
-export default timerSectionStyles
+export default dateTimeSectionStyles
