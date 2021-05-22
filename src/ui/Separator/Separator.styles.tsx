@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import colors from '../../styles/colors.styles'
 import { SeparatorProps } from './Separator'
+import styled from '@emotion/styled'
 
 const verticalStyles = css`
   width: 2px;
@@ -15,8 +16,9 @@ const horizontalStyles = css`
   border-bottom: 1px solid ${colors.white};
 `
 
-const separatorStyles = ({ orientation = 'vertical' }: SeparatorProps) => css`
-  ${orientation == 'vertical' ? verticalStyles : horizontalStyles}
+const SeparatorStyled = styled.div<SeparatorProps>`
+  ${(props) =>
+    props.orientation === 'vertical' ? verticalStyles : horizontalStyles};
 `
 
-export default separatorStyles
+export default SeparatorStyled

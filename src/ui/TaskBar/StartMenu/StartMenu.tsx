@@ -61,7 +61,7 @@ const StartMenu: React.FC = () => {
       <div css={startMenuStyles.startMenuEntries}>
         {entries.map((entry, index) =>
           entry === 'separator' ? (
-            <Separator key={index} orientation={'horizontal'} />
+            <Separator key={index} />
           ) : (
             <div key={entry.label} css={startMenuStyles.startMenuEntry}>
               <Icon src={entry.icon} alt={entry.label} />

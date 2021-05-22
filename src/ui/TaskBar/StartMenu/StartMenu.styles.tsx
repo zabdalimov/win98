@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import mixins from '../../../styles/mixins.styles'
 import sizings from '../../../styles/sizings.styles'
 import colors from '../../../styles/colors.styles'
+import SeparatorStyled from '../../Separator/Separator.styles'
 
 const startMenuStyles = {
   startMenu: css`
@@ -30,7 +31,7 @@ const startMenuStyles = {
     flex-direction: column;
     width: 100%;
 
-    > [class*='separator'] {
+    > ${SeparatorStyled} {
       margin: 3px 0 3px 2px;
     }
   `,

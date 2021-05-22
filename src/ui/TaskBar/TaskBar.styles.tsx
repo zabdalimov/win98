@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import sizings from '../../styles/sizings.styles'
 import colors from '../../styles/colors.styles'
+import SeparatorStyled from '../Separator/Separator.styles'
 
 const taskBarStyles = {
   taskBar: css`
@@ -12,15 +13,15 @@ const taskBarStyles = {
     background-color: ${colors.baseGray};
     box-shadow: inset 0 1px ${colors.lightGray}, inset 0 2px ${colors.white};
 
-    > [class*='separatorStyles'] {
+    > ${SeparatorStyled} {
       margin-left: 2px;
 
-      :nth-last-of-type(2) {
+      &:nth-last-of-type(2) {
         margin-left: auto;
       }
     }
-    // TODO inconsistent naming
-    > [class*='timerSection'] {
+
+    > div:last-of-type {
       margin-left: 2px;
     }
   `,

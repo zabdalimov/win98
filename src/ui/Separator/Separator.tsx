@@ -1,12 +1,14 @@
 import React from 'react'
-import separatorStyles from './Separator.styles'
+import SeparatorStyled from './Separator.styles'
 
 export interface SeparatorProps {
-  orientation?: 'vertical' | 'horizontal'
+  orientation?: 'horizontal' | 'vertical'
 }
 
-const Separator: React.FC<SeparatorProps> = (props) => {
-  return <div css={separatorStyles(props)} />
+const Separator: React.FC<SeparatorProps> = ({
+  orientation = 'horizontal',
+}) => {
+  return <SeparatorStyled orientation={orientation} />
 }
 
 export default Separator

@@ -22,7 +22,7 @@ const TaskBar: React.FC = () => {
   return (
     <div css={taskBarStyles.taskBar}>
       <StartButton />
-      <Separator />
+      <Separator orientation={'vertical'} />
       {applications.map((a) => (
         <TaskEntry
           key={a.applicationType.name}
@@ -30,7 +30,7 @@ const TaskBar: React.FC = () => {
           onClick={() => onClick(a)}
         />
       ))}
-      <Separator />
+      <Separator orientation={'vertical'} />
       <TimerSection date={currentDate} />
     </div>
   )
