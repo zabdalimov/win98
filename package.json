@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.1.4",
     "@emotion/utils": "^1.0.0",
     "@reduxjs/toolkit": "^1.5.0",
     "react": "^17.0.1",
