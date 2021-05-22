@@ -1,6 +1,8 @@
 import { css } from '@emotion/react'
 import colors from '../../../styles/colors.styles'
+import { IconStyled } from '../../Icon/Icon.styles'
 
+// TODO extract border styles this as mixin or component
 const timerSectionStyles = {
   timerSection: css`
     height: 100%;
@@ -12,8 +14,12 @@ const timerSectionStyles = {
     border-right: 1px solid ${colors.white};
     border-bottom: 1px solid ${colors.white};
 
-    [class*='iconStyles']:not(:first-of-type) {
+    > ${IconStyled} {
       margin-left: 1px;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
     }
   `,
   time: css`
