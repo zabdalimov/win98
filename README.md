@@ -1,6 +1,9 @@
 # win98
 Windows 98 recreation attempt using TypeScript and React.
 
+## Live Demo
+[Check out live demo on Github Pages](https://zabdalimov.github.io/win98)
+
 ## Getting Started
 To run project locally:
 ```shell
