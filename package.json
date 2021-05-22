@@ -2,6 +2,7 @@
   "name": "win98",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zabdalimov.github.io/win98",
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
@@ -10,6 +11,8 @@
     "eslint": "eslint src --ext .ts,.tsx",
     "stylelint": "stylelint 'src/**/*.tsx'",
     "lint:fix": "yarn eslint --fix && yarn stylelint --fix",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -42,6 +45,7 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.1.0",
     "jest": "26.6.0",
     "prettier": "^2.2.1",
     "react-app-rewired": "^2.1.8",
