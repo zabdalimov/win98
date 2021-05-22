@@ -10,5 +10,9 @@ yarn start # start web server
 
 After web server is started, go to localhost:3000 to see your Windows 98 desktop.
 
-# Resources
-* https://win98icons.alexmeub.com/
+# Resources / Credits
+|               |                                        |
+| ------------- | -------------------------------------- |
+| Icons         | https://win98icons.alexmeub.com        |
+| Fonts         | TODO                                   |
+| Emulator      | https://copy.sh/v86/?profile=windows98 |
