@@ -6,10 +6,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      # TODO this should be parametrized
-      url: https://zabdalimov.github.io/win98
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
