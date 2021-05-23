@@ -18,4 +18,5 @@ After web server is started, go to http://localhost:3000 to see your Windows 98 
 | ------------- | -------------------------------------- |
 | Icons         | https://win98icons.alexmeub.com        |
 | Fonts         | TODO                                   |
+| Sounds        | https://101soundboards.com             |
 | Emulator      | https://copy.sh/v86/?profile=windows98 |
