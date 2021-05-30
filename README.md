@@ -1,4 +1,4 @@
-#![Windows 98 Logo](public/favicon.ico) win98
+# ![Windows 98 Logo](public/favicon.ico) win98
 Windows 98 recreation attempt using TypeScript and React.
 
 ## Live Demo
