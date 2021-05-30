@@ -3,10 +3,10 @@ Windows 98 recreation attempt using TypeScript and React.
 
 ![Demo Screenshot](demo-screen.png)
 
-## Live Demo
+## ![Internet Explorer Icon](src/static/icons/ie-icon.png) Live Demo
 [Check out live demo on Github Pages](https://zabdalimov.github.io/win98).
 
-## Getting Started
+## ![Internet Explorer Icon](src/static/icons/settings-icon.png) Getting Started
 To run project locally:
 ```shell
 yarn # install dependencies
@@ -15,7 +15,7 @@ yarn start # start web server
 
 After web server is started, go to http://localhost:3000 to see your Windows 98 desktop.
 
-## Resources / Credits
+## ![Internet Explorer Icon](src/static/icons/help-book-icon.png) Resources / Credits
 |               |                                        |
 | ------------- | -------------------------------------- |
 | Icons         | https://win98icons.alexmeub.com        |
