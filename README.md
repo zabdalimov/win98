@@ -1,6 +1,8 @@
 # ![Windows 98 Logo](public/favicon.ico) win98
 Windows 98 recreation attempt using TypeScript and React.
 
+![Demo Screenshot](demo-screen.png)
+
 ## Live Demo
 [Check out live demo on Github Pages](https://zabdalimov.github.io/win98).
 
