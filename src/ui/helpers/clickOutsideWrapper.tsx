@@ -20,8 +20,8 @@ export function clickOutsideWrapper<Props>(
           setIsOpen(false)
         }
       }
-      document.addEventListener('click', handleClick)
-      return () => document.removeEventListener('click', handleClick)
+      document.addEventListener('mousedown', handleClick)
+      return () => document.removeEventListener('mousedown', handleClick)
     }, [])
 
     return (
