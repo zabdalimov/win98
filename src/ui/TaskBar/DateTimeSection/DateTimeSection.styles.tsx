@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 import colors from '../../../styles/colors.styles'
 import { IconStyled } from '../../Icon/Icon.styles'
+import { VolumeControlStyled } from '../VolumeControl/VolumeControl.styles'
 
 // TODO extract border styles this as mixin or component
 const dateTimeSectionStyles = {
@@ -24,6 +25,10 @@ const dateTimeSectionStyles = {
     border-left: 1px solid ${colors.darkGray};
     border-right: 1px solid ${colors.white};
     border-bottom: 1px solid ${colors.white};
+
+    ${VolumeControlStyled} {
+      right: 50px;
+    }
   `,
   time: css`
     margin-left: 11px;

@@ -9,7 +9,7 @@ export const VolumeControl: React.FC = () => {
   }
   return (
     <VolumeControlStyled>
-      <div>Volume</div>
+      <p>Volume</p>
       <Slider min={0} max={1} orientation={'vertical'} onChange={onChange} />
     </VolumeControlStyled>
   )

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { SliderOrientation, SliderProps } from './Slider'
+import { SliderProps } from './Slider'
 import { css } from '@emotion/react'
 import mixins from '../../styles/mixins.styles'
 import colors from '../../styles/colors.styles'
@@ -7,29 +7,63 @@ import colors from '../../styles/colors.styles'
 const sliderThumbWidth = 8
 const sliderThumbHeight = 18
 
-const sliderTrackHeight = 4
+const sliderTrackWidth = 4
 
 type Props = Pick<SliderProps, 'orientation'>
 
 export const SliderStyled = styled.div<Props>`
   position: relative;
-  width: 100%;
+  display: flex;
+
+  ${({ orientation }) =>
+    orientation === 'horizontal'
+      ? css`
+          width: 100%;
+          align-items: center;
+        `
+      : css`
+          height: 100%;
+          flex-direction: column;
+          align-items: center;
+        `}
 `
 
+// TODO border is not visually correct here, probably should use background black + use tricolor mixin
 export const SliderTrack = styled.div<Props>`
   position: absolute;
-  width: 100%;
-  height: ${sliderTrackHeight}px;
-  background: red;
+
+  ${mixins.standardBorderInvertedAlt};
+  padding: 0;
+
+  ${({ orientation }) =>
+    orientation === 'horizontal'
+      ? css`
+          width: 100%;
+          height: ${sliderTrackWidth}px;
+        `
+      : css`
+          width: ${sliderTrackWidth}px;
+          height: 100%;
+        `}
 `
 
 // TODO customize cursor if windows had some
 export const SliderHandle = styled.div<Props>`
-  ${mixins.standardBorder};
+  ${mixins.triColorBorder};
   background-color: ${colors.baseGray};
   position: absolute;
-  top: -${(sliderThumbHeight - sliderTrackHeight) * 0.5}px;
-  width: ${sliderThumbWidth}px;
-  height: ${sliderThumbHeight}px;
   cursor: pointer;
+
+  ${({ orientation }) =>
+    orientation === 'horizontal'
+      ? css`
+          top: -${sliderThumbHeight * 0.5}px;
+          width: ${sliderThumbWidth}px;
+          height: ${sliderThumbHeight}px;
+        `
+      : css`
+          left: -${sliderThumbHeight * 0.5}px;
+          width: ${sliderThumbHeight}px;
+          height: ${sliderThumbWidth}px;
+        `}
 `

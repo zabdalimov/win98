@@ -27,11 +27,10 @@ const DateTimeSection: React.FC<Props & ClickOutsideWrapperProps> = ({
     },
   ]
 
-  // TODO delete true
   return (
     <div css={dateTimeSectionStyles.dateTimeSection}>
       <div ref={wrapperRef} css={dateTimeSectionStyles.iconSection}>
-        {true && <VolumeControl />}
+        {isOpen && <VolumeControl />}
         {icons.map((ip) => (
           <Icon key={ip.src} {...ip} />
         ))}

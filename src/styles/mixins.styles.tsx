@@ -2,6 +2,7 @@ import { css } from '@emotion/react'
 import colors from './colors.styles'
 
 // TODO names could be better here
+// TODO mb rework this as panel component with different options
 const mixins = {
   // Padding is added so box shadow is not overlapping with contents of the element
   // white, dark gray
@@ -38,6 +39,12 @@ const mixins = {
   standardBorderInvertedAlt: css`
     box-shadow: inset 1px 1px ${colors.darkGray}, inset 2px 2px ${colors.black},
       inset -1px -1px ${colors.white}, inset -2px -2px ${colors.lightGray};
+    padding: 4px;
+  `,
+  // white, dark gray, black
+  triColorBorder: css`
+    box-shadow: inset 1px 1px ${colors.white}, inset -1px -1px ${colors.black},
+      inset -2px -2px ${colors.darkGray};
     padding: 4px;
   `,
   dottedBorderBlack: css`

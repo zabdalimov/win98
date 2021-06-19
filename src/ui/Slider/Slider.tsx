@@ -19,6 +19,7 @@ interface State {
 
 // TODO this is similar to useDrag but it's one dimensional, mb extract common logic to separate hook
 // TODO step param
+// TODO enable clicking on track to change value
 export const Slider: React.FC<SliderProps> = ({
   min,
   max,
@@ -28,11 +29,18 @@ export const Slider: React.FC<SliderProps> = ({
   const trackRef = useRef<HTMLDivElement>(null)
   const handleRef = useRef<HTMLDivElement>(null)
 
-  const trackWidth = trackRef.current?.offsetWidth ?? 0
-  const handleWidth = handleRef.current?.offsetWidth ?? 0
+  const trackSize =
+    (orientation === 'horizontal'
+      ? trackRef.current?.offsetWidth
+      : trackRef.current?.offsetHeight) ?? 0
+
+  const handleSize =
+    (orientation === 'horizontal'
+      ? handleRef.current?.offsetWidth
+      : handleRef.current?.offsetHeight) ?? 0
 
   const minPosition = 0
-  const maxPosition = trackWidth - handleWidth
+  const maxPosition = trackSize - handleSize
 
   const [state, setState] = useState<State>({
     startPosition: 0,
@@ -41,25 +49,31 @@ export const Slider: React.FC<SliderProps> = ({
   })
 
   const onMouseMove = useCallback(
-    (e: MouseEvent) => {
+    (e: MouseEvent) =>
       setState((prev) => ({
         ...prev,
         position: clamp(
-          prev.lastPosition + e.clientX - prev.startPosition,
+          prev.lastPosition +
+            (orientation === 'horizontal' ? e.clientX : -e.clientY) -
+            prev.startPosition,
           minPosition,
           maxPosition
         ),
-      }))
-    },
-    [maxPosition]
+      })),
+    [maxPosition, orientation]
   )
 
   const onMouseUp = useCallback(() => {
     window.removeEventListener('mousemove', onMouseMove)
     window.removeEventListener('mouseup', onMouseUp)
     setState((prev) => {
-      const value = (max - min) * (prev.position / maxPosition)
-      onChange && onChange(value)
+      // TODO for some reason maxPosition is 0 sometimes, meaning that track and handle elements disappear (0 width each).
+      // TODO this shows up when that happens "Cannot flush updates when React is already rendering".
+      // TODO Don't call change as a workaround for now.
+      if (onChange && maxPosition) {
+        const value = (max - min) * (prev.position / maxPosition)
+        onChange(value)
+      }
       return {
         ...prev,
         lastPosition: prev.position,
@@ -73,11 +87,13 @@ export const Slider: React.FC<SliderProps> = ({
       window.addEventListener('mouseup', onMouseUp)
       setState((prev) => ({
         ...prev,
-        startPosition: e.clientX,
+        startPosition: orientation === 'horizontal' ? e.clientX : -e.clientY,
       }))
     },
-    [onMouseMove, onMouseUp]
+    [onMouseMove, onMouseUp, orientation]
   )
+
+  const offsetProp = orientation === 'horizontal' ? 'left' : 'bottom'
 
   return (
     <SliderStyled orientation={orientation}>
@@ -86,7 +102,7 @@ export const Slider: React.FC<SliderProps> = ({
         orientation={orientation}
         onMouseDown={onMouseDown}
         style={{
-          left: `${state.position}px`,
+          [offsetProp]: `${state.position}px`,
         }}
         ref={handleRef}
       />
