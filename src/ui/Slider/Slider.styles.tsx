@@ -29,8 +29,10 @@ export const SliderStyled = styled.div<Props>`
 `
 
 // TODO border is not visually correct here, probably should use background black + use tricolor mixin
+// TODO customize cursor if windows had some
 export const SliderTrack = styled.div<Props>`
   position: absolute;
+  cursor: pointer;
 
   ${mixins.standardBorderInvertedAlt};
   padding: 0;
