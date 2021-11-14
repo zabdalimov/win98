@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { SliderHandle, SliderStyled, SliderTrack } from './Slider.styles'
 import { clamp } from '../../utils/math'
 
@@ -9,6 +9,8 @@ export interface SliderProps {
   max: number
   orientation?: SliderOrientation
   onChange?: (value: number) => void
+  // This will also be called when clicking on slider track
+  onHandleRelease?: (value: number) => void
 }
 
 interface State {
@@ -19,12 +21,12 @@ interface State {
 
 // TODO this is similar to useDrag but it's one dimensional, mb extract common logic to separate hook
 // TODO step param
-// TODO enable clicking on track to change value
 export const Slider: React.FC<SliderProps> = ({
   min,
   max,
   orientation = 'horizontal',
   onChange,
+  onHandleRelease,
 }) => {
   const trackRef = useRef<HTMLDivElement>(null)
   const handleRef = useRef<HTMLDivElement>(null)
@@ -48,38 +50,83 @@ export const Slider: React.FC<SliderProps> = ({
     lastPosition: 0,
   })
 
+  const calculateValue = useCallback(
+    (position: number) => (max - min) * (position / maxPosition),
+    [max, maxPosition, min]
+  )
+
+  const getClientCoordinate = useCallback(
+    (event: MouseEvent | React.MouseEvent<HTMLElement>) => {
+      // More intuitive to work with negative y value
+      return orientation === 'horizontal' ? event.clientX : -event.clientY
+    },
+    [orientation]
+  )
+
+  useEffect(() => {
+    // TODO for some reason maxPosition is 0 sometimes, meaning that track and handle elements disappear (0 width each).
+    // TODO this shows up when that happens "Cannot flush updates when React is already rendering".
+    // TODO Don't call change as a workaround for now.
+    if (onChange && maxPosition) {
+      const value = calculateValue(state.position)
+      onChange(value)
+    }
+    // We explicitly want to position change only
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.position])
+
+  const onTrackClick = useCallback(
+    (e: React.MouseEvent<HTMLElement>) => {
+      setState(() => {
+        const trackRect = (e.target as HTMLDivElement).getBoundingClientRect()
+        // TODO horizontal is not tested, probably wouldn't work
+        const position =
+          getClientCoordinate(e) +
+          (orientation === 'horizontal' ? trackRect.left : trackRect.bottom) -
+          handleSize / 2
+        const positionClamped = clamp(position, minPosition, maxPosition)
+        onHandleRelease?.(calculateValue(positionClamped))
+        return {
+          startPosition: positionClamped,
+          position: positionClamped,
+          lastPosition: positionClamped,
+        }
+      })
+    },
+    [
+      calculateValue,
+      getClientCoordinate,
+      handleSize,
+      maxPosition,
+      onHandleRelease,
+      orientation,
+    ]
+  )
+
   const onMouseMove = useCallback(
     (e: MouseEvent) =>
       setState((prev) => ({
         ...prev,
         position: clamp(
-          prev.lastPosition +
-            (orientation === 'horizontal' ? e.clientX : -e.clientY) -
-            prev.startPosition,
+          prev.lastPosition + getClientCoordinate(e) - prev.startPosition,
           minPosition,
           maxPosition
         ),
       })),
-    [maxPosition, orientation]
+    [getClientCoordinate, maxPosition]
   )
 
   const onMouseUp = useCallback(() => {
     window.removeEventListener('mousemove', onMouseMove)
     window.removeEventListener('mouseup', onMouseUp)
     setState((prev) => {
-      // TODO for some reason maxPosition is 0 sometimes, meaning that track and handle elements disappear (0 width each).
-      // TODO this shows up when that happens "Cannot flush updates when React is already rendering".
-      // TODO Don't call change as a workaround for now.
-      if (onChange && maxPosition) {
-        const value = (max - min) * (prev.position / maxPosition)
-        onChange(value)
-      }
+      onHandleRelease?.(calculateValue(prev.position))
       return {
         ...prev,
         lastPosition: prev.position,
       }
     })
-  }, [max, maxPosition, min, onChange, onMouseMove])
+  }, [calculateValue, onHandleRelease, onMouseMove])
 
   const onMouseDown = useCallback(
     (e: React.MouseEvent<HTMLElement>) => {
@@ -87,17 +134,21 @@ export const Slider: React.FC<SliderProps> = ({
       window.addEventListener('mouseup', onMouseUp)
       setState((prev) => ({
         ...prev,
-        startPosition: orientation === 'horizontal' ? e.clientX : -e.clientY,
+        startPosition: getClientCoordinate(e),
       }))
     },
-    [onMouseMove, onMouseUp, orientation]
+    [getClientCoordinate, onMouseMove, onMouseUp]
   )
 
   const offsetProp = orientation === 'horizontal' ? 'left' : 'bottom'
 
   return (
     <SliderStyled orientation={orientation}>
-      <SliderTrack orientation={orientation} ref={trackRef} />
+      <SliderTrack
+        orientation={orientation}
+        ref={trackRef}
+        onClick={onTrackClick}
+      />
       <SliderHandle
         orientation={orientation}
         onMouseDown={onMouseDown}
