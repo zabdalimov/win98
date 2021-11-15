@@ -1,21 +1,22 @@
 {
   "files": {
     "main.css": "/win98/static/css/main.51dfe730.chunk.css",
-    "main.js": "/win98/static/js/main.3e326257.chunk.js",
-    "main.js.map": "/win98/static/js/main.3e326257.chunk.js.map",
+    "main.js": "/win98/static/js/main.a35cae80.chunk.js",
+    "main.js.map": "/win98/static/js/main.a35cae80.chunk.js.map",
     "runtime-main.js": "/win98/static/js/runtime-main.03bdb13d.js",
     "runtime-main.js.map": "/win98/static/js/runtime-main.03bdb13d.js.map",
-    "static/js/2.4222bb62.chunk.js": "/win98/static/js/2.4222bb62.chunk.js",
-    "static/js/2.4222bb62.chunk.js.map": "/win98/static/js/2.4222bb62.chunk.js.map",
+    "static/js/2.f72cd9b2.chunk.js": "/win98/static/js/2.f72cd9b2.chunk.js",
+    "static/js/2.f72cd9b2.chunk.js.map": "/win98/static/js/2.f72cd9b2.chunk.js.map",
     "index.html": "/win98/index.html",
     "static/css/main.51dfe730.chunk.css.map": "/win98/static/css/main.51dfe730.chunk.css.map",
-    "static/js/2.4222bb62.chunk.js.LICENSE.txt": "/win98/static/js/2.4222bb62.chunk.js.LICENSE.txt",
+    "static/js/2.f72cd9b2.chunk.js.LICENSE.txt": "/win98/static/js/2.f72cd9b2.chunk.js.LICENSE.txt",
+    "static/media/startup-image.bf1966da.jpeg": "/win98/static/media/startup-image.bf1966da.jpeg",
     "static/media/index.css": "/win98/static/media/w95fa.fb426abf.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.03bdb13d.js",
-    "static/js/2.4222bb62.chunk.js",
+    "static/js/2.f72cd9b2.chunk.js",
     "static/css/main.51dfe730.chunk.css",
-    "static/js/main.3e326257.chunk.js"
+    "static/js/main.a35cae80.chunk.js"
   ]
 }
