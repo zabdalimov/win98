@@ -6,7 +6,8 @@ const colors = {
   darkGray: '#808080',
   black: '#000',
 
-  lightBlue: '#0000FF',
+  lightBlue: '#4d7fbe',
+  blue: '#0000FF',
   darkBlue: '#000080',
 
   desktopTheme: '#008080',
