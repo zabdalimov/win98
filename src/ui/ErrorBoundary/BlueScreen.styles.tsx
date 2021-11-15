@@ -13,11 +13,11 @@ export const BlueScreenStyled = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: ${colors.lightBlue};
+  background-color: ${colors.blue};
 `
 
 export const BlueScreenHeading = styled.p`
-  color: ${colors.lightBlue};
+  color: ${colors.blue};
   background-color: ${colors.baseGray};
   padding: 0.25rem;
   margin-bottom: 0.5rem;
