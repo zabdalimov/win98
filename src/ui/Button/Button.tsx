@@ -1,6 +1,6 @@
 import { SerializedStyles } from '@emotion/react'
 import React from 'react'
-import buttonStyles from './Button.styles'
+import { ButtonStyled } from './Button.styles'
 
 export interface ButtonProps {
   isPushed?: boolean
@@ -8,16 +8,20 @@ export interface ButtonProps {
   onClick?: (event?: React.MouseEvent<HTMLElement>) => void
 }
 
-const Button: React.FC<ButtonProps> = (props) => {
-  const { children, className = () => '', onClick = () => void 0 } = props
-
+const Button: React.FC<ButtonProps> = ({
+  isPushed,
+  className = () => '',
+  onClick = () => void 0,
+  children,
+}) => {
   return (
-    <button
-      css={[buttonStyles.button(props), className(props)]}
+    <ButtonStyled
+      isPushed={isPushed}
+      css={className({ isPushed })}
       onClick={onClick}
     >
       <div>{children}</div>
-    </button>
+    </ButtonStyled>
   )
 }
 

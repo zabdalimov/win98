@@ -1,4 +1,9 @@
-import styles from './ApplicationWindow.styles'
+import {
+  ApplicationWindowContents,
+  ApplicationWindowHeader,
+  ApplicationWindowName,
+  ApplicationWindowStyled,
+} from './ApplicationWindow.styles'
 import React, { useRef } from 'react'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
@@ -28,23 +33,20 @@ const ApplicationWindow: React.FC<Props> = ({
   const { onMouseDown } = useDrag({ ref })
 
   return (
-    <div
-      css={styles.applicationWindow(isFocused)}
+    <ApplicationWindowStyled
+      isFocused={isFocused}
       onMouseDown={focus}
       ref={ref}
     >
-      <div
-        css={styles.applicationWindowHeader(isFocused)}
-        onMouseDown={onMouseDown}
-      >
+      <ApplicationWindowHeader isFocused={isFocused} onMouseDown={onMouseDown}>
         <Icon src={applicationType.smallIconSrc} alt={applicationType.name} />
-        <span>{applicationType.name}</span>
+        <ApplicationWindowName>{applicationType.name}</ApplicationWindowName>
         <Button onClick={onClose}>
           <Icon src={closeButtonIcon} alt={'Close button'} />
         </Button>
-      </div>
-      <div css={styles.applicationWindowContents}>{children}</div>
-    </div>
+      </ApplicationWindowHeader>
+      <ApplicationWindowContents>{children}</ApplicationWindowContents>
+    </ApplicationWindowStyled>
   )
 }
 

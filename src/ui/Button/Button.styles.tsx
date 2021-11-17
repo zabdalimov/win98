@@ -1,37 +1,33 @@
-import { css } from '@emotion/react'
 import mixins from '../../styles/mixins.styles'
 import colors from '../../styles/colors.styles'
 import { ButtonProps } from './Button'
+import styled from '@emotion/styled'
 
-const buttonStyles = {
-  button: (props: ButtonProps) => css`
-    ${mixins.standardBorder};
+export const ButtonStyled = styled.button<ButtonProps>`
+  ${mixins.standardBorder};
+  display: flex;
+  align-items: center;
+  background-color: ${colors.baseGray};
+  border: none;
+  cursor: inherit;
+  font-family: inherit;
+
+  ${({ isPushed }) => (isPushed ? mixins.standardBorderInverted : '')};
+
+  > div {
     display: flex;
     align-items: center;
-    background-color: ${colors.baseGray};
-    border: none;
-    cursor: inherit;
-    font-family: inherit;
+  }
 
-    ${props.isPushed ? mixins.standardBorderInverted : ''};
+  :active {
+    ${mixins.standardBorderInverted};
+  }
+
+  :focus {
+    outline: none;
 
     > div {
-      display: flex;
-      align-items: center;
+      ${mixins.dottedBorderBlack};
     }
-
-    :active {
-      ${mixins.standardBorderInverted};
-    }
-
-    :focus {
-      outline: none;
-
-      > div {
-        ${mixins.dottedBorderBlack};
-      }
-    }
-  `,
-}
-
-export default buttonStyles
+  }
+`
