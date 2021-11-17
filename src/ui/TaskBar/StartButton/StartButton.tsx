@@ -6,7 +6,7 @@ import StartMenu from '../StartMenu/StartMenu'
 import {
   clickOutsideWrapper,
   ClickOutsideWrapperProps,
-} from '../../helpers/clickOutsideWrapper'
+} from '../../../hocs/clickOutsideWrapper'
 import startButtonStyles from './StartButton.styles'
 
 const StartButton: React.FC<ClickOutsideWrapperProps> = ({

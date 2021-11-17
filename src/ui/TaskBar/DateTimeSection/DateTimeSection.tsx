@@ -5,7 +5,7 @@ import dateTimeSectionStyles from './DateTimeSection.styles'
 import {
   clickOutsideWrapper,
   ClickOutsideWrapperProps,
-} from '../../helpers/clickOutsideWrapper'
+} from '../../../hocs/clickOutsideWrapper'
 import { VolumeControl } from '../VolumeControl/VolumeControl'
 
 interface Props {
