@@ -4,17 +4,19 @@ import { ButtonStyled } from './Button.styles'
 
 export interface ButtonProps {
   isPushed?: boolean
-  className?: (props: ButtonProps) => SerializedStyles
   onClick?: (event?: React.MouseEvent<HTMLElement>) => void
+  // This is needed to emotion can pass override styles, when we use styled(Button)``
+  className?: SerializedStyles & string
 }
 
 const Button: React.FC<ButtonProps> = ({
   isPushed,
   onClick = () => void 0,
   children,
+  className,
 }) => {
   return (
-    <ButtonStyled isPushed={isPushed} onClick={onClick}>
+    <ButtonStyled isPushed={isPushed} onClick={onClick} className={className}>
       <div>{children}</div>
     </ButtonStyled>
   )
