@@ -1,17 +1,16 @@
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+import { ButtonStyled } from '../../Button/Button.styles'
 
-const startButtonStyles = {
-  startButtonContainer: css`
-    height: 100%;
-  `,
-  startButton: css`
-    height: 100%;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-  `,
-  startButtonText: css`
-    margin-left: 1px;
-  `,
-}
+export const StartButtonContainer = styled.div`
+  height: 100%;
+`
 
-export default startButtonStyles
+export const StartButtonStyled = styled(ButtonStyled)`
+  height: 100%;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+`
+
+export const StartButtonText = styled.span`
+  margin-left: 1px;
+`

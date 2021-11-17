@@ -10,16 +10,11 @@ export interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({
   isPushed,
-  className = () => '',
   onClick = () => void 0,
   children,
 }) => {
   return (
-    <ButtonStyled
-      isPushed={isPushed}
-      css={className({ isPushed })}
-      onClick={onClick}
-    >
+    <ButtonStyled isPushed={isPushed} onClick={onClick}>
       <div>{children}</div>
     </ButtonStyled>
   )
