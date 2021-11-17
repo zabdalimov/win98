@@ -10,7 +10,7 @@ import { useEnvConfig } from '../../hooks/useEnvConfig'
 
 const MainWindow: React.FC = () => {
   const { isDevelopment } = useEnvConfig()
-  const { isLoading } = useStartup(4000, 8000)
+  const { isLoading } = useStartup(4000, 6000)
 
   // TODO add startup sound after loading (note: it's blocked if user didn't interact with page)
 
