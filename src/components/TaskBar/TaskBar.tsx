@@ -1,7 +1,7 @@
 import React from 'react'
 import StartButton from './StartButton/StartButton'
 import Separator from '../Separator/Separator'
-import DateTimeSection from './DateTimeSection/DateTimeSection'
+import DateTimeSection from './NotificationArea/NotificationArea'
 import useCurrentDate from '../../hooks/useCurrentDate'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectOpenedApplications } from '../../store/application/selectors'

@@ -2,6 +2,7 @@ import sizings from '../../styles/sizings.styles'
 import colors from '../../styles/colors.styles'
 import SeparatorStyled from '../Separator/Separator.styles'
 import styled from '@emotion/styled'
+import { NotificationAreaStyled } from './NotificationArea/NotificationArea.styles'
 
 export const TaskBarStyled = styled.div`
   height: ${sizings.taskbarHeight};
@@ -20,8 +21,7 @@ export const TaskBarStyled = styled.div`
     }
   }
 
-  // TODO use DateTimeSection after it's rewritten to styled
-  > div:last-of-type {
+  > ${NotificationAreaStyled} {
     margin-left: 2px;
   }
 `

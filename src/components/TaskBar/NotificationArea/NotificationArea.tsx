@@ -1,7 +1,11 @@
 import React from 'react'
 import Icon, { IconProps } from '../../Icon/Icon'
 import soundIcon from '../../../static/icons/sound-icon.png'
-import dateTimeSectionStyles from './DateTimeSection.styles'
+import {
+  NotificationAreaIconSection,
+  NotificationAreaStyled,
+  NotificationAreaTime,
+} from './NotificationArea.styles'
 import {
   clickOutsideWrapper,
   ClickOutsideWrapperProps,
@@ -12,8 +16,7 @@ interface Props {
   date: Date
 }
 
-// TODO this is not DateTimeSection because of icons, come up with better name
-const DateTimeSection: React.FC<Props & ClickOutsideWrapperProps> = ({
+const NotificationArea: React.FC<Props & ClickOutsideWrapperProps> = ({
   date,
   isOpen,
   toggleIsOpen,
@@ -28,18 +31,18 @@ const DateTimeSection: React.FC<Props & ClickOutsideWrapperProps> = ({
   ]
 
   return (
-    <div css={dateTimeSectionStyles.dateTimeSection}>
-      <div ref={wrapperRef} css={dateTimeSectionStyles.iconSection}>
+    <NotificationAreaStyled>
+      <NotificationAreaIconSection ref={wrapperRef}>
         {isOpen && <VolumeControl />}
         {icons.map((ip) => (
           <Icon key={ip.src} {...ip} />
         ))}
-      </div>
-      <div css={dateTimeSectionStyles.time}>
+      </NotificationAreaIconSection>
+      <NotificationAreaTime>
         {date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-      </div>
-    </div>
+      </NotificationAreaTime>
+    </NotificationAreaStyled>
   )
 }
 
-export default clickOutsideWrapper(DateTimeSection)
+export default clickOutsideWrapper(NotificationArea)
