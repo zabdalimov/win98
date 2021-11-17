@@ -1,20 +1,18 @@
-import { css } from '@emotion/react'
 import mixins from '../../../styles/mixins.styles'
+import styled from '@emotion/styled'
 
-const notepadStyles = {
-  notepad: css`
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  `,
-  menuBar: css`
-    display: flex;
-  `,
-  textArea: css`
-    height: 100%;
-    resize: none;
-    ${mixins.standardBorderInvertedAlt}
-  `,
-}
+export const NotepadStyled = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`
 
-export default notepadStyles
+export const NotepadMenu = styled.div`
+  display: flex;
+`
+
+export const NotepadTextArea = styled.textarea`
+  height: 100%;
+  resize: none;
+  ${mixins.standardBorderInvertedAlt}
+`
