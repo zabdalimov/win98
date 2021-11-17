@@ -1,8 +1,8 @@
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export const modalRootZindex = 100
 
-const modalRootStyles = css`
+export const ModalRootStyled = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -13,5 +13,3 @@ const modalRootStyles = css`
     pointer-events: initial;
   }
 `
-
-export default modalRootStyles

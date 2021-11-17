@@ -1,5 +1,5 @@
 import React from 'react'
-import modalRootStyles from './ModalRoot.styles'
+import { ModalRootStyled } from './ModalRoot.styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectOpenedApplications } from '../../store/application/selectors'
 import ApplicationWindow from '../ApplicationWindow/ApplicationWindow'
@@ -11,7 +11,7 @@ const ModalRoot: React.FC = () => {
   const applications = useSelector(selectOpenedApplications)
   const dispatch = useDispatch()
   return (
-    <div id={ModalRootId} css={modalRootStyles}>
+    <ModalRootStyled id={ModalRootId}>
       {applications.map((a) => (
         <ApplicationWindow
           key={a.applicationType.name}
@@ -21,7 +21,7 @@ const ModalRoot: React.FC = () => {
           {a.applicationType.content}
         </ApplicationWindow>
       ))}
-    </div>
+    </ModalRootStyled>
   )
 }
 
