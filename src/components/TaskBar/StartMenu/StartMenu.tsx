@@ -1,5 +1,10 @@
 import React from 'react'
-import startMenuStyles from './StartMenu.styles'
+import {
+  StartMenuBlueLine,
+  StartMenuEntries,
+  StartMenuStyled,
+  StartMenuEntry as StartMenuEntryComponent,
+} from './StartMenu.styles'
 import Icon from '../../Icon/Icon'
 import winUpdate from '../../../static/icons/win-update.png'
 import dirExecIcon from '../../../static/icons/dir-exec-icon.png'
@@ -54,23 +59,23 @@ const StartMenu: React.FC = () => {
     },
   ]
   return (
-    <div css={startMenuStyles.startMenu}>
-      <div css={startMenuStyles.windowsBlueLine}>
+    <StartMenuStyled>
+      <StartMenuBlueLine>
         <span>Windows98</span>
-      </div>
-      <div css={startMenuStyles.startMenuEntries}>
+      </StartMenuBlueLine>
+      <StartMenuEntries>
         {entries.map((entry, index) =>
           entry === 'separator' ? (
             <Separator key={index} />
           ) : (
-            <div key={entry.label} css={startMenuStyles.startMenuEntry}>
+            <StartMenuEntryComponent key={entry.label}>
               <Icon src={entry.icon} alt={entry.label} />
               <span>{entry.label}</span>
-            </div>
+            </StartMenuEntryComponent>
           )
         )}
-      </div>
-    </div>
+      </StartMenuEntries>
+    </StartMenuStyled>
   )
 }
 
