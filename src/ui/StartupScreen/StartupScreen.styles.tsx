@@ -15,7 +15,7 @@ export const StartupScreenStyled = styled.div`
 
 export const StartupScreenLoading = styled.div`
   width: 100%;
-  height: 16px;
+  height: 12px;
   background: linear-gradient(
     0.25turn,
     transparent,
