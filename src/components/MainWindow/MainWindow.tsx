@@ -1,5 +1,5 @@
 import React from 'react'
-import mainWindowStyles from './MainWindow.styles'
+import { MainWindowStyled } from './MainWindow.styles'
 import TaskBar from '../TaskBar/TaskBar'
 import DesktopGrid from '../DesktopGrid/DesktopGrid'
 import ModalRoot from '../ModalRoot/ModalRoot'
@@ -15,7 +15,7 @@ const MainWindow: React.FC = () => {
   // TODO add startup sound after loading (note: it's blocked if user didn't interact with page)
 
   return (
-    <div css={mainWindowStyles}>
+    <MainWindowStyled>
       <ErrorBoundary>
         {!isDevelopment && isLoading ? (
           <StartupScreen isLoading={isLoading} />
@@ -27,7 +27,7 @@ const MainWindow: React.FC = () => {
           </React.Fragment>
         )}
       </ErrorBoundary>
-    </div>
+    </MainWindowStyled>
   )
 }
 

@@ -1,8 +1,8 @@
 import colors from '../../styles/colors.styles'
-import { css } from '@emotion/react'
 import cursorDefault from '../../static/cursor-default.png'
+import styled from '@emotion/styled'
 
-const mainWindowStyles = css`
+export const MainWindowStyled = styled.div`
   width: 100%;
   height: 100%;
   max-width: 1024px;
@@ -19,5 +19,3 @@ const mainWindowStyles = css`
     image-rendering: pixelated;
   }
 `
-
-export default mainWindowStyles
