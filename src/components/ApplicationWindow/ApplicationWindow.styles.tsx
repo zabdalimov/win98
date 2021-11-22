@@ -1,5 +1,4 @@
 import { css } from '@emotion/react'
-import colors from '../../styles/colors.styles'
 import mixins from '../../styles/mixins.styles'
 import { modalRootZindex } from '../ModalRoot/ModalRoot.styles'
 import styled from '@emotion/styled'
@@ -15,7 +14,7 @@ export const ApplicationWindowStyled = styled.div<{ isFocused: boolean }>`
   margin: auto;
   height: fit-content;
   width: fit-content;
-  background-color: ${colors.baseGray};
+  background-color: ${({ theme }) => theme.colors.baseGray};
   display: flex;
   flex-direction: column;
   ${({ isFocused }) =>
@@ -30,14 +29,15 @@ export const ApplicationWindowName = styled.span``
 
 export const ApplicationWindowHeader = styled.div<{ isFocused: boolean }>`
   padding: 2px 3px;
-  background-color: ${({ isFocused }) =>
-    isFocused ? colors.darkBlue : colors.darkGray};
+  background-color: ${({ isFocused, theme }) =>
+    isFocused ? theme.colors.darkBlue : theme.colors.darkGray};
   display: flex;
   align-items: center;
 
   > ${ApplicationWindowName} {
     font-size: 13px;
-    color: ${({ isFocused }) => (isFocused ? colors.white : colors.baseGray)};
+    color: ${({ isFocused, theme }) =>
+      isFocused ? theme.colors.white : theme.colors.baseGray};
     margin-left: 3px;
   }
 

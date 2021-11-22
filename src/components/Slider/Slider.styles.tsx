@@ -2,7 +2,6 @@ import styled from '@emotion/styled'
 import { SliderProps } from './Slider'
 import { css } from '@emotion/react'
 import mixins from '../../styles/mixins.styles'
-import colors from '../../styles/colors.styles'
 
 const sliderThumbWidth = 8
 const sliderThumbHeight = 18
@@ -52,7 +51,7 @@ export const SliderTrack = styled.div<Props>`
 // TODO customize cursor if windows had some
 export const SliderHandle = styled.div<Props>`
   ${mixins.triColorBorder};
-  background-color: ${colors.baseGray};
+  background-color: ${({ theme }) => theme.colors.baseGray};
   position: absolute;
   cursor: pointer;
 

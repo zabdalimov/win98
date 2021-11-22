@@ -1,4 +1,3 @@
-import colors from '../../styles/colors.styles'
 import cursorDefault from '../../static/cursor-default.png'
 import styled from '@emotion/styled'
 
@@ -10,7 +9,7 @@ export const MainWindowStyled = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${colors.desktopTheme};
+  background-color: ${({ theme }) => theme.colors.desktopTheme};
   cursor: url(${cursorDefault}), auto;
   font-family: Windows95, serif;
   user-select: none;
