@@ -1,7 +1,7 @@
 import { css } from '@emotion/react'
-import colors from '../../../styles/colors.styles'
 import styled from '@emotion/styled'
 import { ButtonStyled } from '../../Button/Button.styles'
+import { theme } from '../../../styles/theme'
 
 export const TaskEntryStyled = styled(ButtonStyled)`
   font-size: 11px;
@@ -12,7 +12,7 @@ export const TaskEntryStyled = styled(ButtonStyled)`
     isPushed
       ? css`
           font-weight: bold;
-          background-color: ${colors.lightGray};
+          background-color: ${theme.colors.lightGray};
         `
       : ''};
 

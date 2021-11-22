@@ -1,6 +1,5 @@
 import mixins from '../../../styles/mixins.styles'
 import sizings from '../../../styles/sizings.styles'
-import colors from '../../../styles/colors.styles'
 import SeparatorStyled from '../../Separator/Separator.styles'
 import styled from '@emotion/styled'
 
@@ -11,7 +10,7 @@ export const StartMenuStyled = styled.div`
   bottom: calc(${sizings.taskbarHeight} - 4px);
   padding: 3px 5px 3px 3px;
   display: flex;
-  background-color: ${colors.baseGray};
+  background-color: ${({ theme }) => theme.colors.baseGray};
   z-index: 200;
 `
 
@@ -21,8 +20,8 @@ export const StartMenuBlueLine = styled.div`
   align-items: center;
   width: 20px;
   padding: 4px 0 0 0;
-  color: ${colors.white};
-  background-color: ${colors.darkBlue};
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.darkBlue};
   writing-mode: vertical-lr;
   transform: rotate(180deg);
 `
@@ -52,7 +51,7 @@ export const StartMenuEntry = styled.div`
   }
 
   :hover {
-    background-color: ${colors.darkBlue};
-    color: ${colors.white};
+    background-color: ${({ theme }) => theme.colors.darkBlue};
+    color: ${({ theme }) => theme.colors.white};
   }
 `

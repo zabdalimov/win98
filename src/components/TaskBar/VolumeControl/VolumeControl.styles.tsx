@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
 import mixins from '../../../styles/mixins.styles'
 import sizings from '../../../styles/sizings.styles'
-import colors from '../../../styles/colors.styles'
 import { SliderStyled } from '../../Slider/Slider.styles'
 
 export const VolumeControlStyled = styled.div`
@@ -12,7 +11,7 @@ export const VolumeControlStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: ${colors.baseGray};
+  background-color: ${({ theme }) => theme.colors.baseGray};
   z-index: 200;
 
   & > p {

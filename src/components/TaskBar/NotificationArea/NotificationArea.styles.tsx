@@ -1,4 +1,3 @@
-import colors from '../../../styles/colors.styles'
 import { IconStyled } from '../../Icon/Icon.styles'
 import { VolumeControlStyled } from '../VolumeControl/VolumeControl.styles'
 import styled from '@emotion/styled'
@@ -9,10 +8,10 @@ export const NotificationAreaStyled = styled.div`
   display: flex;
   align-items: center;
   padding: 2px;
-  border-top: 1px solid ${colors.darkGray};
-  border-left: 1px solid ${colors.darkGray};
-  border-right: 1px solid ${colors.white};
-  border-bottom: 1px solid ${colors.white};
+  border-top: 1px solid ${({ theme }) => theme.colors.darkGray};
+  border-left: 1px solid ${({ theme }) => theme.colors.darkGray};
+  border-right: 1px solid ${({ theme }) => theme.colors.white};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.white};
 
   ${VolumeControlStyled} {
     right: 50px;

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import startupImage from '../../static/images/startup-image.jpeg'
-import colors from '../../styles/colors.styles'
 
 export const StartupScreenStyled = styled.div`
   width: 100%;
@@ -19,7 +18,7 @@ export const StartupScreenLoading = styled.div`
   background: linear-gradient(
     0.25turn,
     transparent,
-    ${colors.lightBlue} 45% 55%,
+    ${({ theme }) => theme.colors.lightBlue} 45% 55%,
     transparent
   );
 
