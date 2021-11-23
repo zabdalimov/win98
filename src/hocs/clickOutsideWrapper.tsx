@@ -1,16 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { Ref, useEffect, useRef, useState } from 'react'
 
 export interface ClickOutsideWrapperProps {
   isOpen: boolean
   toggleIsOpen: () => void
-  wrapperRef: React.RefObject<any>
+  // TODO need more generic type, HTMLElement doesn't work here for some reason
+  wrapperRef: Ref<HTMLDivElement>
 }
 
 export function clickOutsideWrapper<Props>(
   Component: React.FC<Props & ClickOutsideWrapperProps>
 ): React.FC<Props> {
   return function WrappedComponent(props) {
-    const ref = useRef<HTMLElement>(null)
+    const ref = useRef<HTMLDivElement>(null)
     const [isOpen, setIsOpen] = useState(false)
     const toggleIsOpen = () => setIsOpen((prevState) => !prevState)
 

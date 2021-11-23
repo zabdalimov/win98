@@ -5,6 +5,7 @@
     "node": true
   },
   "extends": [
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
@@ -24,6 +25,7 @@
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": 0,
     "linebreak-style": ["error", "unix"],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
