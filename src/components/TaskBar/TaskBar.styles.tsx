@@ -1,5 +1,7 @@
-import SeparatorStyled from '../Separator/Separator.styles'
 import styled from '@emotion/styled'
+
+import SeparatorStyled from '../Separator/Separator.styles'
+
 import { NotificationAreaStyled } from './NotificationArea/NotificationArea.styles'
 
 export const TaskBarStyled = styled.div`

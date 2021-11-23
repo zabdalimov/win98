@@ -1,5 +1,6 @@
-import cursorDefault from '../../static/cursor-default.png'
 import styled from '@emotion/styled'
+
+import cursorDefault from '../../static/cursor-default.png'
 
 export const MainWindowStyled = styled.div`
   width: 100%;

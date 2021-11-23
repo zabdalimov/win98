@@ -1,7 +1,9 @@
 import React from 'react'
-import { VolumeControlStyled } from './VolumeControl.styles'
-import { Slider } from '../../Slider/Slider'
+
 import { playAudio } from '../../../audio'
+import { Slider } from '../../Slider/Slider'
+
+import { VolumeControlStyled } from './VolumeControl.styles'
 
 export const VolumeControl: React.FC = () => {
   const onHandleRelease = (value: number) => {

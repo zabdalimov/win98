@@ -1,5 +1,6 @@
-import mixins from '../../styles/mixins.styles'
 import styled from '@emotion/styled'
+
+import mixins from '../../styles/mixins.styles'
 
 export const MenuBarEntryStyled = styled.button`
   background-color: ${({ theme }) => theme.colors.baseGray};

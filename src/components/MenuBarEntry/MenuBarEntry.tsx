@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { MenuBarEntryStyled } from './MenuBarEntry.styles'
 
 interface MenuBarEntryProps {

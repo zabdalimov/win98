@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+
 import mixins from '../../../styles/mixins.styles'
 import { SliderStyled } from '../../Slider/Slider.styles'
 

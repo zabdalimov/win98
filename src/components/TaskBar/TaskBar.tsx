@@ -1,14 +1,16 @@
 import React from 'react'
-import StartButton from './StartButton/StartButton'
-import Separator from '../Separator/Separator'
-import DateTimeSection from './NotificationArea/NotificationArea'
-import useCurrentDate from '../../hooks/useCurrentDate'
 import { useDispatch, useSelector } from 'react-redux'
-import { selectOpenedApplications } from '../../store/application/selectors'
+
+import useCurrentDate from '../../hooks/useCurrentDate'
 import { changeApplicationFocus } from '../../store/application/actions'
-import TaskEntry from './TaskEntry/TaskEntry'
 import { Application } from '../../store/application/reducer'
+import { selectOpenedApplications } from '../../store/application/selectors'
+import Separator from '../Separator/Separator'
+
+import DateTimeSection from './NotificationArea/NotificationArea'
+import StartButton from './StartButton/StartButton'
 import { TaskBarStyled } from './TaskBar.styles'
+import TaskEntry from './TaskEntry/TaskEntry'
 
 const TaskBar: React.FC = () => {
   const applications = useSelector(selectOpenedApplications)

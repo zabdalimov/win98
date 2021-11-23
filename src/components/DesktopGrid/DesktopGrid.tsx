@@ -1,9 +1,11 @@
 import React from 'react'
-import { DesktopGridEntry, DesktopGridStyled } from './DesktopGrid.styles'
-import Icon from '../Icon/Icon'
 import { useDispatch } from 'react-redux'
+
 import { openApplication } from '../../store/application/actions'
 import { ApplicationType } from '../../store/application/ApplicationType'
+import Icon from '../Icon/Icon'
+
+import { DesktopGridEntry, DesktopGridStyled } from './DesktopGrid.styles'
 
 const DesktopGrid: React.FC = () => {
   const dispatch = useDispatch()

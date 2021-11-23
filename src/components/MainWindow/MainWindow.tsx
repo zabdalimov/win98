@@ -1,12 +1,14 @@
 import React from 'react'
-import { MainWindowStyled } from './MainWindow.styles'
-import TaskBar from '../TaskBar/TaskBar'
-import DesktopGrid from '../DesktopGrid/DesktopGrid'
-import ModalRoot from '../ModalRoot/ModalRoot'
-import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary'
-import { StartupScreen } from '../StartupScreen/StartupScreen'
-import useStartup from '../../hooks/useStartup'
+
 import { useEnvConfig } from '../../hooks/useEnvConfig'
+import useStartup from '../../hooks/useStartup'
+import DesktopGrid from '../DesktopGrid/DesktopGrid'
+import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary'
+import ModalRoot from '../ModalRoot/ModalRoot'
+import { StartupScreen } from '../StartupScreen/StartupScreen'
+import TaskBar from '../TaskBar/TaskBar'
+
+import { MainWindowStyled } from './MainWindow.styles'
 
 const MainWindow: React.FC = () => {
   const { isDevelopment } = useEnvConfig()

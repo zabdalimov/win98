@@ -1,7 +1,8 @@
 import { css } from '@emotion/react'
 import styled from '@emotion/styled'
-import { ButtonStyled } from '../../Button/Button.styles'
+
 import { theme } from '../../../styles/theme'
+import { ButtonStyled } from '../../Button/Button.styles'
 
 export const TaskEntryStyled = styled(ButtonStyled)`
   font-size: 11px;

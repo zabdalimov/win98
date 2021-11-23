@@ -1,5 +1,6 @@
-import mixins from '../../styles/mixins.styles'
 import styled from '@emotion/styled'
+
+import mixins from '../../styles/mixins.styles'
 
 export const DesktopGridStyled = styled.div`
   height: calc(100% - ${({ theme }) => theme.sizings.taskbarHeight});

@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import { SliderHandle, SliderStyled, SliderTrack } from './Slider.styles'
+
 import { clamp } from '../../utils/math'
+
+import { SliderHandle, SliderStyled, SliderTrack } from './Slider.styles'
 
 export type SliderOrientation = 'horizontal' | 'vertical'
 

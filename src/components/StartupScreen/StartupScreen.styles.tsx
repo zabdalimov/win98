@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+
 import startupImage from '../../static/images/startup-image.jpeg'
 
 export const StartupScreenStyled = styled.div`

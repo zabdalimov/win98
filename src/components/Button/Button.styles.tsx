@@ -1,6 +1,8 @@
-import mixins from '../../styles/mixins.styles'
-import { ButtonProps } from './Button'
 import styled from '@emotion/styled'
+
+import mixins from '../../styles/mixins.styles'
+
+import { ButtonProps } from './Button'
 
 export const ButtonStyled = styled.button<ButtonProps>`
   ${mixins.standardBorder};

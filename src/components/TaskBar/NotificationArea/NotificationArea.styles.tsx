@@ -1,6 +1,7 @@
+import styled from '@emotion/styled'
+
 import { IconStyled } from '../../Icon/Icon.styles'
 import { VolumeControlStyled } from '../VolumeControl/VolumeControl.styles'
-import styled from '@emotion/styled'
 
 // TODO extract border styles this as mixin or component
 export const NotificationAreaStyled = styled.div`

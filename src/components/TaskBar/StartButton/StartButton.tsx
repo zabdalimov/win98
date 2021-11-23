@@ -1,11 +1,13 @@
 import React from 'react'
-import logo from '../../../static/icons/w98-icon.png'
-import Icon from '../../Icon/Icon'
-import StartMenu from '../StartMenu/StartMenu'
+
 import {
   clickOutsideWrapper,
   ClickOutsideWrapperProps,
 } from '../../../hocs/clickOutsideWrapper'
+import logo from '../../../static/icons/w98-icon.png'
+import Icon from '../../Icon/Icon'
+import StartMenu from '../StartMenu/StartMenu'
+
 import {
   StartButtonContainer,
   StartButtonStyled,

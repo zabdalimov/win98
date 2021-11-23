@@ -1,17 +1,19 @@
+import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { useDrag } from '../../hooks/useDrag'
+import closeButtonIcon from '../../static/icons/close-button-icon.png'
+import { changeApplicationFocus } from '../../store/application/actions'
+import { Application } from '../../store/application/reducer'
+import Button from '../Button/Button'
+import Icon from '../Icon/Icon'
+
 import {
   ApplicationWindowContents,
   ApplicationWindowHeader,
   ApplicationWindowName,
   ApplicationWindowStyled,
 } from './ApplicationWindow.styles'
-import React, { useRef } from 'react'
-import Button from '../Button/Button'
-import Icon from '../Icon/Icon'
-import closeButtonIcon from '../../static/icons/close-button-icon.png'
-import { useDrag } from '../../hooks/useDrag'
-import { useDispatch } from 'react-redux'
-import { changeApplicationFocus } from '../../store/application/actions'
-import { Application } from '../../store/application/reducer'
 
 interface Props {
   application: Application

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { IconStyled } from './Icon.styles'
 
 export interface IconProps {

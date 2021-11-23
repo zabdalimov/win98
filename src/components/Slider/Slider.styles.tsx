@@ -1,7 +1,9 @@
-import styled from '@emotion/styled'
-import { SliderProps } from './Slider'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
+
 import mixins from '../../styles/mixins.styles'
+
+import { SliderProps } from './Slider'
 
 const sliderThumbWidth = 8
 const sliderThumbHeight = 18

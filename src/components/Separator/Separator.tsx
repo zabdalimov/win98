@@ -1,4 +1,5 @@
 import React from 'react'
+
 import SeparatorStyled from './Separator.styles'
 
 export interface SeparatorProps {

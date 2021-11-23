@@ -1,7 +1,9 @@
 import { css } from '@emotion/react'
-import { SeparatorProps } from './Separator'
 import styled from '@emotion/styled'
+
 import { theme } from '../../styles/theme'
+
+import { SeparatorProps } from './Separator'
 
 const verticalStyles = css`
   width: 2px;

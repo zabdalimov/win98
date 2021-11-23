@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+
 import { randomIntFromInterval } from '../utils/math'
 
 export default function useStartup(minTimeMs: number, maxTimeMs: number) {

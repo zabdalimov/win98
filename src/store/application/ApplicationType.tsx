@@ -1,14 +1,15 @@
-import React from 'react'
 import { css } from '@emotion/react'
-import myComputerIcon from '../../static/icons/my-computer-icon.png'
-import myComputerSmIcon from '../../static/icons/my-computer-sm-icon.png'
-import recycleBinEmptyIcon from '../../static/icons/recycle-bin-empty-icon.png'
-import recycleBinEmptySmIcon from '../../static/icons/recycle-bin-empty-sm-icon.png'
+import React from 'react'
+
+import Notepad from '../../components/applications/Notepad/Notepad'
 import ieIcon from '../../static/icons/ie-icon.png'
 import ieSmIcon from '../../static/icons/ie-sm-icon.png'
+import myComputerIcon from '../../static/icons/my-computer-icon.png'
+import myComputerSmIcon from '../../static/icons/my-computer-sm-icon.png'
 import notepadIcon from '../../static/icons/notepad-icon.png'
 import notepadSmIcon from '../../static/icons/notepad-sm-icon.png'
-import Notepad from '../../components/applications/Notepad/Notepad'
+import recycleBinEmptyIcon from '../../static/icons/recycle-bin-empty-icon.png'
+import recycleBinEmptySmIcon from '../../static/icons/recycle-bin-empty-sm-icon.png'
 
 const dummyContent = (
   <div

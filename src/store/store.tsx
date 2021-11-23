@@ -1,4 +1,5 @@
 import { combineReducers, createStore } from 'redux'
+
 import { applicationReducer } from './application/reducer'
 
 const rootReducer = combineReducers({

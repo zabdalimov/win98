@@ -1,6 +1,8 @@
 import React from 'react'
-import { BlueScreen } from './BlueScreen'
+
 import { getFirstPathFromStackTrace } from '../../utils/error'
+
+import { BlueScreen } from './BlueScreen'
 
 interface State {
   error: Error | null

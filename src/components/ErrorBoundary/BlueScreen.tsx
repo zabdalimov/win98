@@ -1,9 +1,10 @@
+import React from 'react'
+
 import {
   BlueScreenHeading,
   BlueScreenStyled,
   BlueScreenText,
 } from './BlueScreen.styles'
-import React from 'react'
 
 interface Props {
   headingText?: string

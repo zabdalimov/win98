@@ -1,16 +1,18 @@
 import React from 'react'
-import Icon, { IconProps } from '../../Icon/Icon'
+
+import {
+  clickOutsideWrapper,
+  ClickOutsideWrapperProps,
+} from '../../../hocs/clickOutsideWrapper'
 import soundIcon from '../../../static/icons/sound-icon.png'
+import Icon, { IconProps } from '../../Icon/Icon'
+import { VolumeControl } from '../VolumeControl/VolumeControl'
+
 import {
   NotificationAreaIconSection,
   NotificationAreaStyled,
   NotificationAreaTime,
 } from './NotificationArea.styles'
-import {
-  clickOutsideWrapper,
-  ClickOutsideWrapperProps,
-} from '../../../hocs/clickOutsideWrapper'
-import { VolumeControl } from '../VolumeControl/VolumeControl'
 
 interface Props {
   date: Date

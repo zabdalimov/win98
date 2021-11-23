@@ -1,7 +1,9 @@
-import { Application } from '../../../store/application/reducer'
 import React from 'react'
-import { TaskEntryStyled } from './TaskEntry.styles'
+
+import { Application } from '../../../store/application/reducer'
 import Icon from '../../Icon/Icon'
+
+import { TaskEntryStyled } from './TaskEntry.styles'
 
 interface Props {
   application: Application

@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+
 import Button from '../../Button/Button'
 
 // When trying to style component from the outside, use this instead of StartButtonStyled
