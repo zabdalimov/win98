@@ -24,47 +24,7 @@
   },
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "rules": {
-    "indent": 0,
-    "@typescript-eslint/ban-ts-ignore": 0,
-    "@typescript-eslint/camelcase": 0,
-    "@typescript-eslint/member-delimiter-style": 0,
-    "@typescript-eslint/no-non-null-assertion": 0,
-    "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/no-explicit-any": 0,
-    "@typescript-eslint/explicit-module-boundary-types": 0,
     "linebreak-style": ["error", "unix"],
-    "quotes": [
-      "error",
-      "single",
-      { "allowTemplateLiterals": true, "avoidEscape": true }
-    ],
-    "semi": ["error", "never"],
-    "comma-dangle": [
-      "warn",
-      {
-        "arrays": "always-multiline",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "never"
-      }
-    ],
-    "react/sort-comp": 0,
-    "react/require-render-return": 0,
-    "react/require-default-props": 0,
-    "react/prop-types": 0,
-    "react/prefer-stateless-function": 0,
-    "react/prefer-es6-class": 0,
-    "react/no-unused-state": 0,
-    "react/no-unsafe": 0,
-    "react/no-string-refs": 0,
-    "react/no-typos": 0,
-    "react/no-set-state": 0,
-    "react/no-redundant-should-component-update": 0,
-    "react/no-multi-comp": 0,
-    "react/no-deprecated": 0,
-    "react/default-props-match-prop-types": 0,
-    "react/jsx-no-bind": 0,
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
