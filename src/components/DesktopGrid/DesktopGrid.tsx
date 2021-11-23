@@ -1,5 +1,5 @@
 import React from 'react'
-import desktopGridStyles from './DesktopGrid.styles'
+import { DesktopGridEntry, DesktopGridStyled } from './DesktopGrid.styles'
 import Icon from '../Icon/Icon'
 import { useDispatch } from 'react-redux'
 import { openApplication } from '../../store/application/actions'
@@ -15,18 +15,14 @@ const DesktopGrid: React.FC = () => {
   }
 
   return (
-    <div css={desktopGridStyles.desktopGrid}>
+    <DesktopGridStyled>
       {applicationTypes.map((at) => (
-        <button
-          key={at.name}
-          css={desktopGridStyles.desktopGridEntry}
-          onDoubleClick={() => onDoubleClick(at)}
-        >
+        <DesktopGridEntry key={at.name} onDoubleClick={() => onDoubleClick(at)}>
           <Icon src={at.iconSrc} alt={at.name} />
           <span>{at.name}</span>
-        </button>
+        </DesktopGridEntry>
       ))}
-    </div>
+    </DesktopGridStyled>
   )
 }
 
