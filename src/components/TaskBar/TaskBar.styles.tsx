@@ -1,10 +1,9 @@
-import sizings from '../../styles/sizings.styles'
 import SeparatorStyled from '../Separator/Separator.styles'
 import styled from '@emotion/styled'
 import { NotificationAreaStyled } from './NotificationArea/NotificationArea.styles'
 
 export const TaskBarStyled = styled.div`
-  height: ${sizings.taskbarHeight};
+  height: ${({ theme }) => theme.sizings.taskbarHeight};
   display: flex;
   align-items: center;
   margin-top: auto;

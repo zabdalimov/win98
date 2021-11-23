@@ -1,5 +1,4 @@
 import mixins from '../../../styles/mixins.styles'
-import sizings from '../../../styles/sizings.styles'
 import SeparatorStyled from '../../Separator/Separator.styles'
 import styled from '@emotion/styled'
 
@@ -7,7 +6,7 @@ export const StartMenuStyled = styled.div`
   ${mixins.standardBorder};
   width: 176px;
   position: absolute;
-  bottom: calc(${sizings.taskbarHeight} - 4px);
+  bottom: calc(${({ theme }) => theme.sizings.taskbarHeight} - 4px);
   padding: 3px 5px 3px 3px;
   display: flex;
   background-color: ${({ theme }) => theme.colors.baseGray};

@@ -1,9 +1,8 @@
-import sizings from '../../styles/sizings.styles'
 import mixins from '../../styles/mixins.styles'
 import styled from '@emotion/styled'
 
 export const DesktopGridStyled = styled.div`
-  height: calc(100% - ${sizings.taskbarHeight});
+  height: calc(100% - ${({ theme }) => theme.sizings.taskbarHeight});
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

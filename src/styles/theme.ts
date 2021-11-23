@@ -12,4 +12,7 @@ export const theme = {
 
     desktopTheme: '#008080',
   },
+  sizings: {
+    taskbarHeight: '27px',
+  },
 }
