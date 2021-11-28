@@ -1,7 +1,7 @@
+import { useMemo } from 'react'
+
+import { getEnvConfig } from '../utils/env'
+
 export function useEnvConfig() {
-  const env = process.env.NODE_ENV
-  return {
-    env,
-    isDevelopment: env === 'development',
-  }
+  return useMemo(() => getEnvConfig(), [])
 }

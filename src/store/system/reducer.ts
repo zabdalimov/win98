@@ -1,3 +1,5 @@
+import { getEnvConfig } from '../../utils/env'
+
 import {
   CHANGE_BIOS_LOADING_STATUS,
   CHANGE_WINDOWS_LOADING_STATUS,
@@ -10,8 +12,8 @@ export interface SystemState {
 }
 
 const initialState: SystemState = {
-  isBiosLoaded: false,
-  isWindowsLoaded: false,
+  isBiosLoaded: getEnvConfig().isDevelopment,
+  isWindowsLoaded: getEnvConfig().isDevelopment,
 }
 
 export function systemReducer(
