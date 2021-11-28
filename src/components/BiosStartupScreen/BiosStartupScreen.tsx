@@ -2,6 +2,7 @@ import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
 
 import { useBrowserInfo } from '../../hooks/useBrowserInfo'
+import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
 import { useSystem } from '../../hooks/useSystem'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
 
@@ -84,15 +85,7 @@ export const BiosStartupScreen: React.FC = () => {
     })()
   }, [browserInfo.storageEstimate])
 
-  useEffect(() => {
-    const goToWindows = (event: KeyboardEvent) => {
-      if (event.key === 'Enter') {
-        setBiosIsLoaded()
-      }
-    }
-    window.addEventListener('keydown', goToWindows)
-    return () => window.removeEventListener('keydown', goToWindows)
-  })
+  useOnKeyDownOnce('Enter', setBiosIsLoaded)
 
   // TODO add gradual loading of all info entries
 
