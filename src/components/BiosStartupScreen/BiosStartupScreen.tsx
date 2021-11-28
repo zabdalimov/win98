@@ -5,6 +5,7 @@ import { useBrowserInfo } from '../../hooks/useBrowserInfo'
 import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
 import { useSystem } from '../../hooks/useSystem'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
+import { isNumber } from '../../utils/math'
 
 export const BiosStartupScreenStyled = styled.div`
   height: 100%;
@@ -126,6 +127,42 @@ export const BiosStartupScreen: React.FC = () => {
                 />
               </React.Fragment>
             )}
+          </tbody>
+        </table>
+        <table>
+          <tbody>
+            <BiosInfoEntry
+              label="Bandwidth Estimated"
+              value={
+                isNumber(browserInfo.connection.downlink)
+                  ? `${browserInfo.connection.downlink}Mbps`
+                  : FALLBACK_LABEL
+              }
+            />
+            <BiosInfoEntry
+              label="Bandwidth Max"
+              value={
+                isNumber(browserInfo.connection.downlinkMax)
+                  ? `${browserInfo.connection.downlinkMax}Mbps`
+                  : FALLBACK_LABEL
+              }
+            />
+            <BiosInfoEntry
+              label="Ping"
+              value={
+                isNumber(browserInfo.connection.rtt)
+                  ? `${browserInfo.connection.rtt}ms`
+                  : FALLBACK_LABEL
+              }
+            />
+            <BiosInfoEntry
+              label="Connection Type"
+              value={browserInfo.connection.type ?? FALLBACK_LABEL}
+            />
+            <BiosInfoEntry
+              label="Connection Effective Type"
+              value={browserInfo.connection.effectiveType ?? FALLBACK_LABEL}
+            />
           </tbody>
         </table>
         <p>
