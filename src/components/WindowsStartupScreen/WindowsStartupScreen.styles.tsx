@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 
 import startupImage from '../../static/images/startup-image.jpeg'
 
-export const StartupScreenStyled = styled.div`
+export const WindowsStartupScreenStyled = styled.div`
   width: 100%;
   height: 100%;
 
@@ -13,7 +13,7 @@ export const StartupScreenStyled = styled.div`
   background-size: cover;
 `
 
-export const StartupScreenLoading = styled.div`
+export const WindowsStartupScreenLoading = styled.div`
   width: 100%;
   height: 12px;
   background: linear-gradient(
