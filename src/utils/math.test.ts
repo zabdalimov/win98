@@ -52,5 +52,12 @@ describe('math', () => {
         expect(result).toBeLessThanOrEqual(-4)
       }
     })
+
+    it('generates same int between same min and max', () => {
+      for (let i = 0; i < 10; i++) {
+        const result = randomIntFromInterval(5, 5)
+        expect(result).toBe(5)
+      }
+    })
   })
 })
