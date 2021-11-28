@@ -8,6 +8,7 @@ export const DesktopGridStyled = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   align-content: start;
+  background-color: ${({ theme }) => theme.colors.desktopTheme};
 `
 
 export const DesktopGridEntry = styled.button`

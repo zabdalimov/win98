@@ -10,7 +10,6 @@ export const MainWindowStyled = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.desktopTheme};
   cursor: url(${cursorDefault}), auto;
   font-family: ${({ theme }) => theme.fontFamilies.windows95};
   user-select: none;
