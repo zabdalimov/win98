@@ -1,9 +1,8 @@
 import React, { useRef } from 'react'
-import { useDispatch } from 'react-redux'
 
+import { useApplications } from '../../hooks/useApplications'
 import { useDrag } from '../../hooks/useDrag'
 import closeButtonIcon from '../../static/icons/close-button-icon.png'
-import { changeApplicationFocus } from '../../store/application/actions'
 import { Application } from '../../store/application/reducer'
 import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
@@ -28,16 +27,13 @@ const ApplicationWindow: React.FC<Props> = ({
   const { applicationType, isFocused } = application
   const ref = useRef<HTMLDivElement>(null)
 
-  const dispatch = useDispatch()
-  const focus = () =>
-    dispatch(changeApplicationFocus(applicationType.name, true))
-
+  const { focusApplication } = useApplications()
   const { onMouseDown } = useDrag({ ref })
 
   return (
     <ApplicationWindowStyled
       isFocused={isFocused}
-      onMouseDown={focus}
+      onMouseDown={() => focusApplication(applicationType.name)}
       ref={ref}
     >
       <ApplicationWindowHeader isFocused={isFocused} onMouseDown={onMouseDown}>

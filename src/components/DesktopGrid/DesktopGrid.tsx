@@ -1,19 +1,18 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
 
-import { openApplication } from '../../store/application/actions'
+import { useApplications } from '../../hooks/useApplications'
 import { ApplicationType } from '../../store/application/ApplicationType'
 import Icon from '../Icon/Icon'
 
 import { DesktopGridEntry, DesktopGridStyled } from './DesktopGrid.styles'
 
 const DesktopGrid: React.FC = () => {
-  const dispatch = useDispatch()
+  const { openApplication } = useApplications()
 
   const applicationTypes = ApplicationType.All
 
   const onDoubleClick = (applicationType: ApplicationType) => {
-    dispatch(openApplication(applicationType))
+    openApplication(applicationType)
   }
 
   return (
