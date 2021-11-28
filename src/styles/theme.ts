@@ -12,6 +12,10 @@ export const theme = {
 
     desktopTheme: '#008080',
   },
+  fontFamilies: {
+    windows95: 'Windows95, serif',
+    dos: 'DOS, serif',
+  },
   sizings: {
     taskbarHeight: '27px',
   },

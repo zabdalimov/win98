@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 
-// TODO there is a different font here
 export const BlueScreenStyled = styled.div`
   width: 100%;
   height: 100%;
@@ -11,6 +10,8 @@ export const BlueScreenStyled = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  font-family: ${({ theme }) => theme.fontFamilies.dos};
 
   background-color: ${({ theme }) => theme.colors.blue};
 `

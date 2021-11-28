@@ -4,6 +4,12 @@
   url(../static/fonts/w95fa.woff2) format('woff2');
 }
 
+/*TODO figure out which formats need to be added*/
+@font-face {
+  font-family: 'DOS';
+  src: url(../static/fonts/perfectDosVga437win.ttf);
+}
+
 html {
   height: 100%;
 }

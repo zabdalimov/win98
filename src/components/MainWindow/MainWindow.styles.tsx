@@ -12,7 +12,7 @@ export const MainWindowStyled = styled.div`
   flex-direction: column;
   background-color: ${({ theme }) => theme.colors.desktopTheme};
   cursor: url(${cursorDefault}), auto;
-  font-family: Windows95, serif;
+  font-family: ${({ theme }) => theme.fontFamilies.windows95};
   user-select: none;
 
   img {
