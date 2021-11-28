@@ -9,6 +9,7 @@
     "test": "react-app-rewired test --passWithNoTests",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "yarn lint --fix",
+    "lint:verbose": "DEBUG=eslint:cli-engine yarn lint",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
