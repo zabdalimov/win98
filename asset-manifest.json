@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/win98/static/css/main.51737df2.chunk.css",
-    "main.js": "/win98/static/js/main.a9fea6ee.chunk.js",
-    "main.js.map": "/win98/static/js/main.a9fea6ee.chunk.js.map",
+    "main.js": "/win98/static/js/main.4aa4b186.chunk.js",
+    "main.js.map": "/win98/static/js/main.4aa4b186.chunk.js.map",
     "runtime-main.js": "/win98/static/js/runtime-main.391a1df6.js",
     "runtime-main.js.map": "/win98/static/js/runtime-main.391a1df6.js.map",
     "static/js/2.db636c07.chunk.js": "/win98/static/js/2.db636c07.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.391a1df6.js",
     "static/js/2.db636c07.chunk.js",
     "static/css/main.51737df2.chunk.css",
-    "static/js/main.a9fea6ee.chunk.js"
+    "static/js/main.4aa4b186.chunk.js"
   ]
 }
