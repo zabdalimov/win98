@@ -3,7 +3,7 @@ Windows 98 recreation attempt using TypeScript and React.
 
 ![Demo Screenshot](demo-screen.png)
 
-Features:
+## ![My Computer Icon](src/static/icons/my-computer-icon.png) Features
 * Classic BIOS Energy Star startup screen
 * Classic Windows startup screen and sound
 * Multi-window application management integrated with taskbar
