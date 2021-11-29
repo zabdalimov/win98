@@ -4,8 +4,12 @@ import React, { useEffect, useState } from 'react'
 import { useBrowserInfo } from '../../hooks/useBrowserInfo'
 import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
 import { useSystem } from '../../hooks/useSystem'
+import energyStarBlueMan from '../../static/images/energy-star-blue-man.png'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
 import { isNumber } from '../../utils/math'
+
+import { BiosInfoEntry } from './BiosInfoEntry'
+import { BiosInfoSection, BiosInfoSectionStyled } from './BiosInfoSection'
 
 export const BiosStartupScreenStyled = styled.div`
   height: 100%;
@@ -15,7 +19,7 @@ export const BiosStartupScreenStyled = styled.div`
   background-color: ${({ theme }) => theme.colors.black};
 `
 
-const BiosInfoSection = styled.div`
+const BiosInfoSections = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -23,7 +27,7 @@ const BiosInfoSection = styled.div`
   font-family: ${({ theme }) => theme.fontFamilies.dos};
   font-size: 26px;
 
-  > table {
+  > ${BiosInfoSectionStyled} {
     margin-bottom: 26px;
   }
 
@@ -35,14 +39,12 @@ const BiosInfoSection = styled.div`
   }
 `
 
-const EnergyStarLogo = styled.img`
-  margin-left: auto;
+const BiosLink = styled.a`
+  color: inherit;
 `
 
-const BiosInfoEntryStyled = styled.tr`
-  > td {
-    vertical-align: top;
-  }
+const EnergyStarLogo = styled.img`
+  margin-left: auto;
 `
 
 const FALLBACK_LABEL = 'Unknown'
@@ -56,19 +58,6 @@ const getStorageUsage = ({ usage, quota }: StorageEstimate) => {
   } else {
     return FALLBACK_LABEL
   }
-}
-
-const BiosInfoEntry: React.FC<{ label: string; value: string | number }> = ({
-  label,
-  value,
-}) => {
-  return (
-    <BiosInfoEntryStyled>
-      <td>{label}</td>
-      <td>:</td>
-      <td>{value}</td>
-    </BiosInfoEntryStyled>
-  )
 }
 
 export const BiosStartupScreen: React.FC = () => {
@@ -92,83 +81,94 @@ export const BiosStartupScreen: React.FC = () => {
 
   return (
     <BiosStartupScreenStyled>
-      <BiosInfoSection>
-        <table>
-          <tbody>
-            <BiosInfoEntry label="Platform" value={browserInfo.platform} />
-            <BiosInfoEntry label="Agent" value={browserInfo.userAgent} />
-            <BiosInfoEntry label="Vendor" value={browserInfo.vendor} />
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            <BiosInfoEntry label="Cores" value={browserInfo.cores} />
-            <BiosInfoEntry
-              label="RAM"
-              value={
-                browserInfo.minimalRam
-                  ? `At Least ${browserInfo.minimalRam} GiB`
-                  : FALLBACK_LABEL
-              }
-            />
-            {loadedValues?.storageEstimate && (
-              <React.Fragment>
-                <BiosInfoEntry
-                  label="Storage Quota"
-                  value={
-                    loadedValues.storageEstimate.quota
-                      ? `${loadedValues.storageEstimate.quota}B`
-                      : FALLBACK_LABEL
-                  }
-                />
-                <BiosInfoEntry
-                  label="Storage Usage"
-                  value={getStorageUsage(loadedValues.storageEstimate)}
-                />
-              </React.Fragment>
-            )}
-          </tbody>
-        </table>
-        <table>
-          <tbody>
-            <BiosInfoEntry
-              label="Bandwidth Estimated"
-              value={
-                isNumber(browserInfo.connection.downlink)
-                  ? `${browserInfo.connection.downlink}Mbps`
-                  : FALLBACK_LABEL
-              }
-            />
-            <BiosInfoEntry
-              label="Bandwidth Max"
-              value={
-                isNumber(browserInfo.connection.downlinkMax)
-                  ? `${browserInfo.connection.downlinkMax}Mbps`
-                  : FALLBACK_LABEL
-              }
-            />
-            <BiosInfoEntry
-              label="Ping"
-              value={
-                isNumber(browserInfo.connection.rtt)
-                  ? `${browserInfo.connection.rtt}ms`
-                  : FALLBACK_LABEL
-              }
-            />
-            <BiosInfoEntry
-              label="Connection Type"
-              value={browserInfo.connection.type ?? FALLBACK_LABEL}
-            />
-            <BiosInfoEntry
-              label="Connection Effective Type"
-              value={browserInfo.connection.effectiveType ?? FALLBACK_LABEL}
-            />
-          </tbody>
-        </table>
+      <BiosInfoSections>
+        <BiosInfoSection>
+          <tr>
+            <td>
+              <img src={energyStarBlueMan} alt="Energy Star Blue Man" />
+            </td>
+            <td>
+              <BiosLink
+                href="https://github.com/zabdalimov/win98"
+                target="_blank"
+                rel="noreferrer"
+              >
+                https://github.com/zabdalimov/win98
+              </BiosLink>
+              <p>No License For Now (?) 2020-{new Date().getFullYear()}</p>
+            </td>
+          </tr>
+        </BiosInfoSection>
+        <BiosInfoSection>
+          <BiosInfoEntry label="Platform" value={browserInfo.platform} />
+          <BiosInfoEntry label="Agent" value={browserInfo.userAgent} />
+          <BiosInfoEntry label="Vendor" value={browserInfo.vendor} />
+        </BiosInfoSection>
+        <BiosInfoSection>
+          <BiosInfoEntry label="Cores" value={browserInfo.cores} />
+          <BiosInfoEntry
+            label="RAM"
+            value={
+              browserInfo.minimalRam
+                ? `At Least ${browserInfo.minimalRam} GiB`
+                : FALLBACK_LABEL
+            }
+          />
+          {loadedValues?.storageEstimate && (
+            <React.Fragment>
+              <BiosInfoEntry
+                label="Storage Quota"
+                value={
+                  loadedValues.storageEstimate.quota
+                    ? `${loadedValues.storageEstimate.quota}B`
+                    : FALLBACK_LABEL
+                }
+              />
+              <BiosInfoEntry
+                label="Storage Usage"
+                value={getStorageUsage(loadedValues.storageEstimate)}
+              />
+            </React.Fragment>
+          )}
+        </BiosInfoSection>
+        <BiosInfoSection>
+          <BiosInfoEntry
+            label="Bandwidth Estimated"
+            value={
+              isNumber(browserInfo.connection.downlink)
+                ? `${browserInfo.connection.downlink}Mbps`
+                : FALLBACK_LABEL
+            }
+          />
+          <BiosInfoEntry
+            label="Bandwidth Max"
+            value={
+              isNumber(browserInfo.connection.downlinkMax)
+                ? `${browserInfo.connection.downlinkMax}Mbps`
+                : FALLBACK_LABEL
+            }
+          />
+          <BiosInfoEntry
+            label="Ping"
+            value={
+              isNumber(browserInfo.connection.rtt)
+                ? `${browserInfo.connection.rtt}ms`
+                : FALLBACK_LABEL
+            }
+          />
+          <BiosInfoEntry
+            label="Connection Type"
+            value={browserInfo.connection.type ?? FALLBACK_LABEL}
+          />
+          <BiosInfoEntry
+            label="Connection Effective Type"
+            value={browserInfo.connection.effectiveType ?? FALLBACK_LABEL}
+          />
+        </BiosInfoSection>
         <p>
           Press <strong>ENTER</strong> to load WIN98
         </p>
-      </BiosInfoSection>
+      </BiosInfoSections>
       <EnergyStarLogo
         src={energyStarLogo}
         alt="Energy Star Logo"
