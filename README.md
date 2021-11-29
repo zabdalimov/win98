@@ -1,4 +1,4 @@
-# ![Windows 98 Logo](public/favicon.ico) win98
+# ![Windows 98 Logo](public/favicon.ico) win98 ![ci badge](https://github.com/zabdalimov/win98/actions/workflows/ci.yml/badge.svg) ![deploy badge](https://github.com/zabdalimov/win98/actions/workflows/deploy.yml/badge.svg)
 Windows 98 recreation attempt using TypeScript and React.
 
 ![Demo Screenshot](demo-screen.png)
