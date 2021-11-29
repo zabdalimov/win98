@@ -3,6 +3,13 @@ Windows 98 recreation attempt using TypeScript and React.
 
 ![Demo Screenshot](demo-screen.png)
 
+Features:
+* Classic BIOS Energy Star startup screen
+* Classic Windows startup screen and sound
+* Multi-window application management integrated with taskbar
+* Startup menu (useless for now...)
+* And more coming soon...
+
 ## ![Internet Explorer Icon](src/static/icons/ie-icon.png) Live Demo
 [Check out live demo on Github Pages](https://zabdalimov.github.io/win98).
 
