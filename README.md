@@ -7,6 +7,7 @@ Windows 98 recreation attempt using TypeScript and React.
 * Classic BIOS Energy Star startup screen
 * Classic Windows startup screen and sound
 * Multi-window application management integrated with taskbar
+* Sound control
 * Startup menu (useless for now...)
 * And more coming soon...
 
