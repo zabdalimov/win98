@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { playAudio } from '../../audio'
 import useStartup from '../../hooks/useStartup'
-import { useSystem } from '../../hooks/useSystem'
+import { useWindowsLoading } from '../../hooks/useWindowsLoading'
 
 import {
   WindowsStartupScreenLoading,
@@ -11,7 +11,7 @@ import {
 
 export const WindowsStartupScreen: React.FC = () => {
   // TODO mb add skip button
-  const { setWindowsIsLoaded } = useSystem()
+  const { setWindowsIsLoaded } = useWindowsLoading()
   const { isLoading } = useStartup(5000, 5000)
 
   useEffect(() => {

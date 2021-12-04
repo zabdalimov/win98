@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
 
+import { useBiosLoading } from '../../hooks/useBiosLoading'
 import { useBrowserInfo } from '../../hooks/useBrowserInfo'
 import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
-import { useSystem } from '../../hooks/useSystem'
 import energyStarBlueMan from '../../static/images/energy-star-blue-man.png'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
 import { isNumber } from '../../utils/math'
@@ -62,7 +62,7 @@ const getStorageUsage = ({ usage, quota }: StorageEstimate) => {
 
 export const BiosStartupScreen: React.FC = () => {
   const browserInfo = useBrowserInfo()
-  const { setBiosIsLoaded } = useSystem()
+  const { setBiosIsLoaded } = useBiosLoading()
 
   const [loadedValues, setLoadedValues] = useState<
     { storageEstimate: StorageEstimate } | undefined

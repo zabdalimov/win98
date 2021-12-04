@@ -1,6 +1,7 @@
 import React from 'react'
 
-import { useSystem } from '../../hooks/useSystem'
+import { useBiosLoading } from '../../hooks/useBiosLoading'
+import { useWindowsLoading } from '../../hooks/useWindowsLoading'
 import { BiosStartupScreen } from '../BiosStartupScreen/BiosStartupScreen'
 import DesktopGrid from '../DesktopGrid/DesktopGrid'
 import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary'
@@ -11,7 +12,8 @@ import { WindowsStartupScreen } from '../WindowsStartupScreen/WindowsStartupScre
 import { MainWindowStyled } from './MainWindow.styles'
 
 const MainWindow: React.FC = () => {
-  const { isBiosLoaded, isWindowsLoaded } = useSystem()
+  const { isWindowsLoaded } = useWindowsLoading()
+  const { isBiosLoaded } = useBiosLoading()
 
   return (
     <MainWindowStyled>
