@@ -24,10 +24,10 @@ yarn start # start web server
 After web server is started, go to http://localhost:3000 to see your Windows 98 desktop.
 
 ## ![Help Book Icon](src/static/icons/help-book-icon.png) Resources / Credits
-|               |                                                   |
-| ------------- | ------------------------------------------------- |
-| Icons         | https://win98icons.alexmeub.com                   |
-| Fonts         | https://fontsarena.com/w95fa-by-fontsarena        |
-|               | https://dafont.com/perfect-dos-vga-437.font       |
-| Sounds        | https://101soundboards.com                        |
-| Emulator      | https://copy.sh/v86/?profile=windows98            |
+|          |                                             |
+|----------|---------------------------------------------|
+| Icons    | https://win98icons.alexmeub.com             |
+| Fonts    | https://fontsarena.com/w95fa-by-fontsarena  |
+|          | https://dafont.com/perfect-dos-vga-437.font |
+| Sounds   | https://101soundboards.com                  |
+| Emulator | https://copy.sh/v86/?profile=windows98      |
