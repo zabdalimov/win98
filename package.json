@@ -6,7 +6,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test --passWithNoTests",
+    "test": "react-scripts test --passWithNoTests",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:verbose": "DEBUG=eslint:cli-engine yarn lint",
