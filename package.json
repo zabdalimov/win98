@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://zabdalimov.github.io/win98",
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test --passWithNoTests",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test --passWithNoTests",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "yarn lint --fix",
     "lint:verbose": "DEBUG=eslint:cli-engine yarn lint",
@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
+    "@craco/craco": "^6.4.3",
     "@emotion/babel-preset-css-prop": "^11.0.0",
     "@testing-library/dom": "^8.11.1",
     "@testing-library/jest-dom": "^5.11.4",
@@ -38,7 +39,6 @@
     "@types/react-redux": "^7.1.15",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
-    "customize-cra": "^1.0.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
@@ -48,7 +48,6 @@
     "gh-pages": "^3.1.0",
     "jest": "26.6.0",
     "prettier": "^2.2.1",
-    "react-app-rewired": "^2.1.8",
     "react-scripts": "^4.0.1",
     "ts-jest": "^26.5.6",
     "typescript": "^4.1.3"
