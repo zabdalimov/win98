@@ -27,6 +27,7 @@ interface Props {
 interface StartMenuEntry {
   icon: string
   label: string
+  disabled?: boolean
   onClick?: () => void
 }
 
@@ -37,23 +38,28 @@ const StartMenu: React.FC<Props> = ({ closeMenu }) => {
     {
       icon: winUpdate,
       label: 'Windows Update',
+      disabled: true,
     },
     'separator',
     {
       icon: dirExecIcon,
       label: 'Programs',
+      disabled: true,
     },
     {
       icon: settingsIcon,
       label: 'Settings',
+      disabled: true,
     },
     {
       icon: searchIcon,
       label: 'Find',
+      disabled: true,
     },
     {
       icon: applicationHourglassIcon,
       label: 'Run',
+      disabled: true,
     },
     {
       icon: helpIcon,
@@ -64,10 +70,12 @@ const StartMenu: React.FC<Props> = ({ closeMenu }) => {
     {
       icon: winKeyIcon,
       label: 'Log Off...',
+      disabled: true,
     },
     {
       icon: shutDownIcon,
       label: 'Shut Down...',
+      disabled: true,
     },
   ]
   return (
@@ -83,6 +91,7 @@ const StartMenu: React.FC<Props> = ({ closeMenu }) => {
             <StartMenuEntryComponent
               key={entry.label}
               onClick={() => entry.onClick?.() && closeMenu()}
+              disabled={entry.disabled}
             >
               <Icon src={entry.icon} alt={entry.label} />
               <span>{entry.label}</span>

@@ -1,3 +1,4 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 import mixins from '../../../styles/mixins.styles'
@@ -36,7 +37,7 @@ export const StartMenuEntries = styled.div`
   }
 `
 
-export const StartMenuEntry = styled.div`
+export const StartMenuEntry = styled.div<{ disabled?: boolean }>`
   font-size: 12px;
   display: flex;
   align-items: center;
@@ -50,8 +51,17 @@ export const StartMenuEntry = styled.div`
     margin-left: 13px;
   }
 
-  :hover {
-    background-color: ${({ theme }) => theme.colors.darkBlue};
-    color: ${({ theme }) => theme.colors.white};
-  }
+  ${({ disabled = false, theme }) =>
+    disabled
+      ? css`
+          // TODO move this somewhere, this is reusable
+          color: ${theme.colors.darkGray};
+          text-shadow: 1px 1px ${theme.colors.white};
+        `
+      : css`
+          :hover {
+            background-color: ${theme.colors.darkBlue};
+            color: ${theme.colors.white};
+          }
+        `}
 `
