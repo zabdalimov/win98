@@ -21,7 +21,7 @@ const StartButton: React.FC<ClickOutsideWrapperProps> = ({
 }) => {
   return (
     <StartButtonContainer ref={wrapperRef}>
-      {isOpen && <StartMenu />}
+      {isOpen && <StartMenu closeMenu={toggleIsOpen} />}
       <StartButtonStyled isPushed={isOpen} onClick={toggleIsOpen}>
         <Icon src={logo} alt="Windows 98 Icon" />
         <StartButtonText>Start</StartButtonText>

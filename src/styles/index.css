@@ -46,6 +46,10 @@ input:focus, textarea:focus {
   outline: none;
 }
 
+table, tbody, tr, th, td {
+  padding: 0;
+}
+
 #root {
   height: 100%;
   width: 100%;

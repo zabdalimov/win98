@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useApplications } from '../../../hooks/useApplications'
 import applicationHourglassIcon from '../../../static/icons/application-hourglass-icon.png'
 import dirExecIcon from '../../../static/icons/dir-exec-icon.png'
 import helpIcon from '../../../static/icons/help-book-icon.png'
@@ -8,6 +9,7 @@ import settingsIcon from '../../../static/icons/settings-icon.png'
 import shutDownIcon from '../../../static/icons/shut-down-icon.png'
 import winKeyIcon from '../../../static/icons/win-key-icon.png'
 import winUpdate from '../../../static/icons/win-update.png'
+import { ApplicationType } from '../../../store/application/ApplicationType'
 import Icon from '../../Icon/Icon'
 import Separator from '../../Separator/Separator'
 
@@ -18,12 +20,19 @@ import {
   StartMenuEntry as StartMenuEntryComponent,
 } from './StartMenu.styles'
 
+interface Props {
+  closeMenu: () => void
+}
+
 interface StartMenuEntry {
   icon: string
   label: string
+  onClick?: () => void
 }
 
-const StartMenu: React.FC = () => {
+const StartMenu: React.FC<Props> = ({ closeMenu }) => {
+  const { openApplication } = useApplications()
+
   const entries: (StartMenuEntry | 'separator')[] = [
     {
       icon: winUpdate,
@@ -43,12 +52,13 @@ const StartMenu: React.FC = () => {
       label: 'Find',
     },
     {
-      icon: helpIcon,
-      label: 'Help',
-    },
-    {
       icon: applicationHourglassIcon,
       label: 'Run',
+    },
+    {
+      icon: helpIcon,
+      label: 'About',
+      onClick: () => openApplication(ApplicationType.About),
     },
     'separator',
     {
@@ -70,7 +80,10 @@ const StartMenu: React.FC = () => {
           entry === 'separator' ? (
             <Separator key={index} />
           ) : (
-            <StartMenuEntryComponent key={entry.label}>
+            <StartMenuEntryComponent
+              key={entry.label}
+              onClick={() => entry.onClick?.() && closeMenu()}
+            >
               <Icon src={entry.icon} alt={entry.label} />
               <span>{entry.label}</span>
             </StartMenuEntryComponent>

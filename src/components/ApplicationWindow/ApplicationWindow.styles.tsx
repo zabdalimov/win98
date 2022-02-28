@@ -47,8 +47,3 @@ export const ApplicationWindowHeader = styled.div<{ isFocused: boolean }>`
     padding: 2px;
   }
 `
-
-export const ApplicationWindowContents = styled.div`
-  width: 600px;
-  height: 400px;
-`

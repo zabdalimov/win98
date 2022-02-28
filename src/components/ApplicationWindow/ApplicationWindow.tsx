@@ -8,7 +8,6 @@ import Button from '../Button/Button'
 import Icon from '../Icon/Icon'
 
 import {
-  ApplicationWindowContents,
   ApplicationWindowHeader,
   ApplicationWindowName,
   ApplicationWindowStyled,
@@ -43,7 +42,7 @@ const ApplicationWindow: React.FC<Props> = ({
           <Icon src={closeButtonIcon} alt={'Close button'} />
         </Button>
       </ApplicationWindowHeader>
-      <ApplicationWindowContents>{children}</ApplicationWindowContents>
+      {children}
     </ApplicationWindowStyled>
   )
 }

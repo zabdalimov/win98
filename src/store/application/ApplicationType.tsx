@@ -1,7 +1,10 @@
 import { css } from '@emotion/react'
 import React from 'react'
 
+import { AboutApplication } from '../../components/applications/AboutApplication'
 import Notepad from '../../components/applications/Notepad/Notepad'
+import helpBookIcon from '../../static/icons/help-book-icon.png'
+import helpBookSmIcon from '../../static/icons/help-book-sm-icon.png'
 import ieIcon from '../../static/icons/ie-icon.png'
 import ieSmIcon from '../../static/icons/ie-sm-icon.png'
 import myComputerIcon from '../../static/icons/my-computer-icon.png'
@@ -49,12 +52,12 @@ export class ApplicationType {
     notepadSmIcon
   )
 
-  static readonly All: ApplicationType[] = [
-    ApplicationType.MyComputer,
-    ApplicationType.RecycleBin,
-    ApplicationType.InternetExplorer,
-    ApplicationType.Notepad,
-  ]
+  static readonly About = new ApplicationType(
+    'About',
+    <AboutApplication />,
+    helpBookIcon,
+    helpBookSmIcon
+  )
 
   constructor(
     readonly name: string,

@@ -6,10 +6,15 @@ import Icon from '../Icon/Icon'
 
 import { DesktopGridEntry, DesktopGridStyled } from './DesktopGrid.styles'
 
+const DESKTOP_APPLICATION_TYPES: ApplicationType[] = [
+  ApplicationType.MyComputer,
+  ApplicationType.RecycleBin,
+  ApplicationType.InternetExplorer,
+  ApplicationType.Notepad,
+]
+
 const DesktopGrid: React.FC = () => {
   const { openApplication } = useApplications()
-
-  const applicationTypes = ApplicationType.All
 
   const onDoubleClick = (applicationType: ApplicationType) => {
     openApplication(applicationType)
@@ -17,7 +22,7 @@ const DesktopGrid: React.FC = () => {
 
   return (
     <DesktopGridStyled>
-      {applicationTypes.map((at) => (
+      {DESKTOP_APPLICATION_TYPES.map((at) => (
         <DesktopGridEntry key={at.name} onDoubleClick={() => onDoubleClick(at)}>
           <Icon src={at.iconSrc} alt={at.name} />
           <span>{at.name}</span>

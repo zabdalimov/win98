@@ -6,6 +6,7 @@ import { useBrowserInfo } from '../../hooks/useBrowserInfo'
 import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
 import energyStarBlueMan from '../../static/images/energy-star-blue-man.png'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
+import { getEnvConfig } from '../../utils/env'
 import { isNumber } from '../../utils/math'
 
 import { BiosInfoEntry } from './BiosInfoEntry'
@@ -61,6 +62,7 @@ const getStorageUsage = ({ usage, quota }: StorageEstimate) => {
 }
 
 export const BiosStartupScreen: React.FC = () => {
+  const { projectUrl } = getEnvConfig()
   const browserInfo = useBrowserInfo()
   const { setBiosIsLoaded } = useBiosLoading()
 
@@ -88,12 +90,8 @@ export const BiosStartupScreen: React.FC = () => {
               <img src={energyStarBlueMan} alt="Energy Star Blue Man" />
             </td>
             <td>
-              <BiosLink
-                href="https://github.com/zabdalimov/win98"
-                target="_blank"
-                rel="noreferrer"
-              >
-                https://github.com/zabdalimov/win98
+              <BiosLink href={projectUrl} target="_blank" rel="noreferrer">
+                {projectUrl}
               </BiosLink>
               <p>No License For Now (?) 2020-{new Date().getFullYear()}</p>
             </td>
