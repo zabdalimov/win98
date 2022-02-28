@@ -8,11 +8,11 @@ import Icon from '../Icon/Icon'
 const AboutApplicationContainer = styled.div`
   display: flex;
 
-  padding: 1rem;
+  padding: 0.75rem;
 `
 
 const IconContainer = styled.div`
-  margin-right: 1rem;
+  margin-right: 0.75rem;
 `
 
 export const AboutApplication: React.FC = () => {
