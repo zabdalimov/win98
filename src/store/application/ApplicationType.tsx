@@ -21,17 +21,6 @@ const dummyContent = (
 )
 
 export class ApplicationType {
-  static readonly All: ApplicationType[] = []
-
-  constructor(
-    readonly name: string,
-    readonly content: React.ReactElement,
-    readonly iconSrc: string,
-    readonly smallIconSrc: string
-  ) {
-    ApplicationType.All.push(this)
-  }
-
   static readonly MyComputer = new ApplicationType(
     'My Computer',
     dummyContent,
@@ -59,4 +48,18 @@ export class ApplicationType {
     notepadIcon,
     notepadSmIcon
   )
+
+  static readonly All: ApplicationType[] = [
+    ApplicationType.MyComputer,
+    ApplicationType.RecycleBin,
+    ApplicationType.InternetExplorer,
+    ApplicationType.Notepad,
+  ]
+
+  constructor(
+    readonly name: string,
+    readonly content: React.ReactElement,
+    readonly iconSrc: string,
+    readonly smallIconSrc: string
+  ) {}
 }
