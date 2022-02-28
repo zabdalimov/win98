@@ -163,6 +163,16 @@ export const BiosStartupScreen: React.FC = () => {
             value={browserInfo.connection.effectiveType ?? FALLBACK_LABEL}
           />
         </BiosInfoSection>
+        <BiosInfoSection>
+          <BiosInfoEntry
+            label="Current Date Time"
+            value={new Date().toLocaleString()}
+          />
+          <BiosInfoEntry
+            label="Timezone"
+            value={Intl.DateTimeFormat().resolvedOptions().timeZone}
+          />
+        </BiosInfoSection>
         <p>
           Press <strong>ENTER</strong> to load WIN98
         </p>
