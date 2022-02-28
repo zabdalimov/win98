@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/win98/static/css/main.3e6993f7.css",
-    "main.js": "/win98/static/js/main.ba78894f.js",
+    "main.css": "/win98/static/css/main.e7657797.css",
+    "main.js": "/win98/static/js/main.b717244b.js",
     "static/media/perfectDosVga437win.ttf": "/win98/static/media/perfectDosVga437win.29ef71f99589099ff342.ttf",
     "static/media/startup-image.jpeg": "/win98/static/media/startup-image.bf1966da3ca772674d57.jpeg",
     "static/media/w95fa.woff": "/win98/static/media/w95fa.a79f08367baf01d93aca.woff",
     "static/media/w95fa.woff2": "/win98/static/media/w95fa.fb426abf85e01e2c7d00.woff2",
     "index.html": "/win98/index.html",
-    "main.3e6993f7.css.map": "/win98/static/css/main.3e6993f7.css.map",
-    "main.ba78894f.js.map": "/win98/static/js/main.ba78894f.js.map"
+    "main.e7657797.css.map": "/win98/static/css/main.e7657797.css.map",
+    "main.b717244b.js.map": "/win98/static/js/main.b717244b.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e6993f7.css",
-    "static/js/main.ba78894f.js"
+    "static/css/main.e7657797.css",
+    "static/js/main.b717244b.js"
   ]
 }
