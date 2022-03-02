@@ -2,7 +2,7 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 import mixins from '../../../styles/mixins.styles'
-import SeparatorStyled from '../../Separator/Separator.styles'
+import { SeparatorStyled } from '../../Separator/Separator'
 
 export const StartMenuStyled = styled.div`
   ${mixins.standardBorder};

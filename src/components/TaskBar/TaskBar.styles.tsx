@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-import SeparatorStyled from '../Separator/Separator.styles'
+import { SeparatorStyled } from '../Separator/Separator'
 
 import { NotificationAreaStyled } from './NotificationArea/NotificationArea.styles'
 

@@ -11,7 +11,7 @@ import winKeyIcon from '../../../static/icons/win-key-icon.png'
 import winUpdate from '../../../static/icons/win-update.png'
 import { ApplicationType } from '../../../store/application/ApplicationType'
 import Icon from '../../Icon/Icon'
-import Separator from '../../Separator/Separator'
+import { Separator } from '../../Separator/Separator'
 
 import {
   StartMenuBlueLine,

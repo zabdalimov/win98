@@ -3,7 +3,7 @@ import React from 'react'
 import { useApplications } from '../../hooks/useApplications'
 import useCurrentDate from '../../hooks/useCurrentDate'
 import { Application } from '../../store/application/reducer'
-import Separator from '../Separator/Separator'
+import { Separator } from '../Separator/Separator'
 
 import DateTimeSection from './NotificationArea/NotificationArea'
 import StartButton from './StartButton/StartButton'
