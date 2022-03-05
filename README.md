@@ -8,8 +8,8 @@ Windows 98 recreation attempt using TypeScript and React.
 * Classic Windows startup screen and sound
 * Multi-window application management integrated with taskbar
 * Sound control
-* Startup menu (work in progress for now...)
-* And more coming soon...
+* Start Menu
+* Blue Screen of Death on errors
 
 ## ![Internet Explorer Icon](src/static/icons/ie-icon.png) Live Demo
 [Check out live demo on Github Pages](https://zabdalimov.github.io/win98).
