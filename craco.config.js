@@ -1,6 +1,7 @@
 const DefinePlugin = require('webpack').DefinePlugin
 
-const packageVersion = require('./package.json').version;
+const packageJson = require('./package.json')
+const packageVersion = packageJson.version
 
 // get git info from command line
 const commitHash = require('child_process')
@@ -8,7 +9,7 @@ const commitHash = require('child_process')
   .toString()
   .trim()
 
-const projectUrl = 'https://github.com/zabdalimov/win98'
+const projectUrl = packageJson.repository
 
 module.exports = {
   babel: {
