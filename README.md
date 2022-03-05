@@ -2,10 +2,10 @@
 Windows 98 recreation attempt using TypeScript and React.
 
 <div style='display: flex;'>
-  <img src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/bios-startup-screen.png" alt="Bios Startup"/>
-  <img src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/windows-startup-screen.png" alt="Windows Startup"/>
-  <img src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/desktop-screen.png" alt="Desktop"/>
-  <img src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/blue-screen.png" alt="Blue Screen"/>
+  <img width='204px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/bios-startup-screen.png" alt="Bios Startup"/>
+  <img width='204px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/windows-startup-screen.png" alt="Windows Startup"/>
+  <img width='204px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/desktop-screen.png" alt="Desktop"/>
+  <img width='204px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/blue-screen.png" alt="Blue Screen"/>
 </div>
 
 ## ![My Computer Icon](src/static/icons/my-computer-icon.png) Features
