@@ -1,7 +1,12 @@
 # ![Windows 98 Logo](public/favicon.ico) win98 ![ci badge](https://github.com/zabdalimov/win98/actions/workflows/ci.yml/badge.svg) ![deploy badge](https://github.com/zabdalimov/win98/actions/workflows/deploy.yml/badge.svg)
 Windows 98 recreation attempt using TypeScript and React.
 
-![Demo Screenshot](demo-screen.png)
+<div style='display: flex;'>
+  <img width='408px' height='306px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/bios-startup-screen.png" alt="Bios Startup"/>
+  <img width='408px' height='306px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/windows-startup-screen.png" alt="Windows Startup"/>
+  <img width='408px' height='306px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/desktop-screen.png" alt="Desktop"/>
+  <img width='408px' height='306px' src="https://raw.githubusercontent.com/zabdalimov/win98/master/docs/blue-screen.png" alt="Blue Screen"/>
+</div>
 
 ## ![My Computer Icon](src/static/icons/my-computer-icon.png) Features
 * Classic BIOS Energy Star startup screen
