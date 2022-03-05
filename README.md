@@ -24,10 +24,11 @@ yarn start # start web server
 After web server is started, go to http://localhost:3000 to see your Windows 98 desktop.
 
 ## ![Help Book Icon](src/static/icons/help-book-icon.png) Resources / Credits
-|                                     |                                                              |
-|-------------------------------------|--------------------------------------------------------------|
-| Icons                               | [win98icons.alexmeub.com](https://win98icons.alexmeub.com)   |
-| Fonts                               | [fontsarena.com](https://fontsarena.com/w95fa-by-fontsarena) |
-|                                     | [dafont.com](https://dafont.com/perfect-dos-vga-437.font)    |
-| Sounds                              | [101soundboards.com](https://101soundboards.com)             |
-| Emulator (to take inspiration from) | [copy.sh](https://copy.sh/v86/?profile=windows98)            |
+|                                     |                                                                                                                                    |
+|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| Icons                               | [win98icons.alexmeub.com](https://win98icons.alexmeub.com)                                                                         |
+| Energy Star Screen Logo and Icons   | [reddit.com/u/SvenCuaresma](https://www.reddit.com/r/vitahacks/comments/bo81du/made_a_classic_pc_boot_screen_for_nostalgic_feels/) |
+| Fonts                               | [fontsarena.com](https://fontsarena.com/w95fa-by-fontsarena)                                                                       |
+|                                     | [dafont.com](https://dafont.com/perfect-dos-vga-437.font)                                                                          |
+| Sounds                              | [101soundboards.com](https://101soundboards.com)                                                                                   |
+| Emulator (to take inspiration from) | [copy.sh](https://copy.sh/v86/?profile=windows98)                                                                                  |
