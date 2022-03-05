@@ -1,4 +1,4 @@
-import { getEnvConfig } from '../../utils/env'
+import { getEnvConfig } from '../../utils/getEnvConfig'
 
 import {
   CHANGE_BIOS_LOADING_STATUS,

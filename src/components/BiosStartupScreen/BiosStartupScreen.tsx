@@ -8,7 +8,7 @@ import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
 import { useVolume } from '../../hooks/useVolume'
 import energyStarBlueMan from '../../static/images/energy-star-blue-man.png'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
-import { getEnvConfig } from '../../utils/env'
+import { getEnvConfig } from '../../utils/getEnvConfig'
 import { isNumber } from '../../utils/math'
 
 import { BiosInfoEntry } from './BiosInfoEntry'

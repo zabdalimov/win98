@@ -1,5 +1,6 @@
 const DefinePlugin = require('webpack').DefinePlugin
 
+const packageVersion = require('./package.json').version;
 
 // get git info from command line
 const commitHash = require('child_process')
@@ -23,6 +24,7 @@ module.exports = {
     plugins: {
       add: [
         new DefinePlugin({
+          'process.env.PACKAGE_VERSION': JSON.stringify(packageVersion),
           'process.env.COMMIT_HASH': JSON.stringify(commitHash),
           'process.env.PROJECT_URL': JSON.stringify(projectUrl),
         })

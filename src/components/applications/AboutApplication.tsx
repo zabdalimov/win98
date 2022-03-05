@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import React from 'react'
 
 import helpIcon from '../../static/icons/help-book-icon.png'
-import { getEnvConfig } from '../../utils/env'
+import { getEnvConfig } from '../../utils/getEnvConfig'
 import Icon from '../Icon/Icon'
 
 const AboutApplicationContainer = styled.div`
@@ -16,7 +16,7 @@ const IconContainer = styled.div`
 `
 
 export const AboutApplication: React.FC = () => {
-  const { commitHash, projectUrl } = getEnvConfig()
+  const { packageVersion, commitHash, projectUrl } = getEnvConfig()
 
   return (
     <AboutApplicationContainer>
@@ -34,8 +34,10 @@ export const AboutApplication: React.FC = () => {
             </td>
           </tr>
           <tr>
-            <td>Commit Hash:</td>
-            <td>{commitHash}</td>
+            <td>Version:</td>
+            <td>
+              v{packageVersion}#{commitHash}
+            </td>
           </tr>
         </tbody>
       </table>
