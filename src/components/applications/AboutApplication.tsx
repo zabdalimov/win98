@@ -26,17 +26,17 @@ export const AboutApplication: React.FC = () => {
       <table>
         <tbody>
           <tr>
+            <td>Version:</td>
+            <td>
+              v{packageVersion}#{commitHash}
+            </td>
+          </tr>
+          <tr>
             <td>Project URL:</td>
             <td>
               <a href={projectUrl} target="_blank" rel="noreferrer">
                 {projectUrl}
               </a>
-            </td>
-          </tr>
-          <tr>
-            <td>Version:</td>
-            <td>
-              v{packageVersion}#{commitHash}
             </td>
           </tr>
         </tbody>
