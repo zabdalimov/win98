@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { clamp } from '../../utils/math'
 
@@ -9,6 +9,7 @@ export type SliderOrientation = 'horizontal' | 'vertical'
 export interface SliderProps {
   min: number
   max: number
+  value?: number
   orientation?: SliderOrientation
   onChange?: (value: number) => void
   // This will also be called when clicking on slider track
@@ -23,25 +24,27 @@ interface State {
 
 // TODO this is similar to useDrag but it's one dimensional, mb extract common logic to separate hook
 // TODO step param
+// TODO this component rerenders every second for some reason
 export const Slider: React.FC<SliderProps> = ({
   min,
   max,
+  value = 0,
   orientation = 'horizontal',
   onChange,
   onHandleRelease,
 }) => {
-  const trackRef = useRef<HTMLDivElement>(null)
-  const handleRef = useRef<HTMLDivElement>(null)
+  const [trackEl, setTrackEl] = useState<HTMLDivElement | null>(null)
+  const [handleEl, setHandleEl] = useState<HTMLDivElement | null>(null)
 
   const trackSize =
     (orientation === 'horizontal'
-      ? trackRef.current?.offsetWidth
-      : trackRef.current?.offsetHeight) ?? 0
+      ? trackEl?.offsetWidth
+      : trackEl?.offsetHeight) ?? 0
 
   const handleSize =
     (orientation === 'horizontal'
-      ? handleRef.current?.offsetWidth
-      : handleRef.current?.offsetHeight) ?? 0
+      ? handleEl?.offsetWidth
+      : handleEl?.offsetHeight) ?? 0
 
   const minPosition = 0
   const maxPosition = trackSize - handleSize
@@ -51,6 +54,19 @@ export const Slider: React.FC<SliderProps> = ({
     position: 0,
     lastPosition: 0,
   })
+
+  useEffect(() => {
+    if (!trackEl || !handleEl || state.position) {
+      return
+    }
+
+    setState((prev) => ({
+      ...prev,
+      position: (value * maxPosition) / (max - min),
+    }))
+    // This is just for setting initial value, we don't want to react to other changes
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [trackEl, handleEl])
 
   const calculateValue = useCallback(
     (position: number) => (max - min) * (position / maxPosition),
@@ -73,7 +89,7 @@ export const Slider: React.FC<SliderProps> = ({
       const value = calculateValue(state.position)
       onChange(value)
     }
-    // We explicitly want to position change only
+    // We explicitly want to react on position change only
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.position])
 
@@ -142,13 +158,16 @@ export const Slider: React.FC<SliderProps> = ({
     [getClientCoordinate, onMouseMove, onMouseUp]
   )
 
-  const offsetProp = orientation === 'horizontal' ? 'left' : 'bottom'
+  const offsetProp = useMemo(
+    () => (orientation === 'horizontal' ? 'left' : 'bottom'),
+    [orientation]
+  )
 
   return (
     <SliderStyled orientation={orientation}>
       <SliderTrack
         orientation={orientation}
-        ref={trackRef}
+        ref={(el) => setTrackEl(el)}
         onClick={onTrackClick}
       />
       <SliderHandle
@@ -157,7 +176,7 @@ export const Slider: React.FC<SliderProps> = ({
         style={{
           [offsetProp]: `${state.position}px`,
         }}
-        ref={handleRef}
+        ref={(el) => setHandleEl(el)}
       />
     </SliderStyled>
   )

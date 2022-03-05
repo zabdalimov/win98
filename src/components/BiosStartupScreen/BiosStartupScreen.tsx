@@ -1,9 +1,11 @@
 import styled from '@emotion/styled'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
+import { DEFAULT_VOLUME } from '../../audio'
 import { useBiosLoading } from '../../hooks/useBiosLoading'
 import { useBrowserInfo } from '../../hooks/useBrowserInfo'
 import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
+import { useVolume } from '../../hooks/useVolume'
 import energyStarBlueMan from '../../static/images/energy-star-blue-man.png'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
 import { getEnvConfig } from '../../utils/env'
@@ -32,10 +34,11 @@ const BiosInfoSections = styled.div`
     margin-bottom: 26px;
   }
 
-  > p:last-child {
+  > div:last-child {
     margin-top: auto;
-    > strong {
+    strong {
       color: ${({ theme }) => theme.colors.white};
+      text-transform: uppercase;
     }
   }
 `
@@ -61,23 +64,37 @@ const getStorageUsage = ({ usage, quota }: StorageEstimate) => {
   }
 }
 
+const LOAD_WITH_SOUND_KEY = 'Enter'
+const LOAD_WITHOUT_SOUND_KEY = 'm'
+
 export const BiosStartupScreen: React.FC = () => {
   const { projectUrl } = getEnvConfig()
   const browserInfo = useBrowserInfo()
   const { setBiosIsLoaded } = useBiosLoading()
+  const { setVolume } = useVolume()
 
-  const [loadedValues, setLoadedValues] = useState<
+  const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState<
     { storageEstimate: StorageEstimate } | undefined
   >()
 
   useEffect(() => {
     ;(async () => {
       const storageEstimate = await browserInfo.storageEstimate
-      setLoadedValues({ storageEstimate })
+      setBrowserInfoLoadedValues({ storageEstimate })
     })()
   }, [browserInfo.storageEstimate])
 
-  useOnKeyDownOnce('Enter', setBiosIsLoaded)
+  const loadWithoutSound = useCallback(() => {
+    setBiosIsLoaded()
+  }, [setBiosIsLoaded])
+
+  const loadWithSound = useCallback(() => {
+    setVolume(DEFAULT_VOLUME)
+    setBiosIsLoaded()
+  }, [setBiosIsLoaded, setVolume])
+
+  useOnKeyDownOnce(LOAD_WITH_SOUND_KEY, loadWithSound)
+  useOnKeyDownOnce(LOAD_WITHOUT_SOUND_KEY, loadWithoutSound)
 
   // TODO add gradual loading of all info entries
 
@@ -112,19 +129,19 @@ export const BiosStartupScreen: React.FC = () => {
                 : FALLBACK_LABEL
             }
           />
-          {loadedValues?.storageEstimate && (
+          {browserInfoLoadedValues?.storageEstimate && (
             <React.Fragment>
               <BiosInfoEntry
                 label="Storage Quota"
                 value={
-                  loadedValues.storageEstimate.quota
-                    ? `${loadedValues.storageEstimate.quota}B`
+                  browserInfoLoadedValues.storageEstimate.quota
+                    ? `${browserInfoLoadedValues.storageEstimate.quota}B`
                     : FALLBACK_LABEL
                 }
               />
               <BiosInfoEntry
                 label="Storage Usage"
-                value={getStorageUsage(loadedValues.storageEstimate)}
+                value={getStorageUsage(browserInfoLoadedValues.storageEstimate)}
               />
             </React.Fragment>
           )}
@@ -173,9 +190,15 @@ export const BiosStartupScreen: React.FC = () => {
             value={Intl.DateTimeFormat().resolvedOptions().timeZone}
           />
         </BiosInfoSection>
-        <p>
-          Press <strong>ENTER</strong> to load WIN98
-        </p>
+        <div>
+          <p>
+            Press <strong>{LOAD_WITH_SOUND_KEY}</strong> to startup WIN98.
+          </p>
+          <p>
+            Press <strong>{LOAD_WITHOUT_SOUND_KEY}</strong> to do it without
+            sound.
+          </p>
+        </div>
       </BiosInfoSections>
       <EnergyStarLogo
         src={energyStarLogo}
