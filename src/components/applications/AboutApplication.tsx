@@ -32,7 +32,7 @@ export const AboutApplication: React.FC = () => {
             </td>
           </tr>
           <tr>
-            <td>Project URL:</td>
+            <td>Repository:</td>
             <td>
               <a href={projectUrl} target="_blank" rel="noreferrer">
                 {projectUrl}
