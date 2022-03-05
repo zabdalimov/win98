@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://zabdalimov.github.io/win98",
+  "repository": "https://github.com/zabdalimov/win98",
   "scripts": {
     "start": "craco start",
     "build": "craco build",
