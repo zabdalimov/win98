@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 import mixins from '../../styles/mixins.styles'
 import { ButtonStyled } from '../Button/Button.styles'
-import { modalRootZindex } from '../ModalRoot/ModalRoot.styles'
+import { modalRootZindex } from '../ModalRoot/ModalRoot'
 
 export const ApplicationWindowStyled = styled.div<{ isFocused: boolean }>`
   ${mixins.standardBorderAlt};
