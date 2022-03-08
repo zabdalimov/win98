@@ -27,6 +27,8 @@ const ModalRootStyled = styled.div<{ isBackdropShown?: boolean }>`
       background-position: 0 0, 0 1px, 1px -1px, -1px 0;
 
       transition: background-image 1s linear;
+
+      pointer-events: initial;
     `}
 
   > * {
