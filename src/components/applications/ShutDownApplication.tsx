@@ -13,7 +13,6 @@ import { RadioButton, RadioButtonStyled } from '../RadioButton/RadioButton'
 
 const ShutDownApplicationContainer = styled.div`
   width: 300px;
-  height: 200px;
 
   display: flex;
 
@@ -44,7 +43,7 @@ const ButtonsContainer = styled.div`
   justify-content: end;
   align-items: center;
 
-  margin-top: auto;
+  margin-top: 42px;
 
   > ${ButtonStyled} {
     min-width: 80px;
