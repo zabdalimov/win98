@@ -3,6 +3,7 @@ import React from 'react'
 
 import { AboutApplication } from '../../components/applications/AboutApplication'
 import Notepad from '../../components/applications/Notepad/Notepad'
+import { ShutDownApplication } from '../../components/applications/ShutDownApplication'
 import helpBookIcon from '../../static/icons/help-book-icon.png'
 import helpBookSmIcon from '../../static/icons/help-book-sm-icon.png'
 import ieIcon from '../../static/icons/ie-icon.png'
@@ -13,6 +14,8 @@ import notepadIcon from '../../static/icons/notepad-icon.png'
 import notepadSmIcon from '../../static/icons/notepad-sm-icon.png'
 import recycleBinEmptyIcon from '../../static/icons/recycle-bin-empty-icon.png'
 import recycleBinEmptySmIcon from '../../static/icons/recycle-bin-empty-sm-icon.png'
+import shutDownIcon from '../../static/icons/shut-down-icon.png'
+import shutDownSmIcon from '../../static/icons/shut-down-sm-icon.png'
 
 const dummyContent = (
   <div
@@ -57,6 +60,13 @@ export class ApplicationType {
     <AboutApplication />,
     helpBookIcon,
     helpBookSmIcon
+  )
+
+  static readonly ShutDown = new ApplicationType(
+    'Shut Down...',
+    <ShutDownApplication />,
+    shutDownIcon,
+    shutDownSmIcon
   )
 
   constructor(

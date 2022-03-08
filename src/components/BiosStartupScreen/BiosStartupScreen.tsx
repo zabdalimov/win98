@@ -70,7 +70,7 @@ const LOAD_WITHOUT_SOUND_KEY = 'm'
 export const BiosStartupScreen: React.FC = () => {
   const { projectUrl } = getEnvConfig()
   const browserInfo = useBrowserInfo()
-  const { setBiosIsLoaded } = useBiosLoading()
+  const { setIsBiosLoaded } = useBiosLoading()
   const { setVolume } = useVolume()
 
   const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState<
@@ -85,13 +85,16 @@ export const BiosStartupScreen: React.FC = () => {
   }, [browserInfo.storageEstimate])
 
   const loadWithoutSound = useCallback(() => {
-    setBiosIsLoaded()
-  }, [setBiosIsLoaded])
+    // It is necessary to explicitly set it to 0,
+    // because system restart is possible, and value from previous run is saved
+    setVolume(0)
+    setIsBiosLoaded(true)
+  }, [setIsBiosLoaded, setVolume])
 
   const loadWithSound = useCallback(() => {
     setVolume(DEFAULT_VOLUME)
-    setBiosIsLoaded()
-  }, [setBiosIsLoaded, setVolume])
+    setIsBiosLoaded(true)
+  }, [setIsBiosLoaded, setVolume])
 
   useOnKeyDownOnce(LOAD_WITH_SOUND_KEY, loadWithSound)
   useOnKeyDownOnce(LOAD_WITHOUT_SOUND_KEY, loadWithoutSound)
