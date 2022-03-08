@@ -16,6 +16,7 @@ export function useApplications() {
   const isBackdropShown = useSelector(selectIsBackdropShown)
 
   const dispatch = useDispatch()
+
   return {
     applications,
     isBackdropShown,
@@ -23,8 +24,8 @@ export function useApplications() {
       applicationType: ApplicationType,
       isBackdropShown?: boolean
     ) => dispatch(openApplication(applicationType, isBackdropShown)),
-    closeApplication: (applicationName: string, isBackdropShown?: boolean) =>
-      dispatch(closeApplication(applicationName, isBackdropShown)),
+    closeApplication: (applicationName: string) =>
+      dispatch(closeApplication(applicationName)),
     focusApplication: (applicationName: string) =>
       dispatch(changeApplicationFocus(applicationName, true)),
     unfocusApplication: (applicationName: string) =>

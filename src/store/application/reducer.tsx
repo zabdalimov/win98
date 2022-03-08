@@ -56,10 +56,10 @@ export function applicationReducer(
       // TODO focus last application
       return {
         ...state,
-        ...(action.isBackdropShown === false ? { isBackdropShown: false } : {}),
         openedApplications: state.openedApplications.filter(
           (a) => a.applicationType.name !== action.applicationName
         ),
+        isBackdropShown: false,
       }
 
     case CHANGE_APPLICATION_FOCUS:

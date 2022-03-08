@@ -13,7 +13,6 @@ interface OpenApplicationAction {
 interface CloseApplicationAction {
   type: typeof CLOSE_APPLICATION
   applicationName: string
-  isBackdropShown?: boolean
 }
 
 interface ChangeApplicationFocusAction {
@@ -32,12 +31,10 @@ export const openApplication = (
 })
 
 export const closeApplication = (
-  applicationName: string,
-  isBackdropShown?: boolean
+  applicationName: string
 ): CloseApplicationAction => ({
   type: CLOSE_APPLICATION,
   applicationName,
-  isBackdropShown,
 })
 
 export const changeApplicationFocus = (
