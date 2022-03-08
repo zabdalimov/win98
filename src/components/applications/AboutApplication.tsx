@@ -19,7 +19,7 @@ const InfoTable = styled.table``
 const InfoTableBody = styled.tbody``
 const InfoTableRow = styled.tr``
 const InfoTableCell = styled.td`
-  min-width: 100px;
+  min-width: 80px;
 `
 
 export const AboutApplication: React.FC = () => {
