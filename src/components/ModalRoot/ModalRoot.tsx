@@ -8,8 +8,8 @@ import { ModalRootStyled } from './ModalRoot.styles'
 export const ModalRootId = 'modal-root'
 
 const ModalRoot: React.FC = () => {
-  const { applications } = useApplications()
-  const { closeApplication } = useApplications()
+  const { applications, closeApplication } = useApplications()
+
   return (
     <ModalRootStyled id={ModalRootId}>
       {applications.map((a) => (
