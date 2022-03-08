@@ -41,6 +41,7 @@ input, textarea {
   font-family: inherit;
   margin: 0;
   padding: 0;
+  cursor: inherit;
 }
 
 input[type="radio"] {
@@ -49,6 +50,10 @@ input[type="radio"] {
   appearance: none;
   /* For iOS < 15 to remove gradient background */
   background-color: #fff;
+}
+
+label {
+  cursor: inherit;
 }
 
 input:focus, textarea:focus {
