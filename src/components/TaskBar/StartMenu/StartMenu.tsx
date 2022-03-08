@@ -68,7 +68,7 @@ const StartMenu: React.FC<Props> = ({ closeMenu }) => {
     {
       icon: shutDownIcon,
       label: 'Shut Down...',
-      onClick: () => openApplication(ApplicationType.ShutDown),
+      onClick: () => openApplication(ApplicationType.ShutDown, true),
     },
   ]
   return (

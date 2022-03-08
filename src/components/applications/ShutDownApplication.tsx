@@ -72,7 +72,7 @@ export const ShutDownApplication: React.FC = () => {
   const { closeApplication } = useApplications()
 
   const closeShutDownApplication = () => {
-    closeApplication(ApplicationType.ShutDown.name)
+    closeApplication(ApplicationType.ShutDown.name, false)
   }
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {

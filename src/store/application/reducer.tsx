@@ -13,10 +13,12 @@ export interface Application {
 
 interface ApplicationState {
   openedApplications: Application[]
+  isBackdropShown: boolean
 }
 
 const initialState: ApplicationState = {
   openedApplications: [],
+  isBackdropShown: false,
 }
 
 export function applicationReducer(
@@ -46,6 +48,7 @@ export function applicationReducer(
 
       return {
         ...state,
+        ...(action.isBackdropShown === true ? { isBackdropShown: true } : {}),
         openedApplications: [...openedApplications, ...appsToOpen],
       }
 
@@ -53,6 +56,7 @@ export function applicationReducer(
       // TODO focus last application
       return {
         ...state,
+        ...(action.isBackdropShown === false ? { isBackdropShown: false } : {}),
         openedApplications: state.openedApplications.filter(
           (a) => a.applicationType.name !== action.applicationName
         ),
