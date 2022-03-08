@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { useAudio } from '../../hooks/useAudio'
-import useStartup from '../../hooks/useStartup'
+import { useFakeLoading } from '../../hooks/useFakeLoading'
 import { useVolume } from '../../hooks/useVolume'
 import { useWindowsLoading } from '../../hooks/useWindowsLoading'
 
@@ -15,7 +15,7 @@ export const WindowsStartupScreen: React.FC = () => {
   const { playAudio } = useAudio()
   const { volume } = useVolume()
   const { setIsWindowsLoaded } = useWindowsLoading()
-  const { isLoading } = useStartup(5000, 5000)
+  const { isLoading } = useFakeLoading(5000, 5000)
 
   useEffect(() => {
     if (!isLoading) {
