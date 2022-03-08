@@ -1,20 +1,19 @@
 export const CHANGE_BIOS_LOADING_STATUS = 'system/CHANGE_BIOS_LOADING_STATUS'
 export const CHANGE_WINDOWS_LOADING_STATUS =
   'system/CHANGE_WINDOWS_LOADING_STATUS'
-
 export const CHANGE_VOLUME = 'system/CHANGE_VOLUME'
 
-export interface ChangeBiosLoadingStatus {
+interface ChangeBiosLoadingStatus {
   type: typeof CHANGE_BIOS_LOADING_STATUS
   loadingStatus: boolean
 }
 
-export interface ChangeWindowsLoadingStatus {
+interface ChangeWindowsLoadingStatus {
   type: typeof CHANGE_WINDOWS_LOADING_STATUS
   loadingStatus: boolean
 }
 
-export interface ChangeVolume {
+interface ChangeVolume {
   type: typeof CHANGE_VOLUME
   volume: number
 }
