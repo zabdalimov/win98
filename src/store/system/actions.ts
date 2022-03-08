@@ -1,6 +1,7 @@
 export const CHANGE_BIOS_LOADING_STATUS = 'system/CHANGE_BIOS_LOADING_STATUS'
 export const CHANGE_WINDOWS_LOADING_STATUS =
   'system/CHANGE_WINDOWS_LOADING_STATUS'
+export const CHANGE_IS_SHUT_DOWN = 'system/CHANGE_IS_SHUT_DOWN'
 export const CHANGE_VOLUME = 'system/CHANGE_VOLUME'
 
 interface ChangeBiosLoadingStatus {
@@ -13,9 +14,9 @@ interface ChangeWindowsLoadingStatus {
   loadingStatus: boolean
 }
 
-interface ChangeVolume {
-  type: typeof CHANGE_VOLUME
-  volume: number
+interface ChangeIsShutDown {
+  type: typeof CHANGE_IS_SHUT_DOWN
+  isShutDown: boolean
 }
 
 interface ChangeVolume {
@@ -39,6 +40,13 @@ export const changeWindowsLoadingStatus = (
   loadingStatus,
 })
 
+export const changeIsShutDown = (isShutDown: boolean): ChangeIsShutDown => {
+  return {
+    type: CHANGE_IS_SHUT_DOWN,
+    isShutDown,
+  }
+}
+
 export const changeVolume = (volume: number): ChangeVolume => {
   return {
     type: CHANGE_VOLUME,
@@ -49,4 +57,5 @@ export const changeVolume = (volume: number): ChangeVolume => {
 export type SystemAction =
   | ChangeBiosLoadingStatus
   | ChangeWindowsLoadingStatus
+  | ChangeIsShutDown
   | ChangeVolume

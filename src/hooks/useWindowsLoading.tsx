@@ -9,6 +9,8 @@ export function useWindowsLoading() {
 
   return {
     isWindowsLoaded,
-    setWindowsIsLoaded: () => dispatch(changeWindowsLoadingStatus(true)),
+    setIsWindowsLoaded: (isWindowsLoaded: boolean) => {
+      return dispatch(changeWindowsLoadingStatus(isWindowsLoaded))
+    },
   }
 }

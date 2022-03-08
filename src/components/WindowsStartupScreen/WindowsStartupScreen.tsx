@@ -14,7 +14,7 @@ export const WindowsStartupScreen: React.FC = () => {
   // TODO mb add skip button
   const { playAudio } = useAudio()
   const { volume } = useVolume()
-  const { setWindowsIsLoaded } = useWindowsLoading()
+  const { setIsWindowsLoaded } = useWindowsLoading()
   const { isLoading } = useStartup(5000, 5000)
 
   useEffect(() => {
@@ -22,12 +22,12 @@ export const WindowsStartupScreen: React.FC = () => {
       playAudio('startup.mp3')
       if (volume !== 0) {
         // We need to close startup in the middle of a sound for more natural feel
-        setTimeout(() => setWindowsIsLoaded(), 4500)
+        setTimeout(() => setIsWindowsLoaded(true), 4500)
       } else {
-        setWindowsIsLoaded()
+        setIsWindowsLoaded(true)
       }
     }
-  }, [isLoading, playAudio, setWindowsIsLoaded, volume])
+  }, [isLoading, playAudio, setIsWindowsLoaded, volume])
 
   return (
     <WindowsStartupScreenStyled>
