@@ -1,13 +1,10 @@
-import { useBiosLoading } from './useBiosLoading'
-import { useWindowsLoading } from './useWindowsLoading'
+import { useResetState } from './useResetState'
 
 export function useRestart() {
-  const { setIsBiosLoaded } = useBiosLoading()
-  const { setIsWindowsLoaded } = useWindowsLoading()
+  const { resetState } = useResetState()
 
   const restart = () => {
-    setIsBiosLoaded(false)
-    setIsWindowsLoaded(false)
+    resetState()
   }
 
   return {

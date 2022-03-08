@@ -85,8 +85,6 @@ export const BiosStartupScreen: React.FC = () => {
   }, [browserInfo.storageEstimate])
 
   const loadWithoutSound = useCallback(() => {
-    // It is necessary to explicitly set it to 0,
-    // because system restart is possible, and value from previous run is saved
     setVolume(0)
     setIsBiosLoaded(true)
   }, [setIsBiosLoaded, setVolume])
