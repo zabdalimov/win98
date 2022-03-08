@@ -60,7 +60,6 @@ enum ShutDownOption {
   RESTART = 'RESTART',
 }
 
-// TODO add dark backdrop when opening modal
 export const ShutDownApplication: React.FC = () => {
   const [chosenOption, setChosenOption] = useState<ShutDownOption>(
     ShutDownOption.SHUT_DOWN
