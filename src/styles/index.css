@@ -39,7 +39,16 @@ button {
 input, textarea {
   border: none;
   font-family: inherit;
+  margin: 0;
   padding: 0;
+}
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
 }
 
 input:focus, textarea:focus {

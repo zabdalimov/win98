@@ -9,6 +9,8 @@ export function useBiosLoading() {
 
   return {
     isBiosLoaded,
-    setBiosIsLoaded: () => dispatch(changeBiosLoadingStatus(true)),
+    setIsBiosLoaded: (isBiosLoaded: boolean) => {
+      return dispatch(changeBiosLoadingStatus(isBiosLoaded))
+    },
   }
 }
