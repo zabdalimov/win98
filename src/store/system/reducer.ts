@@ -3,6 +3,7 @@ import { getEnvConfig } from '../../utils/getEnvConfig'
 import {
   CHANGE_BIOS_LOADING_STATUS,
   CHANGE_IS_SHUT_DOWN,
+  CHANGE_IS_SYSTEM_LOADING,
   CHANGE_VOLUME,
   CHANGE_WINDOWS_LOADING_STATUS,
   SystemAction,
@@ -14,6 +15,8 @@ export interface SystemState {
 
   isShutDown: boolean
 
+  isSystemLoading: boolean
+
   volume: number
 }
 
@@ -22,6 +25,8 @@ const initialState: SystemState = {
   isWindowsLoaded: getEnvConfig().isDevelopment,
 
   isShutDown: false,
+
+  isSystemLoading: false,
 
   volume: 0,
 }
@@ -45,6 +50,11 @@ export function systemReducer(
       return {
         ...state,
         isShutDown: action.isShutDown,
+      }
+    case CHANGE_IS_SYSTEM_LOADING:
+      return {
+        ...state,
+        isSystemLoading: action.isSystemLoading,
       }
     case CHANGE_VOLUME:
       return {

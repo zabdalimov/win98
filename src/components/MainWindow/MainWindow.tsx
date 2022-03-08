@@ -3,8 +3,10 @@ import React from 'react'
 
 import { useBiosLoading } from '../../hooks/useBiosLoading'
 import { useShutDown } from '../../hooks/useShutDown'
+import { useSystemLoading } from '../../hooks/useSystemLoading'
 import { useWindowsLoading } from '../../hooks/useWindowsLoading'
 import cursorDefault from '../../static/cursor-default.png'
+import cursorLoading from '../../static/cursor-loading.png'
 import { BiosStartupScreen } from '../BiosStartupScreen/BiosStartupScreen'
 import DesktopGrid from '../DesktopGrid/DesktopGrid'
 import { ErrorBoundary } from '../ErrorBoundary/ErrorBoundary'
@@ -13,7 +15,7 @@ import { ShutDownScreen } from '../ShutDownScreen/ShutDownScreen'
 import TaskBar from '../TaskBar/TaskBar'
 import { WindowsStartupScreen } from '../WindowsStartupScreen/WindowsStartupScreen'
 
-const MainWindowStyled = styled.div`
+const MainWindowStyled = styled.div<{ isSystemLoading?: boolean }>`
   width: 100%;
   height: 100%;
   max-width: 1024px;
@@ -21,7 +23,9 @@ const MainWindowStyled = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  cursor: url(${cursorDefault}), auto;
+  cursor: url(${({ isSystemLoading }) =>
+      isSystemLoading ? cursorLoading : cursorDefault}),
+    auto;
   font-family: ${({ theme }) => theme.fontFamilies.windows95};
   user-select: none;
 
@@ -34,8 +38,10 @@ const MainWindow: React.FC = () => {
   const { isBiosLoaded } = useBiosLoading()
   const { isShutDown } = useShutDown()
 
+  const { isSystemLoading } = useSystemLoading()
+
   return (
-    <MainWindowStyled>
+    <MainWindowStyled isSystemLoading={isSystemLoading}>
       <ErrorBoundary>
         {!isBiosLoaded ? (
           <BiosStartupScreen />

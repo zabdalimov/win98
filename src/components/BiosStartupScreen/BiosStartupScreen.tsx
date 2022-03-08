@@ -5,6 +5,7 @@ import { DEFAULT_VOLUME } from '../../audio'
 import { useBiosLoading } from '../../hooks/useBiosLoading'
 import { useBrowserInfo } from '../../hooks/useBrowserInfo'
 import { useOnKeyDownOnce } from '../../hooks/useOnKeyDownOnce'
+import { useSystemLoading } from '../../hooks/useSystemLoading'
 import { useVolume } from '../../hooks/useVolume'
 import energyStarBlueMan from '../../static/images/energy-star-blue-man.png'
 import energyStarLogo from '../../static/images/energy-star-logo.png'
@@ -71,6 +72,7 @@ export const BiosStartupScreen: React.FC = () => {
   const { projectUrl } = getEnvConfig()
   const browserInfo = useBrowserInfo()
   const { setIsBiosLoaded } = useBiosLoading()
+  const { setIsSystemLoading } = useSystemLoading()
   const { setVolume } = useVolume()
 
   const [browserInfoLoadedValues, setBrowserInfoLoadedValues] = useState<
@@ -84,15 +86,20 @@ export const BiosStartupScreen: React.FC = () => {
     })()
   }, [browserInfo.storageEstimate])
 
+  const loadBase = useCallback(() => {
+    setIsBiosLoaded(true)
+    setIsSystemLoading(true)
+  }, [setIsBiosLoaded, setIsSystemLoading])
+
   const loadWithoutSound = useCallback(() => {
     setVolume(0)
-    setIsBiosLoaded(true)
-  }, [setIsBiosLoaded, setVolume])
+    loadBase()
+  }, [loadBase, setVolume])
 
   const loadWithSound = useCallback(() => {
     setVolume(DEFAULT_VOLUME)
-    setIsBiosLoaded(true)
-  }, [setIsBiosLoaded, setVolume])
+    loadBase()
+  }, [loadBase, setVolume])
 
   useOnKeyDownOnce(LOAD_WITH_SOUND_KEY, loadWithSound)
   useOnKeyDownOnce(LOAD_WITHOUT_SOUND_KEY, loadWithoutSound)

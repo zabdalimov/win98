@@ -77,6 +77,8 @@ export const ShutDownApplication: React.FC = () => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
+    closeShutDownApplication()
+
     if (chosenOption === ShutDownOption.SHUT_DOWN) {
       shutDown()
     } else if (chosenOption === ShutDownOption.RESTART) {
@@ -84,7 +86,6 @@ export const ShutDownApplication: React.FC = () => {
     } else {
       console.error('Unknown shutdown option', chosenOption)
     }
-    closeShutDownApplication()
   }
 
   return (

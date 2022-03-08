@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useAudio } from '../../hooks/useAudio'
 import { useFakeLoading } from '../../hooks/useFakeLoading'
+import { useSystemLoading } from '../../hooks/useSystemLoading'
 import { useVolume } from '../../hooks/useVolume'
 import { useWindowsLoading } from '../../hooks/useWindowsLoading'
 
@@ -15,19 +16,22 @@ export const WindowsStartupScreen: React.FC = () => {
   const { playAudio } = useAudio()
   const { volume } = useVolume()
   const { setIsWindowsLoaded } = useWindowsLoading()
+  const { setIsSystemLoading } = useSystemLoading()
   const { isLoading } = useFakeLoading(5000, 5000)
 
   useEffect(() => {
     if (!isLoading) {
       playAudio('startup.mp3')
-      if (volume !== 0) {
-        // We need to close startup in the middle of a sound for more natural feel
-        setTimeout(() => setIsWindowsLoaded(true), 4500)
-      } else {
-        setIsWindowsLoaded(true)
-      }
+      // We need to close startup in the middle of a sound for more natural feel
+      setTimeout(
+        () => {
+          setIsWindowsLoaded(true)
+          setIsSystemLoading(false)
+        },
+        volume !== 0 ? 4500 : 0
+      )
     }
-  }, [isLoading, playAudio, setIsWindowsLoaded, volume])
+  }, [isLoading, playAudio, setIsSystemLoading, setIsWindowsLoaded, volume])
 
   return (
     <WindowsStartupScreenStyled>

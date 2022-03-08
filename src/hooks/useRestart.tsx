@@ -1,10 +1,15 @@
 import { useResetState } from './useResetState'
+import { useSystemLoading } from './useSystemLoading'
 
 export function useRestart() {
   const { resetState } = useResetState()
+  const { setIsSystemLoading } = useSystemLoading()
 
   const restart = () => {
-    resetState()
+    setIsSystemLoading(true)
+    setTimeout(() => {
+      resetState()
+    }, 3000)
   }
 
   return {
