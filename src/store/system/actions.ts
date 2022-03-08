@@ -18,11 +18,9 @@ interface ChangeVolume {
   volume: number
 }
 
-export const changeVolume = (volume: number): ChangeVolume => {
-  return {
-    type: CHANGE_VOLUME,
-    volume,
-  }
+interface ChangeVolume {
+  type: typeof CHANGE_VOLUME
+  volume: number
 }
 
 export const changeBiosLoadingStatus = (
@@ -40,6 +38,13 @@ export const changeWindowsLoadingStatus = (
   type: CHANGE_WINDOWS_LOADING_STATUS,
   loadingStatus,
 })
+
+export const changeVolume = (volume: number): ChangeVolume => {
+  return {
+    type: CHANGE_VOLUME,
+    volume,
+  }
+}
 
 export type SystemAction =
   | ChangeBiosLoadingStatus
