@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/win98/static/css/main.b34dda01.css",
-    "main.js": "/win98/static/js/main.88ec35fa.js",
+    "main.js": "/win98/static/js/main.ac7b0fae.js",
     "static/media/perfectDosVga437win.ttf": "/win98/static/media/perfectDosVga437win.29ef71f99589099ff342.ttf",
     "static/media/startup-image.jpeg": "/win98/static/media/startup-image.bf1966da3ca772674d57.jpeg",
     "static/media/w95fa.woff": "/win98/static/media/w95fa.a79f08367baf01d93aca.woff",
     "static/media/w95fa.woff2": "/win98/static/media/w95fa.fb426abf85e01e2c7d00.woff2",
     "index.html": "/win98/index.html",
     "main.b34dda01.css.map": "/win98/static/css/main.b34dda01.css.map",
-    "main.88ec35fa.js.map": "/win98/static/js/main.88ec35fa.js.map"
+    "main.ac7b0fae.js.map": "/win98/static/js/main.ac7b0fae.js.map"
   },
   "entrypoints": [
     "static/css/main.b34dda01.css",
-    "static/js/main.88ec35fa.js"
+    "static/js/main.ac7b0fae.js"
   ]
 }
