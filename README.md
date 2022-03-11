@@ -15,6 +15,7 @@ Windows 98 recreation attempt using TypeScript and React.
 * Sound control
 * Start Menu
 * Blue Screen of Death on errors
+* System restart and shutdown
 
 ## ![Internet Explorer Icon](src/static/icons/ie-icon.png) Live Demo
 [Check out live demo on Github Pages](https://zabdalimov.github.io/win98).
