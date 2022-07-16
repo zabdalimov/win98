@@ -12,6 +12,8 @@ interface Props {
   checked?: boolean
   onChange?: (checked: boolean) => void
   autoFocus?: boolean
+
+  children?: React.ReactNode
 }
 
 export const RadioButtonStyled = styled.div`

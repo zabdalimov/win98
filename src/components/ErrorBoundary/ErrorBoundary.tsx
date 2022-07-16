@@ -4,13 +4,17 @@ import { getFirstPathFromStackTrace } from '../../utils/error'
 
 import { BlueScreen } from './BlueScreen'
 
+interface Props {
+  children?: React.ReactNode
+}
+
 interface State {
   error: Error | null
 }
 
 // For now there is only class based implementation for ErrorBoundaries in React unfortunately
-export class ErrorBoundary extends React.Component<unknown, State> {
-  constructor(props: unknown) {
+export class ErrorBoundary extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = { error: null }
   }
