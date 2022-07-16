@@ -11,6 +11,8 @@ export interface ButtonProps {
   className?: SerializedStyles & string
   // TODO add more options from flex
   alignContent?: 'center'
+
+  children?: React.ReactNode
 }
 
 const Button: React.FC<ButtonProps> = ({

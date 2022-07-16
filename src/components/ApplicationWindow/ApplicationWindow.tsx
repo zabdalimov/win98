@@ -16,6 +16,8 @@ import {
 interface Props {
   application: Application
   onClose: () => void
+
+  children?: React.ReactNode
 }
 
 const ApplicationWindow: React.FC<Props> = ({
